@@ -1,0 +1,16 @@
+{
+  "name": "Genesis",
+  "short_name": "Genesis",
+  "description": "Bo od ciekawości wszystko się zaczęło",
+  "lang": "pl",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#00647d",
+  "icons": [
+    {
+      "src": "./img/icons/logo.svg",
+      "type": "image/svg"
+    }
+  ],
+  "background_color": "#e3e3e3"
+}
