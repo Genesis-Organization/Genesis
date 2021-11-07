@@ -1,7 +1,7 @@
 <template>
   <nav :class="{ mainpagenav: $route.name === 'Home' }">
     <Desktop class="desktop" />
-    <Mobile class="mobile" />
+    <Mobile />
   </nav>
 </template>
 
@@ -24,7 +24,7 @@ export default defineComponent({
 nav {
   position: sticky;
   width: 100%;
-  background: #00647d;
+  background: #262626;
   height: $height;
   padding: 10px;
   display: flex;
@@ -41,19 +41,6 @@ nav {
   @media (max-width: 1000px) {
     justify-content: flex-end;
     top: 15px;
-    right: 15px;
-  }
-}
-
-.desktop {
-  @media (max-width: 1000px) {
-    display: none;
-  }
-}
-
-.mobile {
-  @media (min-width: 1000px) {
-    display: none;
   }
 }
 </style>

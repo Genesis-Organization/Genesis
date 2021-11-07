@@ -2,24 +2,23 @@
   <div
     class="hero"
     :style="{
-      backgroundImage:'url(' + require('../../assets/hero/' + index + '-min.jpg') + ')',
+      backgroundImage:
+        'url(' + require('../../../assets/hero/' + index + '-min.jpg') + ')',
     }"
     :class="{ active: this.index == this.activeSlide }"
-  >
-  </div>
+  ></div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-    props: ['index', 'activeSlide']
+  props: ['index', 'activeSlide'],
 })
 </script>
 
-
 <style lang="scss" scoped>
-@import '../../styles/index.scss';
+@import '../../../styles/index.scss';
 
 .hero {
   position: absolute;
@@ -27,11 +26,11 @@ export default defineComponent({
   background-position: center;
   width: 100%;
   height: 100%;
-  opacity:0;
+  opacity: 0;
   transition: opacity 2s;
 }
 
 .active {
-    opacity:1;
+  opacity: 1;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div></div>
+  <div>[Footer]</div>
 </template>
 
 <script lang="ts">

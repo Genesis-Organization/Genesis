@@ -15,7 +15,8 @@ $color: #fff;
   transition: 0.3s transform linear;
 }
 
-.hamburger::before, .hamburger::after {
+.hamburger::before,
+.hamburger::after {
   content: '';
   position: absolute;
   top: 0;

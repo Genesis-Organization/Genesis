@@ -1,6 +1,9 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import Home from '../views/Home.vue'
-import Test from '../views/Test.vue'
+import Formulas from '../views/Formulas.vue'
+import Books from '../views/Books.vue'
+import Statistics from '../views/Statistics.vue'
+import Info from '../views/Info.vue'
 
 const routes: RouteRecordRaw[] = [
   {
@@ -9,9 +12,24 @@ const routes: RouteRecordRaw[] = [
     component: Home,
   },
   {
-    path: '/test',
-    name: 'Test',
-    component: Test,
+    path: '/tablice',
+    name: 'Formulas',
+    component: Formulas,
+  },
+  {
+    path: '/podreczniki',
+    name: 'Books',
+    component: Books,
+  },
+  {
+    path: '/statystyki',
+    name: 'Statistics',
+    component: Statistics,
+  },
+  {
+    path: '/informacje',
+    name: 'Info',
+    component: Info,
   },
 ]
 

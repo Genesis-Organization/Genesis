@@ -1,17 +1,17 @@
 module.exports = {
-    pwa: {
-      name: 'Genesis',
-      themeColor: '#3EA08B',
-      appleMobileWebAppCapable: 'yes',
-      workboxPluginMode: 'GenerateSW'
-    },
-    configureWebpack: {
-      devServer: {
-        historyApiFallback: true
-      }
-    },
+  pwa: {
+    name: 'Genesis',
+    themeColor: '#3EA08B',
+    appleMobileWebAppCapable: 'yes',
+    workboxPluginMode: 'GenerateSW',
+  },
+  configureWebpack: {
     devServer: {
-      port: 4000,
-      host: 'localhost',
-  }
+      historyApiFallback: true,
+    },
+  },
+  devServer: {
+    port: 4000,
+    host: 'localhost',
+  },
 }

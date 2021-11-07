@@ -2,7 +2,7 @@
   <header>
     <Slideshow />
     <div class="hello">
-      <img src="../../assets/logo.svg"/>
+      <img src="../../assets/logo.svg" />
       <div>
         <div class="title">GENESIS</div>
         <div class="subtitle">Bo od ciekawości wszystko się zaczęło</div>
@@ -13,12 +13,12 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Slideshow from './Slideshow.vue'
+import Slideshow from './header/Slideshow.vue'
 
 export default defineComponent({
   components: {
-    Slideshow
-  }
+    Slideshow,
+  },
 })
 </script>
 
@@ -29,7 +29,7 @@ header {
   background: white;
   width: 100vw;
   height: 700px;
-  @media (max-width:700px) {
+  @media (max-width: 700px) {
     height: 100vh;
   }
 }
@@ -51,21 +51,21 @@ header {
   font-size: 70px;
   font-weight: 900;
   color: #e3e3e3;
-  @media (max-width:700px) {
-    font-size:50px;
+  @media (max-width: 700px) {
+    font-size: 50px;
   }
 }
 
 .subtitle {
   font-size: 40px;
   color: #e3e3e3;
-  @media (max-width:700px) {
-    font-size:30px;
+  @media (max-width: 700px) {
+    font-size: 30px;
   }
 }
 
 img {
-  width:250px;
-  max-width:40vw;
+  width: 250px;
+  max-width: 40vw;
 }
 </style>

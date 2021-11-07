@@ -1,13 +1,12 @@
 <template>
   <div class="slideshow">
     <Hero
-    v-for="(slide, index) in 8"
-    :key="index"
-    :index= index
-    :activeSlide="activeSlide"
+      v-for="(slide, index) in 8"
+      :key="index"
+      :index="index"
+      :activeSlide="activeSlide"
     />
-    {{ activeSlide }}
-    </div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -16,11 +15,11 @@ import Hero from './Hero.vue'
 
 export default defineComponent({
   components: {
-    Hero
+    Hero,
   },
   data() {
     return {
-      activeSlide: Math.floor(Math.random()*7),
+      activeSlide: Math.floor(Math.random() * 7),
     }
   },
   methods: {
@@ -40,9 +39,8 @@ export default defineComponent({
 })
 </script>
 
-
 <style lang="scss" scoped>
-@import '../../styles/index.scss';
+@import '../../../styles/index.scss';
 
 .slideshow {
   width: 100%;

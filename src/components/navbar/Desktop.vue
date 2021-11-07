@@ -1,22 +1,24 @@
 <template>
-  <div>
-    <router-link to="/" class="home">
-      <img src="../../assets/logo.svg" />
-      GENESIS
-    </router-link>
+  <div class="desktop">
+    <Logo />
     <section>
       <router-link to="/tablice">Tablice</router-link>
-      <router-link to="/tablice">Podręczniki</router-link>
-      <router-link to="/tablice">Statystyki</router-link>
-      <router-link to="/tablice">Informacje</router-link>
+      <router-link to="/podreczniki">Podręczniki</router-link>
+      <router-link to="/statystyki">Statystyki</router-link>
+      <router-link to="/informacje">Informacje</router-link>
     </section>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import Logo from './Logo.vue'
 
-export default defineComponent({})
+export default defineComponent({
+  components: {
+    Logo,
+  },
+})
 </script>
 
 <style lang="scss" scoped>
@@ -34,26 +36,10 @@ section {
   display: flex;
 }
 
-img {
-  height: 100%;
-  filter: invert(0.5) brightness(100);
-}
-
-.home {
-  display: flex;
-  align-items: center;
-  margin: 10px;
-  font-size: calc(20px + 0.85vw);
-  font-weight: 700;
-}
-
-a {
+section a {
   display: block;
   height: 100%;
   color: #e3e3e3;
-}
-
-section a {
   margin: 10px;
   font-size: 22px;
   &:after {
@@ -71,6 +57,12 @@ section a {
   }
   &:hover:after {
     opacity: 1;
+  }
+}
+
+.desktop {
+  @media (max-width: 1000px) {
+    display: none;
   }
 }
 </style>
