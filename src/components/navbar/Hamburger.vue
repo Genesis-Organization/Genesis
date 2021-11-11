@@ -30,13 +30,4 @@ $color: #fff;
   transform: translateY(25px);
   transition: 0.3s transform linear;
 }
-
-.hamburger:focus {
-  transform: rotate(45deg) translateY(5px);
-  border: none;
-}
-
-.hamburger:focus::after {
-  transform: rotate(-90deg) translateX(-10px);
-}
 </style>

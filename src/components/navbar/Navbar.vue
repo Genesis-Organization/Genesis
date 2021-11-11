@@ -1,7 +1,7 @@
 <template>
-  <nav :class="{ mainpagenav: $route.name === 'Home' }">
-    <Desktop class="desktop" />
-    <Mobile />
+  <nav>
+    <Desktop :class="{changed: setNavColor}"/>
+    <Mobile :class="{changed: setNavColor}" />
   </nav>
 </template>
 
@@ -15,6 +15,23 @@ export default defineComponent({
     Desktop,
     Mobile,
   },
+  data () {
+    return {
+      setNavColor: false
+    }
+  },
+  methods:{
+    scrollHandler () {
+      if (window.scrollY > 20) {
+        this.setNavColor = true
+      } else {
+        this.setNavColor = false
+      }
+    }
+  },
+  mounted () {
+    document.addEventListener('scroll', () => this.scrollHandler())
+  }
 })
 </script>
 
@@ -22,25 +39,18 @@ export default defineComponent({
 @import '../../styles/index.scss';
 
 nav {
-  position: sticky;
+  position: fixed;
   width: 100%;
-  background: #262626;
+  background: transparent;
   height: $height;
-  padding: 10px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.185);
   z-index: 1;
 }
 
-.mainpagenav {
-  position: absolute;
-  background: transparent;
-  box-shadow: none;
-  @media (max-width: 1000px) {
-    justify-content: flex-end;
-    top: 15px;
-  }
+.changed {
+  background: $dark;
+  box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.185);
 }
 </style>

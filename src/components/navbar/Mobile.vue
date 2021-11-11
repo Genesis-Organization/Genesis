@@ -1,13 +1,17 @@
 <template>
   <div class="mobile">
     <Logo class="logo" />
-    <Hamburger />
-    <div class="site-menu">
+    <Hamburger v-on:click="setSideMenu(true)" />
+    <div class="site-menu" v-if="showSideMenu == true">
       <ul>
-        <li><router-link to="/tablice">Tablice</router-link></li>
-        <li><router-link to="/podreczniki">Podręczniki</router-link></li>
-        <li><router-link to="/statystyki">Statystyki</router-link></li>
-        <li><router-link to="/informacje">Informacje</router-link></li>
+        <div class="close" v-on:click="setSideMenu(false)"></div>
+        <Logo class="logo" />
+        <MProfile />
+        <NavItem
+          v-for="subpage in subpages"
+          :key="subpage"
+          :subpage="subpage"
+        />
       </ul>
     </div>
   </div>
@@ -15,13 +19,29 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { subpages } from '../../data/home/subpages'
+import MProfile from './mobile/MProfile.vue'
+import NavItem from './mobile/NavItem.vue'
 import Hamburger from './Hamburger.vue'
 import Logo from './Logo.vue'
 
 export default defineComponent({
   components: {
     Hamburger,
+    MProfile,
+    NavItem,
     Logo,
+  },
+  data() {
+    return {
+      subpages,
+      showSideMenu: false,
+    }
+  },
+  methods: {
+    setSideMenu(val: boolean) {
+      this.showSideMenu = val
+    },
   },
 })
 </script>
@@ -33,11 +53,11 @@ export default defineComponent({
   display: flex;
   position: fixed;
   bottom: 0;
-  right: 0;
-  height: calc(100vh - $height);
-  width: calc(200px + 20vw);
-  background: #262626f7;
-  transform: translateX(100%);
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: #1c2123ee;
+  backdrop-filter: blur(10px);
   transition: 0.3s transform ease-in-out;
 }
 
@@ -51,29 +71,9 @@ ul {
   align-content: flex-start;
 }
 
-li {
-  background: #161616;
-  margin-top: 10px;
-  border-radius: 5px;
-  font-size: 18px;
-  flex-basis: 100%;
-  height: 45px;
-  box-shadow: inset 2px 2px 15px rgba(0, 42, 53, 0.245);
-}
-
 a {
-  display: block;
-  height: 100%;
-}
-
-.site-menu a {
   display: flex;
-  padding: 10px;
-  text-decoration: none;
-  align-items: center;
   height: 100%;
-  width: 100%;
-  color: #fff;
 }
 
 button:focus ~ .site-menu,
@@ -89,11 +89,40 @@ button:focus ~ .site-menu,
   width: 100%;
   justify-content: space-evenly;
   align-items: center;
+  transition: .5s all;
   @media (min-width: 1000px) {
     display: none;
   }
   .logo {
     height: calc(0.7 * $height);
+  }
+}
+
+.site-menu a.home.logo {
+  margin: 10px auto 0 auto;
+}
+
+.close {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  &:before,
+  &:after {
+    content: '';
+    width: 100%;
+    height: 7.5px;
+    background: #e3e3e3;
+    position: absolute;
+    display: block;
+    top: 20px;
+    left: 0;
+    border-radius: 40%;
+    transform: rotate(45deg);
+  }
+  &:after {
+    transform: rotate(-45deg);
   }
 }
 </style>

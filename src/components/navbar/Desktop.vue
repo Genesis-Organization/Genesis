@@ -25,11 +25,14 @@ export default defineComponent({
 @import '../../styles/index.scss';
 
 div {
-  width: 1000px;
+  width: 1300px;
+  max-width:100vw;
   height: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  border-radius:10px;
+  transition: .5s all;
 }
 
 section {

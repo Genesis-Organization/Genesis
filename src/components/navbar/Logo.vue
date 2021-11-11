@@ -15,7 +15,7 @@ export default defineComponent({})
 @import '../../styles/index.scss';
 
 img {
-  height: 100%;
+  height: 85%;
   filter: invert(0.5) brightness(100);
 }
 
