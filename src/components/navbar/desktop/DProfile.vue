@@ -1,6 +1,6 @@
 <template>
-  <article v-if="user">
-    <div>
+  <span>
+    <article>
       <div class="avatarcont">
         <section
           class="avatar"
@@ -9,33 +9,26 @@
           }"
         ></section>
       </div>
-      <section class="shortdata">
-        <div>
-          <b class="username">{{ user.username() }}</b>
-          <i class="login">@{{ user.login }}</i>
-        </div>
+      <div class="username">
+        {{ user.name }}
+      </div>
+    </article>
+    <div class="profile_hitbox">
+      <section class="profile">
+        <DProfileData :user="user" />
       </section>
     </div>
-  </article>
-  <NavItem
-    v-else
-    :subpage="{
-      text: 'Zaloguj się',
-      link: 'login',
-      image: 'login',
-      color: '#bdc8cb',
-    }"
-  />
+  </span>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { User, PremiumUser } from '../../../types/user'
-import NavItem from './NavItem.vue'
+import DProfileData from './DProfileData.vue'
 
 export default defineComponent({
   components: {
-    NavItem,
+    DProfileData,
   },
   data() {
     return {
@@ -54,50 +47,64 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import '../../../styles/index.scss';
 article {
-  width: 100%;
-  padding: 5% 2%;
   display: flex;
   justify-content: center;
   align-items: center;
+  &:hover ~ .profile_hitbox .profile {
+    height: 200px;
+    opacity: 1;
+  }
 }
 
-article > div {
-  padding: 5px;
+.profile_hitbox {
+  display: block;
+  transform: translateX(-25%);
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin: 10px;
+  &:hover .profile {
+    height: 200px;
+    opacity: 1;
+  }
+  width: 350px;
+}
+
+.profile {
+  opacity: 0;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 90%;
+  margin: 35px auto 0 auto;
+  // height: 200px;
+  height: 0;
+  background: #28353ad0;
+  backdrop-filter: blur(4px);
+  border-radius: 20px;
+  transition: 0.5s all;
 }
 
 .avatarcont {
   background: #e3e3e3;
-  padding: 5px;
+  padding: 3px;
   border-radius: 50%;
 }
 
 .avatar {
-  width: 100px;
-  height: 100px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   background-position: center;
   background-size: cover;
 }
 
-.shortdata {
-  display: flex;
-  padding: 10px;
-  justify-content: center;
-  align-items: center;
-}
-
-.username,
-.login {
-  display: block;
-  color: #e3e3e3;
-  font-size: 16.5px;
-  padding: 2px;
-  font-weight: 400;
-}
-
 .username {
-  font-size: 22px;
+  color: #e3e3e3;
   font-weight: 500;
+  padding: 0 10px;
+  font-size: 20px;
 }
 </style>

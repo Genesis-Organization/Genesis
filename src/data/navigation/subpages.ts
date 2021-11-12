@@ -23,4 +23,10 @@ export const subpages = [
     image: 'info',
     color: '#CC9300',
   },
+  {
+    text: 'Wesprzyj',
+    link: 'wesprzyj',
+    image: 'donate',
+    color: '#309900',
+  },
 ]

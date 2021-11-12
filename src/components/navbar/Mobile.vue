@@ -19,7 +19,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { subpages } from '../../data/home/subpages'
+import { subpages } from '../../data/navigation/subpages'
 import MProfile from './mobile/MProfile.vue'
 import NavItem from './mobile/NavItem.vue'
 import Hamburger from './Hamburger.vue'
@@ -51,6 +51,7 @@ export default defineComponent({
 
 .site-menu {
   display: flex;
+  align-items: center;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -89,7 +90,7 @@ button:focus ~ .site-menu,
   width: 100%;
   justify-content: space-evenly;
   align-items: center;
-  transition: .5s all;
+  transition: 0.5s all;
   @media (min-width: 1000px) {
     display: none;
   }

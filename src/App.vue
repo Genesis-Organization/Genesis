@@ -31,9 +31,8 @@ export default defineComponent({
 }
 
 .moved {
-  width:100vw;
-  height:$height;
+  width: 100vw;
+  height: $height;
   background: #1c2123;
 }
-
 </style>

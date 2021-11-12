@@ -4,6 +4,7 @@ import Formulas from '../views/Formulas.vue'
 import Books from '../views/Books.vue'
 import Statistics from '../views/Statistics.vue'
 import Info from '../views/Info.vue'
+import Donate from '../views/Donate.vue'
 
 const routes: RouteRecordRaw[] = [
   {
@@ -30,6 +31,11 @@ const routes: RouteRecordRaw[] = [
     path: '/informacje',
     name: 'Info',
     component: Info,
+  },
+  {
+    path: '/wesprzyj',
+    name: 'Support',
+    component: Donate,
   },
 ]
 

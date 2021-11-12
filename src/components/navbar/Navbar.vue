@@ -1,7 +1,7 @@
 <template>
   <nav>
-    <Desktop :class="{changed: setNavColor}"/>
-    <Mobile :class="{changed: setNavColor}" />
+    <Desktop :class="{ changed: setNavColor }" />
+    <Mobile :class="{ changed: setNavColor }" />
   </nav>
 </template>
 
@@ -15,23 +15,23 @@ export default defineComponent({
     Desktop,
     Mobile,
   },
-  data () {
+  data() {
     return {
-      setNavColor: false
+      setNavColor: false,
     }
   },
-  methods:{
-    scrollHandler () {
+  methods: {
+    scrollHandler() {
       if (window.scrollY > 20) {
         this.setNavColor = true
       } else {
         this.setNavColor = false
       }
-    }
+    },
   },
-  mounted () {
+  mounted() {
     document.addEventListener('scroll', () => this.scrollHandler())
-  }
+  },
 })
 </script>
 
