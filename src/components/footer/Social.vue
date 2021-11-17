@@ -32,5 +32,9 @@ a {
   background-position: center;
   color: white;
   border-radius: 5px;
+  transition: 0.2s;
+  &:hover {
+    filter: brightness(1.2);
+  }
 }
 </style>

@@ -1,11 +1,19 @@
-<template>Books</template>
+<template>
+  <Hero
+    img="books/hero.jpg"
+    icon="navbar/books.svg"
+    subtitle="Darmowe podręczniki dla każdego"
+  />
+</template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Header from '../components/home/Header.vue'
+import Hero from '../components/shared/Hero.vue'
 
 export default defineComponent({
-  components: {},
+  components: {
+    Hero,
+  },
 })
 </script>
 

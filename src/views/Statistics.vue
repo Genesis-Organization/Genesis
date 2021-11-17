@@ -1,11 +1,19 @@
-<template>STATS</template>
+<template>
+  <Hero
+    img="statistics/hero.jpg"
+    icon="navbar/statistics.svg"
+    subtitle="Wszystkie statystyki w jednym miejscu"
+  />
+</template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Header from '../components/home/Header.vue'
+import Hero from '../components/shared/Hero.vue'
 
 export default defineComponent({
-  components: {},
+  components: {
+    Hero,
+  },
 })
 </script>
 

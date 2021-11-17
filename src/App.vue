@@ -1,6 +1,6 @@
 <template>
+  <EasterEgg />
   <Navbar />
-  <div v-if="$route.name != 'Home'" class="moved"></div>
   <div id="routerviev">
     <router-view />
   </div>
@@ -11,6 +11,7 @@
 import { defineComponent } from 'vue'
 import Navbar from './components/navbar/Navbar.vue'
 import Footer from './components/footer/Footer.vue'
+import EasterEgg from './components/EasterEgg.vue'
 
 export default defineComponent({
   created() {
@@ -19,6 +20,7 @@ export default defineComponent({
   components: {
     Navbar,
     Footer,
+    EasterEgg,
   },
 })
 </script>
@@ -33,6 +35,6 @@ export default defineComponent({
 .moved {
   width: 100vw;
   height: $height;
-  background: #1c2123;
+  background: $dark;
 }
 </style>

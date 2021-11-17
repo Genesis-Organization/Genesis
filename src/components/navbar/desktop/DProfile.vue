@@ -1,5 +1,5 @@
 <template>
-  <span>
+  <span v-if="user">
     <article>
       <div class="avatarcont">
         <section
@@ -19,6 +19,9 @@
       </section>
     </div>
   </span>
+  <section class="login" v-else>
+    <router-link to="/login">Zaloguj się</router-link>
+  </section>
 </template>
 
 <script lang="ts">
@@ -106,5 +109,18 @@ article {
   font-weight: 500;
   padding: 0 10px;
   font-size: 20px;
+}
+
+.login a {
+  display: block;
+  color: #e3e3e3;
+  margin: 3px;
+  padding: 7px;
+  font-size: 22px;
+  border-radius: 5px;
+  transition: 0.2s all;
+  &:hover {
+    background: $main;
+  }
 }
 </style>

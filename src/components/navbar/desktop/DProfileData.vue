@@ -3,9 +3,12 @@
     <li class="username">{{ user.username() }}</li>
     <li class="login">@{{ user.login }}</li>
     <section class="icons">
-      <router-link :to="'/user/' + user.login.toLowerCase()"></router-link>
-      <router-link to="/a"></router-link>
-      <router-link to="/a"></router-link>
+      <router-link
+        class="link_user"
+        :to="'/user/' + user.login.toLowerCase()"
+      ></router-link>
+      <router-link class="link_settings" to="/a"></router-link>
+      <router-link class="link_logout" to="/a"></router-link>
     </section>
   </ul>
 </template>
@@ -51,7 +54,26 @@ export default defineComponent({
   display: block;
   padding: 22px;
   margin: 5px;
-  background: $main;
+  background-color: $main;
   border-radius: 25%;
+  background-size: 75%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.2s;
+  &:hover {
+    filter: brightness(1.2);
+  }
+}
+
+.link_user {
+  background-image: url('../../../assets/icons/navbar/login.svg');
+}
+
+.link_settings {
+  background-image: url('../../../assets/icons/navbar/settings.svg');
+}
+
+.link_logout {
+  background-image: url('../../../assets/icons/navbar/logout.svg');
 }
 </style>

@@ -29,7 +29,7 @@ img {
 
 a {
   display: block;
-  height: 100%;
+  height: 90%;
   color: #e3e3e3 !important;
 }
 </style>
