@@ -11,7 +11,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import axios from '../../api/axios'
+import axios from '../../config/axios'
 import { Group } from '../../types/sciences'
 
 export default defineComponent({
@@ -23,7 +23,9 @@ export default defineComponent({
   mounted() {
     axios
       .get('/groups')
-      .then((res) => (this.sciences = res.data.map((x: Group) => x.GroupName)))
+      .then(
+        (res: any) => (this.sciences = res.data.map((x: Group) => x.GroupName))
+      )
   },
 })
 </script>

@@ -10,24 +10,29 @@
       >
     </section>
     <DProfile />
+    <Locale :options="langs"/>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { subpages } from '../../data/navigation/subpages'
+import { langs } from '../../data/navigation/langs'
 import DProfile from './desktop/DProfile.vue'
+import Locale from './desktop/Locale.vue'
 import Logo from './Logo.vue'
 
 export default defineComponent({
   data() {
     return {
       subpages,
+      langs
     }
   },
   components: {
     Logo,
     DProfile,
+    Locale,
   },
 })
 </script>
@@ -35,7 +40,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import '../../styles/index.scss';
 
-div {
+.desktop {
   width: 1300px;
   max-width: 100vw;
   height: 100%;

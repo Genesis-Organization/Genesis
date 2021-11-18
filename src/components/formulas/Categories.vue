@@ -1,6 +1,7 @@
 <template>
   <div class="pickcategory">Wybierz jedną z kategorii</div>
   <Filter />
+  {{ $t('key1') }}
 </template>
 
 <script lang="ts">
