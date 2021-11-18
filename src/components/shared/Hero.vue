@@ -3,9 +3,9 @@
     class="hero"
     :style="{ backgroundImage: 'url(' + require('../../assets/' + img) + ')' }"
   >
-  <div class="container">
-    <div class="subtitle">{{subtitle}}</div>
-  </div>
+    <div class="container">
+      <div class="subtitle">{{ subtitle }}</div>
+    </div>
   </header>
 </template>
 

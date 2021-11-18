@@ -1,8 +1,8 @@
 enum Groups {
-    NATURAL = "Natural"
+  NATURAL = 'Natural',
 }
 
 export interface Group {
-    GroupID: number,
-    GroupName: string
+  GroupID: number
+  GroupName: string
 }

@@ -1,8 +1,5 @@
 <template>
-  <Hero
-    img="formulas/hero.jpg"
-    subtitle="Wzory i tablice naukowe"
-  />
+  <Hero img="formulas/hero.jpg" subtitle="Wzory i tablice naukowe" />
   <Categories />
 </template>
 
@@ -14,7 +11,7 @@ import Categories from '../components/formulas/Categories.vue'
 export default defineComponent({
   components: {
     Hero,
-    Categories
+    Categories,
   },
 })
 </script>
