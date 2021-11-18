@@ -2,12 +2,9 @@
   <article>
     <div>
       <Text
-        header="Wszystkie statystyki w jednym miejscu"
-        content="Strona genesis zajmuje się również składowaniem wszelkich
-        statystyk wykresów i danych, które mogą okazać sie pomocne dla każdego.
-        W dalekiej przyszłości przy wsparciu wolontariuszy możliwe będzie
-        też prowadzenie własnych badań."
-        linkcont="Sprawdź tablice i wzory"
+        :header=" $t('home.statistics.header') "
+        :content="$t('home.statistics.desc')"
+        :linkcont="$t('home.statistics.button') "
         link="statystyki"
       />
     </div>

@@ -1,13 +1,9 @@
 <template>
   <article>
     <Text
-      header="Wiedza dostępna jak nigdy dotąd"
-      content="Genesis to projekt non-profit, który ma na celu zwiększenie dostępności edukacji i
-      utworzenie w pełni darmowych kompleksowych źródeł wiedzy. Przyświeca nam
-      idea, że każdy niezależnie od pochodzenia i zamożności ma pełne prawo do
-      nauki, a naszym celem jest zapewnienie wszystkim ludziom równości szans na
-      godne życie."
-      linkcont="Dowiedz się więcej"
+      :header=" $t('home.main.header') "
+      :content="$t('home.main.desc')"
+      :linkcont="$t('home.main.button') "
       link="informacje"
     />
   </article>

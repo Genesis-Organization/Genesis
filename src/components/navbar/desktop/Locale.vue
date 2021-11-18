@@ -1,6 +1,7 @@
 <template>
   <div
     class="custom-select"
+    :key="key"
     :tabindex="tabindex"
     @blur="open = false"
   >
@@ -18,9 +19,9 @@
     >
       <div
         class="item"
-        v-for="(option, i) of options"
+        v-for="(option, i) of filterOptions"
         :key="i"
-        @click="selected=option; open=false; $emit('input', option); $i18n.locale = option"
+        @click="selected=option; open=false; $emit('input', option); changeLanguage(option)"
       >
         <img :src="require('../../../assets/icons/navbar/flags/' + option + '.png')" />
         {{ option.toUpperCase() }}
@@ -44,11 +45,23 @@ export default {
   },
   data() {
     return {
-      selected: this.options.length > 0 ? this.options[this.options.findIndex(locale => locale == this.$i18n.locale)] : null,
-      open: false
+      selected: this.options.length > 0 ? this.options[0] : null,
+      filterOptions: this.options,
+      open: false,
+      key:0,
     };
   },
+  methods: {
+    changeLanguage (lang) {
+      this.$i18n.locale = lang
+      this.$store.commit('setAppLanguage', lang)
+      const filter = this.options.filter(option=> option != this.$i18n.locale)
+      if (filter) this.filterOptions = filter
+      this.$forceUpdate
+    }
+  },
   mounted(){
+    this.selected = this.options[this.options.findIndex(locale => locale == this.$i18n.locale)]
     this.$emit('input', this.selected);
   }
 };
@@ -69,7 +82,7 @@ export default {
 }
 
 .selected {
-  background-color: $dark;
+  background-color: #161E21;
   border-radius: 6px;
   color: #e3e3e3;
   padding-left: 8px;

@@ -6,7 +6,7 @@
         :key="subpage"
         v-for="subpage in subpages"
         :to="'/' + subpage.link"
-        >{{ subpage.text }}</router-link
+        >{{ $t('navigation.navbar.subpages.' + subpage.corename) }}</router-link
       >
     </section>
     <DProfile />
