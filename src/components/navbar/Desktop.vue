@@ -10,7 +10,7 @@
       >
     </section>
     <DProfile />
-    <Locale :options="langs"/>
+    <Locale :options="langs" />
   </div>
 </template>
 
@@ -26,7 +26,7 @@ export default defineComponent({
   data() {
     return {
       subpages,
-      langs
+      langs,
     }
   },
   components: {

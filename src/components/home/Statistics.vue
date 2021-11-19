@@ -2,9 +2,9 @@
   <article>
     <div>
       <Text
-        :header=" $t('home.statistics.header') "
+        :header="$t('home.statistics.header')"
         :content="$t('home.statistics.desc')"
-        :linkcont="$t('home.statistics.button') "
+        :linkcont="$t('home.statistics.button')"
         link="statystyki"
       />
     </div>

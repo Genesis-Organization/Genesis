@@ -37,5 +37,16 @@
     "footer": {
       "copyrights": "Wszelkie użyte zdjęcia i logotypy są wolne od praw autorskich udostępniane na licencji MIT lub CC. Zezwala się na nieograniczone użytkowanie, kopiowanie, modyfikowanie lub rozpowszechnianie oryginalnej lub zmodyfikowanej zawartości udostępnionej na tej stronie pod warunkiem uznania autorstwa i umieszenia informacji o źródle."
     }
+  },
+  "sciences": {
+    "groups":{
+      "all":"Wszystkie",
+      "natural":"Przyrodnicze",
+      "social":"Społeczne",
+      "humanities":"Humanistyczne",
+      "technical":"Techniczne",
+      "artistic":"Artystyczne",
+      "others":"Pozostałe"
+    }
   }
 }

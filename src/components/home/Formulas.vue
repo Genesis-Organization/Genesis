@@ -5,15 +5,15 @@
     </div>
     <div>
       <Text
-        :header=" $t('home.formulas.header') "
+        :header="$t('home.formulas.header')"
         :content="$t('home.formulas.desc')"
-        :linkcont="$t('home.formulas.button') "
+        :linkcont="$t('home.formulas.button')"
         link="tablice"
       />
       <Text
-        :header=" $t('home.books.header') "
+        :header="$t('home.books.header')"
         :content="$t('home.books.desc')"
-        :linkcont="$t('home.books.button') "
+        :linkcont="$t('home.books.button')"
         link="podreczniki"
       />
     </div>

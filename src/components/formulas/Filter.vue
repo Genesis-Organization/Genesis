@@ -1,30 +1,33 @@
 <template>
   <div class="filter">
-    <div class="filter_option">Wszystkie</div>
-    <div class="filter_option">Przyrodnicze</div>
-    <div class="filter_option">Techniczne</div>
-    <div class="filter_option">Społeczne</div>
-    <div class="filter_option">Humanistyczne</div>
-    <div class="filter_option">Pozostałe</div>
+    <div class="filter_option all">{{$t('sciences.groups.all')}}</div>
+    <div 
+      class="filter_option" 
+      v-for="group in sciences" 
+      :key="group"
+    >
+      {{ $t( 'sciences.groups.' + group.GroupName.toLowerCase() ) }}
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { AxiosResponse } from 'axios'
 import axios from '../../config/axios'
+import { defineComponent } from 'vue'
 import { Group } from '../../types/sciences'
 
 export default defineComponent({
   data() {
     return {
-      sciences: {},
+      sciences: {} as Group[],
     }
   },
   mounted() {
     axios
       .get('/groups')
       .then(
-        (res: any) => (this.sciences = res.data.map((x: Group) => x.GroupName))
+        (res: AxiosResponse) => this.sciences = res.data
       )
   },
 })
@@ -60,8 +63,14 @@ export default defineComponent({
     filter: brightness(1.2);
   }
   @media (max-width: 1000px) {
-    font-size: 17px;
+    font-size: 16px;
     height: 40px;
+  }
+}
+
+.all {
+  @media (max-width: 1000px) {
+    background: $secondary;
   }
 }
 </style>

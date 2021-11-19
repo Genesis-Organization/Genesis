@@ -6,7 +6,7 @@
     </div>
     <div class="law">
       <div>Copyrights {{ year }} by Mateusz Słotwiński.</div>
-      <div>{{$t('navigation.footer.copyrights')}}</div>
+      <div>{{ $t('navigation.footer.copyrights') }}</div>
     </div>
   </footer>
 </template>

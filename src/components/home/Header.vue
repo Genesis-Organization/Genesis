@@ -5,7 +5,7 @@
       <img src="../../assets/logo.svg" />
       <div>
         <div class="title">GENESIS</div>
-        <div class="subtitle">{{$t('main.slogan')}}</div>
+        <div class="subtitle">{{ $t('main.slogan') }}</div>
       </div>
     </div>
   </header>

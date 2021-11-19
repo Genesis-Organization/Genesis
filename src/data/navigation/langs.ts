@@ -1,8 +1,8 @@
-export const langs:string[] = [
-    'en',
-    // 'es',
-    // 'it',
-    // 'ru',
-    // 'de',
-    'pl'
+export const langs: string[] = [
+  'en',
+  // 'es',
+  // 'it',
+  // 'ru',
+  // 'de',
+  'pl',
 ]

@@ -5,23 +5,23 @@
   "home": {
     "main": {
       "header": "Knowledge available like never before",
-      "desc": "Genesis to projekt non-profit, który ma na celu zwiększenie dostępności edukacji i utworzenie w pełni darmowych kompleksowych źródeł wiedzy. Przyświeca nam idea, że każdy niezależnie od pochodzenia i zamożności ma pełne prawo do nauki, a naszym celem jest zapewnienie wszystkim ludziom równości szans na godne życie.",
-      "button": "Dowiedz się więcej"
+      "desc": "",
+      "button": ""
     },
     "formulas": {
       "header": "All knowledge in one place",
-      "desc": "Na stronie Genesis dostępne są najważniejsze wzory i tablice z takich przedmiotów jak fizyka, biologia czy matematyka. Wszystkie podzielone są na dziedziny nauk oraz 3 poziomy trudności, aby każdy mógł z nich korzystać. Naukę ułatwiają również podpisy mówiące z jakim wzorem mamy do czynienia oraz czym są wielkości, które go budują.",
-      "button": "Dowiedz się więcej"
+      "desc": "",
+      "button": ""
     },
     "books": {
       "header": "Free books for everyone",
-      "desc": "Docelowo projekt Genesis ma w planach zapewnić darmową edukację każdemu człowiekowi na świecie. W tym celu w przyszłości powstaną darmowe podręczniki wolne od licencji tłumaczone na jak najwięcej języków świata. Obecnie podręczniki akademickie są najczęściej drogie, a studenci zmuszeni do kupowania dziesiątek różnych ksiązek na każdy temat. Zadaniem naszego projektu jest nie tylko utworzenie książek darmowych, ale również na tyle kompleksowych, że nie będą potrzebować żadnych innych.",
-      "button": "Zobacz listę podręczników"
+      "desc": "",
+      "button": ""
     },
     "statistics": {
-      "header": "Wszystkie statystyki w jednym miejscu",
-      "desc": "Strona genesis zajmuje się również składowaniem wszelkich statystyk wykresów i danych, które mogą okazać sie pomocne dla każdego. W dalekiej przyszłości przy wsparciu wolontariuszy możliwe będzie też prowadzenie własnych badań.",
-      "button": "Sprawdź statystyki"
+      "header": "",
+      "desc": "",
+      "button": ""
     }
   },
   "navigation": {
@@ -35,7 +35,18 @@
       }
     },
     "footer": {
-      "copyrights": "Wszelkie użyte zdjęcia i logotypy są wolne od praw autorskich udostępniane na licencji MIT lub CC. Zezwala się na nieograniczone użytkowanie, kopiowanie, modyfikowanie lub rozpowszechnianie oryginalnej lub zmodyfikowanej zawartości udostępnionej na tej stronie pod warunkiem uznania autorstwa i umieszenia informacji o źródle."
+      "copyrights": ""
+    }
+  },
+  "sciences": {
+    "groups":{
+      "all":"All",
+      "natural":"Natural",
+      "social":"Social",
+      "humanities":"Humanities",
+      "technical":"Technical",
+      "artistic":"Artistic",
+      "others":"Others"
     }
   }
 }
