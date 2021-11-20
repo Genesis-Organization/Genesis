@@ -1,12 +1,8 @@
 <template>
   <div class="filter">
-    <div class="filter_option all">{{$t('sciences.groups.all')}}</div>
-    <div 
-      class="filter_option" 
-      v-for="group in sciences" 
-      :key="group"
-    >
-      {{ $t( 'sciences.groups.' + group.GroupName.toLowerCase() ) }}
+    <div class="filter_option all">{{ $t('sciences.groups.all') }}</div>
+    <div class="filter_option" v-for="group in sciences" :key="group">
+      {{ $t('sciences.groups.' + group.GroupName.toLowerCase()) }}
     </div>
   </div>
 </template>
@@ -26,9 +22,7 @@ export default defineComponent({
   mounted() {
     axios
       .get('/groups')
-      .then(
-        (res: AxiosResponse) => this.sciences = res.data
-      )
+      .then((res: AxiosResponse) => (this.sciences = res.data))
   },
 })
 </script>

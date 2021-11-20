@@ -1,7 +1,13 @@
 <template>
   <div class="pickcategory">Wybierz jedną z kategorii</div>
   <Filter />
-  <ScienceItem v-for="science in sciences" :key="science" :science="science"/>
+  <div class="sciences">
+    <ScienceItem
+      v-for="science in sciences"
+      :key="science"
+      :science="science"
+    />
+  </div>
 </template>
 
 <script lang="ts">
@@ -13,24 +19,19 @@ import ScienceItem from './ScienceItem.vue'
 export default defineComponent({
   components: {
     Filter,
-    ScienceItem
+    ScienceItem,
   },
-  data () {
+  data() {
     return {
       sciences: [
         {
-          ScienceName:'Mathematics',
+          ScienceName: 'Physics',
           ScienceID: 0,
           Group: 0,
         },
-        {
-          ScienceName:'Physics',
-          ScienceID: 0,
-          Group: 0,
-        }
-      ] as Science[]
+      ] as Science[],
     }
-  }
+  },
 })
 </script>
 
@@ -45,5 +46,14 @@ export default defineComponent({
   @media (max-width: 1000px) {
     font-size: 24px;
   }
+}
+
+.sciences {
+  width: 1000px;
+  max-width: 90vw;
+  margin: 10px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 </style>

@@ -11,5 +11,5 @@ export default createStore({
   getters,
   mutations,
   actions,
-  modules
+  modules,
 })

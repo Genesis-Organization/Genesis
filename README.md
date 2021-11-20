@@ -1,24 +1,43 @@
-# genesis
+<h1 align="center">Welcome to Genesis 👋</h1>
+<p>
+  <a href="opensource.org/licenses/MIT" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  </a>
+</p>
 
-## Project setup
-```
+> Cause it all started with curiosity
+
+### 🏠 [Homepage](genesis.mslotwinski.eu)
+
+### ✨ [Demo](genesis-foundation.netlify.app)
+
+## Install
+
+```sh
 npm install
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
+## Usage
+
+```sh
+npm start
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Author
 
-### Lints and fixes files
-```
-npm run lint
-```
+👤 **Mateusz Słotwiński**
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+* Website: mslotwinski.eu
+* Github: [@Paprotka2137](https://github.com/Paprotka2137)
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+## 📝 License
+
+Copyright © 2021 [Mateusz Słotwiński](https://github.com/Paprotka2137).<br />
+This project is [MIT](opensource.org/licenses/MIT) licensed.
+
+***
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
