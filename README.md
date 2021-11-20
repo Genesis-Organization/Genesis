@@ -40,4 +40,3 @@ Copyright © 2021 [Mateusz Słotwiński](https://github.com/Paprotka2137).<br />
 This project is [MIT](opensource.org/licenses/MIT) licensed.
 
 ***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
