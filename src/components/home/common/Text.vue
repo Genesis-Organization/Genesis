@@ -25,7 +25,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import '../../../styles/index.scss';
 .text header {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 130%;
   padding-bottom: 10px;
 }

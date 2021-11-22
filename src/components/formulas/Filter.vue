@@ -21,7 +21,7 @@ export default defineComponent({
   },
   mounted() {
     axios
-      .get('/groups')
+      .get('/shared/sciences/groups')
       .then((res: AxiosResponse) => (this.sciences = res.data))
   },
 })
