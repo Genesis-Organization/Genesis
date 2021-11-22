@@ -47,6 +47,9 @@
       "technical":"Techniczne",
       "artistic":"Artystyczne",
       "others":"Pozostałe"
+    },
+    "sciences": {
+      "physics": "Fizyka"
     }
   }
 }

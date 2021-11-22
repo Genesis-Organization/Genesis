@@ -5,7 +5,7 @@
         :header="$t('home.statistics.header')"
         :content="$t('home.statistics.desc')"
         :linkcont="$t('home.statistics.button')"
-        link="statystyki"
+        link="statistics"
       />
     </div>
     <div class="imgcont">

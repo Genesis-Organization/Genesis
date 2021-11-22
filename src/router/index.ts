@@ -13,28 +13,28 @@ const routes: RouteRecordRaw[] = [
     component: Home,
   },
   {
-    path: '/tablice',
+    path: '/formulas',
     name: 'Formulas',
     component: Formulas,
   },
   {
-    path: '/podreczniki',
+    path: '/books',
     name: 'Books',
     component: Books,
   },
   {
-    path: '/statystyki',
+    path: '/statistics',
     name: 'Statistics',
     component: Statistics,
   },
   {
-    path: '/informacje',
+    path: '/info',
     name: 'Info',
     component: Info,
   },
   {
-    path: '/wesprzyj',
-    name: 'Support',
+    path: '/donate',
+    name: 'Donate',
     component: Donate,
   },
 ]

@@ -8,13 +8,13 @@
         :header="$t('home.formulas.header')"
         :content="$t('home.formulas.desc')"
         :linkcont="$t('home.formulas.button')"
-        link="tablice"
+        link="formulas"
       />
       <Text
         :header="$t('home.books.header')"
         :content="$t('home.books.desc')"
         :linkcont="$t('home.books.button')"
-        link="podreczniki"
+        link="books"
       />
     </div>
   </article>

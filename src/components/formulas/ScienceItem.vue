@@ -22,7 +22,7 @@
               '.svg')
           "
         />
-        {{ science.ScienceName }}
+        {{ $t('sciences.sciences.' + science.ScienceName.toLowerCase()) }}
       </span>
     </div>
   </article>
@@ -42,7 +42,6 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import '../../styles/index.scss';
 article {
-  background-image: url('../../assets/home/statistics.jpg');
   background-size: cover;
   background-position: center;
   margin: 10px;

@@ -4,7 +4,7 @@
       :header="$t('home.main.header')"
       :content="$t('home.main.desc')"
       :linkcont="$t('home.main.button')"
-      link="informacje"
+      link="info"
     />
   </article>
 </template>

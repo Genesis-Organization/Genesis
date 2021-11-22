@@ -12,6 +12,8 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import axios from '../../config/axios'
+import { AxiosResponse } from 'axios'
 import { Science } from '../../types/sciences'
 import Filter from './Filter.vue'
 import ScienceItem from './ScienceItem.vue'
@@ -23,14 +25,13 @@ export default defineComponent({
   },
   data() {
     return {
-      sciences: [
-        {
-          ScienceName: 'Physics',
-          ScienceID: 0,
-          Group: 0,
-        },
-      ] as Science[],
+      sciences: [] as Science[],
     }
+  },
+  mounted() {
+    axios
+      .get('/shared/sciences/sciences')
+      .then((res: AxiosResponse) => (this.sciences = res.data))
   },
 })
 </script>
