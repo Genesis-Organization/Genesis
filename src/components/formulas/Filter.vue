@@ -1,7 +1,14 @@
 <template>
   <div class="filter">
-    <div class="filter_option all">{{ $t('sciences.groups.all') }}</div>
-    <div class="filter_option" v-for="group in sciences" :key="group">
+    <div class="filter_option all" v-on:click="filterCategories(null)">
+      {{ $t('sciences.groups.all') }}
+    </div>
+    <div
+      class="filter_option"
+      v-for="group in sciences"
+      :key="group"
+      v-on:click="filterCategories(group.GroupID)"
+    >
       {{ $t('sciences.groups.' + group.GroupName.toLowerCase()) }}
     </div>
   </div>
@@ -18,6 +25,11 @@ export default defineComponent({
     return {
       sciences: {} as Group[],
     }
+  },
+  methods: {
+    filterCategories(category: number | null) {
+      this.$emit('filterCategories', category)
+    },
   },
   mounted() {
     axios

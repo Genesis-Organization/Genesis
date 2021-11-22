@@ -5,8 +5,8 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Hero from '../components/shared/Hero.vue'
-import Categories from '../components/formulas/Categories.vue'
+import Hero from '../../components/shared/Hero.vue'
+import Categories from '../../components/formulas/Categories.vue'
 
 export default defineComponent({
   components: {

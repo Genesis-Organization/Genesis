@@ -1,15 +1,16 @@
 <template>
-  <article
+  <router-link
     :style="{
       backgroundImage:
         'url(' +
-        require('../../assets/sciences/' +
+        require('../../assets/sciences/thumbnails/' +
           science.Group +
           '/' +
           science.ScienceName.toLowerCase() +
           '.jpg') +
         ')',
     }"
+    :to="{name: 'FormulasBranch' ,params: {id: science.ScienceName.toLowerCase()}}"
   >
     <div>
       <span>
@@ -25,7 +26,7 @@
         {{ $t('sciences.sciences.' + science.ScienceName.toLowerCase()) }}
       </span>
     </div>
-  </article>
+  </router-link>
 </template>
 
 <script lang="ts">
@@ -41,7 +42,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import '../../styles/index.scss';
-article {
+a {
   background-size: cover;
   background-position: center;
   margin: 10px;

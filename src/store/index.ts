@@ -1,15 +1,13 @@
 import { createStore } from 'vuex'
+import { Store } from './types'
+import modules from './modules'
 
-import state from './state'
-import getters from './getters'
-import mutations from './mutations'
-import actions from './actions'
-import modules from './modules/index'
-
-export default createStore({
-  state,
-  getters,
-  mutations,
-  actions,
+const store: Store = {
+  state: {},
+  getters: {},
+  mutations: {},
+  actions: {},
   modules,
-})
+}
+
+export default createStore(store)

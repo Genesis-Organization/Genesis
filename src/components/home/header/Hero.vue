@@ -3,7 +3,7 @@
     class="hero"
     :style="{
       backgroundImage:
-        'url(' + require('../../../assets/hero/' + index + '-min.jpg') + ')',
+        'url(' + require('../../../assets/home/hero/' + index + '-min.jpg') + ')',
     }"
     :class="{ active: this.index == this.activeSlide }"
   ></div>

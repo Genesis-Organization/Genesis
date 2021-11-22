@@ -1,6 +1,6 @@
 <template>
   <div class="pickcategory">Wybierz jedną z kategorii</div>
-  <Filter />
+  <Filter @filterCategories="filterCategories" />
   <div class="sciences">
     <ScienceItem
       v-for="science in sciences"
@@ -29,9 +29,18 @@ export default defineComponent({
     }
   },
   mounted() {
-    axios
-      .get('/shared/sciences/sciences')
-      .then((res: AxiosResponse) => (this.sciences = res.data))
+    this.filterCategories(null)
+  },
+  methods: {
+    filterCategories(category: number | null) {
+      axios.get('/shared/sciences/sciences').then((res: AxiosResponse) => {
+        category == null
+          ? (this.sciences = res.data)
+          : (this.sciences = res.data.filter(
+              (science: Science) => science.Group === category
+            ))
+      })
+    },
   },
 })
 </script>

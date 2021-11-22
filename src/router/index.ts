@@ -1,21 +1,19 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
+
+import formulasRoutes from './formulas'
+
 import Home from '../views/Home.vue'
-import Formulas from '../views/Formulas.vue'
 import Books from '../views/Books.vue'
 import Statistics from '../views/Statistics.vue'
 import Info from '../views/Info.vue'
 import Donate from '../views/Donate.vue'
 
 const routes: RouteRecordRaw[] = [
+  formulasRoutes,
   {
     path: '/',
     name: 'Home',
     component: Home,
-  },
-  {
-    path: '/formulas',
-    name: 'Formulas',
-    component: Formulas,
   },
   {
     path: '/books',
