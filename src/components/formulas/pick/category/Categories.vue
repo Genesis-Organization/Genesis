@@ -1,5 +1,5 @@
 <template>
-  <div class="pickcategory">Wybierz jedną z kategorii</div>
+  <div class="pickcategory">{{ $t('formulas.pick.science') }}</div>
   <Filter @filterCategories="filterCategories" />
   <div class="sciences">
     <ScienceItem
@@ -12,9 +12,9 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import axios from '../../config/axios'
+import axios from '@/config/axios'
 import { AxiosResponse } from 'axios'
-import { Science } from '../../types/sciences'
+import { Science } from '@/types/sciences'
 import Filter from './Filter.vue'
 import ScienceItem from './ScienceItem.vue'
 
@@ -46,7 +46,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '../../styles/index.scss';
+@import '@/styles/index.scss';
 
 .pickcategory {
   padding: 10px;

@@ -40,7 +40,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '../../../styles/index.scss';
+@import '@/styles/index.scss';
 
 .slideshow {
   width: 100%;

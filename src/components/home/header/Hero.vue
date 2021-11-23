@@ -3,7 +3,7 @@
     class="hero"
     :style="{
       backgroundImage:
-        'url(' + require('../../../assets/home/hero/' + index + '-min.jpg') + ')',
+        'url(' + require('@/assets/home/hero/' + index + '-min.jpg') + ')',
     }"
     :class="{ active: this.index == this.activeSlide }"
   ></div>
@@ -18,7 +18,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '../../../styles/index.scss';
+@import '@/styles/index.scss';
 
 .hero {
   position: absolute;

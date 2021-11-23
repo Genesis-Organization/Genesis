@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import './registerServiceWorker'
+import './config/service-worker'
 import router from './router'
 import store from './store'
 import i18n from './config/i18n'

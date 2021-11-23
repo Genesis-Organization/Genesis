@@ -16,9 +16,9 @@
 
 <script lang="ts">
 import { AxiosResponse } from 'axios'
-import axios from '../../config/axios'
+import axios from '@/config/axios'
 import { defineComponent } from 'vue'
-import { Group } from '../../types/sciences'
+import { Group } from '@/types/sciences'
 
 export default defineComponent({
   data() {
@@ -40,7 +40,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '../../styles/index.scss';
+@import '@/styles/index.scss';
 
 .filter {
   width: 1000px;

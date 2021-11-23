@@ -51,5 +51,14 @@
     "sciences": {
       "physics": "Fizyka"
     }
+  },
+  "formulas": {
+    "index": {
+      "hero": "Wzory i tablice naukowe"
+    },
+    "pick": {
+      "science": "Wybierz jedną z kategorii",
+      "branch": "Wybierz dziedzinę nauki, która cię interesuje"
+    }
   }
 }

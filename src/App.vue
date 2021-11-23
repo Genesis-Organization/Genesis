@@ -9,9 +9,9 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Navbar from './components/navbar/Navbar.vue'
-import Footer from './components/footer/Footer.vue'
-import EasterEgg from './components/EasterEgg.vue'
+import Navbar from '@/components/navbar/Navbar.vue'
+import Footer from '@/components/footer/Footer.vue'
+import EasterEgg from '@/components/EasterEgg.vue'
 
 export default defineComponent({
   created() {
@@ -28,7 +28,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-@import './styles/index.scss';
+@import '@/styles/index.scss';
 
 #routerviev {
   min-height: 80vh;

@@ -19,7 +19,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { subpages } from '../../data/navigation/subpages'
+import { subpages } from '@/data/navigation/subpages'
 import MProfile from './mobile/MProfile.vue'
 import NavItem from './mobile/NavItem.vue'
 import Hamburger from './Hamburger.vue'
@@ -47,7 +47,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '../../styles/index.scss';
+@import '@/styles/index.scss';
 
 .site-menu {
   display: flex;

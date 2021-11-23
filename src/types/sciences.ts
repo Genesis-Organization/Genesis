@@ -10,3 +10,11 @@ export interface Science {
   ScienceID: number
   ScienceName: string
 }
+
+export interface Branch {
+  _id: string
+  Science: number
+  BranchID: number
+  BranchName: string
+  Desc: string
+}

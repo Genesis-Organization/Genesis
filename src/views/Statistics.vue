@@ -8,7 +8,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Hero from '../components/shared/Hero.vue'
+import Hero from '@/components/shared/Hero.vue'
 
 export default defineComponent({
   components: {

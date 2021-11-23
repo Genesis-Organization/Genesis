@@ -15,7 +15,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { User } from '../../../types/user'
+import { User } from '@/types/user'
 
 export default defineComponent({
   props: {
@@ -25,7 +25,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '../../../styles/index.scss';
+@import '@/styles/index.scss';
 
 .profiledata {
   padding: 5px;

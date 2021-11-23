@@ -3,20 +3,23 @@
     :style="{
       backgroundImage:
         'url(' +
-        require('../../assets/sciences/thumbnails/' +
+        require('@/assets/formulas/sciences/thumbnails/' +
           science.Group +
           '/' +
           science.ScienceName.toLowerCase() +
           '.jpg') +
         ')',
     }"
-    :to="{name: 'FormulasBranch' ,params: {id: science.ScienceName.toLowerCase()}}"
+    :to="{
+      name: 'FormulasBranch',
+      params: { id: science.ScienceName.toLowerCase() },
+    }"
   >
     <div>
       <span>
         <img
           :src="
-            require('../../assets/icons/sciences/' +
+            require('@/assets/icons/sciences/' +
               science.Group +
               '/' +
               science.ScienceName.toLowerCase() +
@@ -31,7 +34,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { Science } from '../../types/sciences'
+import { Science } from '@/types/sciences'
 
 export default defineComponent({
   props: {
@@ -41,7 +44,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '../../styles/index.scss';
+@import '@/styles/index.scss';
 a {
   background-size: cover;
   background-position: center;

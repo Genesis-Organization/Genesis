@@ -16,8 +16,8 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { subpages } from '../../data/navigation/subpages'
-import { langs } from '../../data/navigation/langs'
+import { subpages } from '@/data/navigation/subpages'
+import { langs } from '@/data/navigation/langs'
 import DProfile from './desktop/DProfile.vue'
 import Locale from './desktop/Locale.vue'
 import Logo from './Logo.vue'
@@ -38,7 +38,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '../../styles/index.scss';
+@import '@/styles/index.scss';
 
 .desktop {
   width: 1300px;

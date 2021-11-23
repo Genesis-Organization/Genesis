@@ -6,11 +6,7 @@
     @blur="open = false"
   >
     <div class="selected" :class="{ open: open }" @click="open = !open">
-      <img
-        :src="
-          require('../../../assets/icons/navbar/flags/' + selected + '.png')
-        "
-      />
+      <img :src="require('@/assets/icons/navbar/flags/' + selected + '.png')" />
       {{ selected.toUpperCase() }}
     </div>
     <div class="items" :class="{ selectHide: !open }">
@@ -25,11 +21,7 @@
             changeLanguage(option)
         "
       >
-        <img
-          :src="
-            require('../../../assets/icons/navbar/flags/' + option + '.png')
-          "
-        />
+        <img :src="require('@/assets/icons/navbar/flags/' + option + '.png')" />
         {{ option.toUpperCase() }}
       </div>
     </div>

@@ -4,7 +4,7 @@
     :style="{
       backgroundImage:
         'url(' +
-        require('../../assets/icons/navbar/footer/' +
+        require('@/assets/icons/navbar/footer/' +
           media.Name.toLowerCase() +
           '.svg') +
         ')',
@@ -21,7 +21,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '../../styles/index.scss';
+@import '@/styles/index.scss';
 a {
   display: block;
   padding: 22px;

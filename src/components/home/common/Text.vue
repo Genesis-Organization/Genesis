@@ -23,7 +23,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '../../../styles/index.scss';
+@import '@/styles/index.scss';
 .text header {
   font-weight: 400;
   font-size: 130%;

@@ -1,7 +1,7 @@
 <template>
   <header
     class="hero"
-    :style="{ backgroundImage: 'url(' + require('../../assets/' + img) + ')' }"
+    :style="{ backgroundImage: 'url(' + require('@/assets/' + img) + ')' }"
   >
     <div class="container">
       <div class="subtitle">{{ subtitle }}</div>
@@ -21,7 +21,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '../../styles/index.scss';
+@import '@/styles/index.scss';
 
 .hero {
   background-size: cover;

@@ -6,7 +6,7 @@
           backgroundColor: subpage.color,
           backgroundImage:
             'url(' +
-            require('../../../assets/icons/navbar/' + subpage.image + '.svg') +
+            require('@/assets/icons/navbar/' + subpage.image + '.svg') +
             ')',
         }"
       ></span>
@@ -34,7 +34,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '../../../styles/index.scss';
+@import '@/styles/index.scss';
 
 li {
   margin-top: 10px;

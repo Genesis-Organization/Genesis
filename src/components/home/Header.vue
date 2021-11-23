@@ -2,7 +2,7 @@
   <header>
     <Slideshow />
     <div class="hello">
-      <img src="../../assets/logo.svg" />
+      <img src="@/assets/logo.svg" />
       <div>
         <div class="title">GENESIS</div>
         <div class="subtitle">{{ $t('main.slogan') }}</div>
@@ -23,7 +23,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '../../styles/index.scss';
+@import '@/styles/index.scss';
 
 header {
   background: white;

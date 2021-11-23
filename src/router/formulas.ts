@@ -14,10 +14,10 @@ const formulasRoutes: RouteRecordRaw = {
       component: Formulas,
     },
     {
-        path: ':id',
-        name: 'FormulasBranch',
-        component: SelectBranch,
-        props:true,
+      path: ':id',
+      name: 'FormulasBranch',
+      component: SelectBranch,
+      props: true,
     },
   ],
 }

@@ -9,7 +9,7 @@
       />
     </div>
     <div class="imgcont">
-      <img src="../../assets/home/statistics.jpg" />
+      <img src="@/assets/home/statistics.jpg" />
     </div>
   </article>
 </template>
@@ -26,7 +26,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '../../styles/index.scss';
+@import '@/styles/index.scss';
 article {
   display: flex;
   justify-content: space-around;

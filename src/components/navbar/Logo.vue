@@ -1,6 +1,6 @@
 <template>
   <router-link to="/" class="home">
-    <img src="../../assets/logo.svg" />
+    <img src="@/assets/logo.svg" />
     GENESIS
   </router-link>
 </template>
@@ -12,7 +12,7 @@ export default defineComponent({})
 </script>
 
 <style lang="scss" scoped>
-@import '../../styles/index.scss';
+@import '@/styles/index.scss';
 
 img {
   height: 85%;

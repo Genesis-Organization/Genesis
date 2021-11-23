@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { socialMedia } from '../../data/navigation/footer'
+import { socialMedia } from '@/data/navigation/footer'
 import Social from './Social.vue'
 
 export default defineComponent({
@@ -30,7 +30,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '../../styles/index.scss';
+@import '@/styles/index.scss';
 
 footer {
   background: $dark;

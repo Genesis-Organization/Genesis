@@ -26,7 +26,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { User, PremiumUser } from '../../../types/user'
+import { User, PremiumUser } from '@/types/user'
 import DProfileData from './DProfileData.vue'
 
 export default defineComponent({
@@ -48,7 +48,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '../../../styles/index.scss';
+@import '@/styles/index.scss';
 article {
   display: flex;
   justify-content: center;
