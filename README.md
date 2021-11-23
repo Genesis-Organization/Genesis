@@ -7,9 +7,9 @@
 
 > Cause it all started with curiosity
 
-### 🏠 [Homepage](genesis.mslotwinski.eu)
+### 🏠 [Homepage](https://genesis.mslotwinski.eu)
 
-### ✨ [Demo](genesis-foundation.netlify.app)
+### ✨ [Demo](https://genesis-foundation.netlify.app)
 
 ## Install
 
