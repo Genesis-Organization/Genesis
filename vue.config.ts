@@ -1,4 +1,6 @@
-module.exports = {
+import {ProjectOptions} from '@vue/cli-service'
+
+const vueConfig: ProjectOptions = {
   pwa: {
     name: 'Genesis',
     themeColor: '#3EA08B',
@@ -29,3 +31,5 @@ module.exports = {
     },
   },
 }
+
+module.exports = vueConfig
