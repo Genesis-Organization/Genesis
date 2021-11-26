@@ -17,7 +17,6 @@ const formulasRoutes: RouteRecordRaw = {
       path: ':id',
       name: 'FormulasBranch',
       component: SelectBranch,
-      props: true,
     },
   ],
 }

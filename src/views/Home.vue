@@ -19,6 +19,9 @@ export default defineComponent({
     Formulas,
     Statistics,
   },
+  mounted() {
+    document.title = 'Home'
+  },
 })
 </script>
 

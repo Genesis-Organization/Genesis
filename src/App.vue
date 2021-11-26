@@ -15,9 +15,13 @@ import EasterEgg from '@/components/EasterEgg.vue'
 
 export default defineComponent({
   created() {
-    document.title = 'Project Genesis'
     const lang = localStorage.getItem('language')
-    lang ? (this.$i18n.locale = lang) : 'en'
+    if (lang) {
+      this.$i18n.locale = lang
+    } else {
+      this.$i18n.locale = 'en'
+      document.documentElement.setAttribute('lang', 'en')
+    }
   },
   components: {
     Navbar,

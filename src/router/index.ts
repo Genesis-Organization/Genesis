@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 
 import formulasRoutes from './formulas'
+import errors from './errors'
 
 import Home from '../views/Home.vue'
 import Books from '../views/Books.vue'
@@ -35,6 +36,7 @@ const routes: RouteRecordRaw[] = [
     name: 'Donate',
     component: Donate,
   },
+  errors,
 ]
 
 const router = createRouter({

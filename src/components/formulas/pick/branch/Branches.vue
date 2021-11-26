@@ -1,24 +1,24 @@
 <template>
   <div class="pickcategory">{{ $t('formulas.pick.branch') }}</div>
   <div class="sciences">
-    <SingleBranch
-      v-for="branch in branches"
-      :key="branch"
-      :branch="branch"
-    />
+    <SingleBranch v-for="branch in branches" :key="branch" :branch="branch" />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import axios from '@/config/axios'
 import { AxiosResponse } from 'axios'
-import { Branch } from '@/types/sciences'
+
+import axios from '@/config/axios'
+import { Branch, Science } from '@/types/sciences'
 import SingleBranch from './SingleBranch.vue'
 
 export default defineComponent({
+  props: {
+    science: Object as () => Science,
+  },
   components: {
-    SingleBranch
+    SingleBranch,
   },
   data() {
     return {
@@ -26,10 +26,14 @@ export default defineComponent({
     }
   },
   mounted() {
-    axios
-      .get('/shared/sciences/sciences')
-      .then((res: AxiosResponse) => {})
-  }
+    this.science &&
+      axios
+        .get(
+          '/shared/sciences/branches?target=Science&filter=' +
+            this.science.ScienceID
+        )
+        .then((res: AxiosResponse) => (this.branches = res.data))
+  },
 })
 </script>
 

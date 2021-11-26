@@ -50,6 +50,22 @@
     },
     "sciences": {
       "physics": "Fizyka"
+    },
+    "branches": {
+      "0": {
+        "0": {
+          "name": "Kinematyka",
+          "desc": "Badamy ruch ciał, łącznie z ich przyspieszeniem, torem czy prędkością"
+        },
+        "1": {
+          "name": "Dynamika",
+          "desc": "Zajmiemy się opisem sił działających na różne ciała, a także ich skutkami"
+        },
+        "2": {
+          "name": "Energia",
+          "desc": "Praca moc i energia to wielkości, które pozwolą nam spojrzeć na mechanikę z innej strony, a także będą wstępem do kolejnych działów fizyki."
+        }
+      }
     }
   },
   "formulas": {
