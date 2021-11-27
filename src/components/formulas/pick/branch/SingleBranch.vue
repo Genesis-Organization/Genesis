@@ -1,5 +1,5 @@
 <template>
-  <article>
+  <router-link :to="$route.fullPath + '/' + branch.BranchName.toLowerCase()">
     <header>
       {{
         $t(
@@ -22,7 +22,7 @@
         )
       }}
     </section>
-  </article>
+  </router-link>
 </template>
 
 <script lang="ts">
@@ -39,7 +39,8 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import '@/styles/index.scss';
 
-article {
+a {
+  display: block;
   width: 900px;
   padding: 10px 20px;
   margin: 15px auto;

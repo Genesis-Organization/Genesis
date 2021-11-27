@@ -18,3 +18,19 @@ export interface Branch {
   BranchName: string
   Desc: string
 }
+
+export interface Subject {
+  _id: string
+  Science: number
+  BranchID: number
+  BranchName: string
+}
+
+
+export interface Formula {
+  _id: string
+  Science: number
+  BranchID: number
+  BranchName: string
+  Desc: string
+}

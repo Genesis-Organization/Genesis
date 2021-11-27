@@ -8,11 +8,22 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+
 import Hero from '@/components/shared/Hero.vue'
+
+import setMeta from '@/scripts/root/setMeta'
 
 export default defineComponent({
   components: {
     Hero,
+  },
+  methods: {
+    setMeta,
+  },
+  created() {
+    setMeta(document, {
+      title: this.$t('pages.books') + ' | Genesis',
+    })
   },
 })
 </script>

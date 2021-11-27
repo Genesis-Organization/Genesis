@@ -1,32 +1,29 @@
 <template>
-  <div v-if="science && Object.keys(science) != 0">
+  <div v-if="science && Object.keys(science).length > 1">
     <SmallHero
       :img="'formulas/sciences/big/' + id + '.jpg'"
       :subtitle="$t('sciences.sciences.' + id)"
     />
     <Branches :science="science" />
   </div>
-  <PageNotFound v-else />
-  {{ science }}
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { AxiosResponse } from 'axios'
 
+import axios from '@/config/axios'
+import { Science } from '@/types/sciences'
+import { toCapitalCase } from '@/scripts/strings'
+import setMeta from '@/scripts/root/setMeta'
+
 import SmallHero from '@/components/shared/SmallHero.vue'
 import Branches from '@/components/formulas/pick/branch/Branches.vue'
-import { toCapitalCase } from '@/scripts/strings'
-import { Science } from '@/types/sciences'
-import axios from '@/config/axios'
-
-import PageNotFound from '@/views/errors/PageNotFound.vue'
 
 export default defineComponent({
   components: {
     SmallHero,
     Branches,
-    PageNotFound,
   },
   data() {
     return {
@@ -36,6 +33,7 @@ export default defineComponent({
   },
   methods: {
     toCapitalCase,
+    setMeta,
   },
   mounted() {
     axios
@@ -45,6 +43,14 @@ export default defineComponent({
       )
       .then((res: AxiosResponse) => {
         this.science = res.data[0]
+        this.science && Object.keys(this.science).length != 0
+          ? setMeta(document, {
+              title:
+                this.$t(
+                  'sciences.sciences.' + this.science.ScienceName.toLowerCase()
+                ) + ' | Genesis',
+            })
+          : this.$router.push('/404')
       })
   },
 })

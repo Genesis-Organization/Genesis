@@ -9,19 +9,19 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+
 import Navbar from '@/components/navbar/Navbar.vue'
 import Footer from '@/components/footer/Footer.vue'
 import EasterEgg from '@/components/EasterEgg.vue'
 
+import setLang from '@/scripts/root/setLang'
+
 export default defineComponent({
+  methods: {
+    setLang,
+  },
   created() {
-    const lang = localStorage.getItem('language')
-    if (lang) {
-      this.$i18n.locale = lang
-    } else {
-      this.$i18n.locale = 'en'
-      document.documentElement.setAttribute('lang', 'en')
-    }
+    setLang(this)
   },
   components: {
     Navbar,

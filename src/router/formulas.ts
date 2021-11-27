@@ -1,7 +1,8 @@
 import { RouteRecordRaw } from 'vue-router'
 import Empty from '../views/Empty.vue'
-import Formulas from '../views/formulas/Formulas.vue'
+import SelectScience from '../views/formulas/SelectScience.vue'
 import SelectBranch from '../views/formulas/SelectBranch.vue'
+import Formulas from '../views/formulas/Formulas.vue'
 
 const formulasRoutes: RouteRecordRaw = {
   path: '/formulas',
@@ -11,13 +12,17 @@ const formulasRoutes: RouteRecordRaw = {
     {
       path: '',
       name: 'FormulasHome',
-      component: Formulas,
+      component: SelectScience,
     },
     {
       path: ':id',
       name: 'FormulasBranch',
       component: SelectBranch,
     },
+    {
+      path: ':id/:branch',
+      component: Formulas
+    }
   ],
 }
 

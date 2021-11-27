@@ -28,6 +28,7 @@
     "navbar": {
       "subpages": {
         "formulas": "Tablice",
+        "articles": "Artykuły",
         "books":"Podręczniki",
         "statistics":"Statystyki",
         "info":"Informacje",
@@ -68,6 +69,15 @@
       }
     }
   },
+  "pages": {
+    "home": "Strona główna",
+    "formulas": "Tablice",
+    "books": "Podręczniki",
+    "articles": "Artykuły",
+    "statistics": "Statystyki",
+    "info": "Informacje",
+    "donate": "Wesprzyj"
+  },
   "formulas": {
     "index": {
       "hero": "Wzory i tablice naukowe"
@@ -75,6 +85,14 @@
     "pick": {
       "science": "Wybierz jedną z kategorii",
       "branch": "Wybierz dziedzinę nauki, która cię interesuje"
+    }
+  },
+  "errors": {
+    "404": {
+      "header": "Nasz system nie znalazł takiej strony :c",
+      "duck": "Więc łap chociaż na pocieszenie kaczkę",
+      "yeah": "Tak, to ten sławny bląd 404",
+      "song": "Bit, bit i pusta kartka, drukarka wydaje szmery Nie ma mnie, bo to nocnego marka nocna warta Świeci się tarcza zegarka - 4:04 Nic nie psuje atmosfery, dźwięki smarta czy wiertarka"
     }
   }
 }
