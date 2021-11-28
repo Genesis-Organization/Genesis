@@ -1,5 +1,5 @@
 export interface Group {
-  _id: string
+  _id?: string
   GroupID: number
   GroupName: string
 }
@@ -17,6 +17,7 @@ export interface Branch {
   BranchID: number
   BranchName: string
   Desc: string
+  Subjects?: Subject[]
 }
 
 export interface Subject {
@@ -24,8 +25,8 @@ export interface Subject {
   Science: number
   BranchID: number
   BranchName: string
+  Formulas?: Formula[]
 }
-
 
 export interface Formula {
   _id: string

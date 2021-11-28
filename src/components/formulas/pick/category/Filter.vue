@@ -5,7 +5,7 @@
     </div>
     <div
       class="filter_option"
-      v-for="group in sciences"
+      v-for="group in groups"
       :key="group"
       v-on:click="filterCategories(group.GroupID)"
     >
@@ -15,26 +15,20 @@
 </template>
 
 <script lang="ts">
-import { AxiosResponse } from 'axios'
-import axios from '@/config/axios'
 import { defineComponent } from 'vue'
-import { Group } from '@/types/sciences'
+
+import { groups } from '@/data/formulas/sciences'
 
 export default defineComponent({
   data() {
     return {
-      sciences: {} as Group[],
+      groups,
     }
   },
   methods: {
     filterCategories(category: number | null) {
       this.$emit('filterCategories', category)
     },
-  },
-  mounted() {
-    axios
-      .get('/shared/sciences/groups')
-      .then((res: AxiosResponse) => (this.sciences = res.data))
   },
 })
 </script>
