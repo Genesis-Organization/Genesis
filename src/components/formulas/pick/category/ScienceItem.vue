@@ -4,8 +4,6 @@
       backgroundImage:
         'url(' +
         require('@/assets/formulas/sciences/thumbnails/' +
-          science.Group +
-          '/' +
           science.ScienceName.toLowerCase() +
           '.jpg') +
         ')',
@@ -20,8 +18,6 @@
         <img
           :src="
             require('@/assets/icons/sciences/' +
-              science.Group +
-              '/' +
               science.ScienceName.toLowerCase() +
               '.svg')
           "
