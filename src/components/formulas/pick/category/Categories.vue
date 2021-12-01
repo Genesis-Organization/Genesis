@@ -7,7 +7,6 @@
       :key="science"
       :science="science"
     />
-    {{ sciences }}
   </div>
 </template>
 
@@ -34,9 +33,7 @@ export default defineComponent({
   },
   methods: {
     filterCategories(category: number | null) {
-      console.log(category)
-      axios.get('/shared/sciences/sciences').then((res: AxiosResponse) => {
-        console.log(res)
+      axios.get('/sciences/sciences').then((res: AxiosResponse) => {
         category == null
           ? (this.sciences = res.data)
           : (this.sciences = res.data.filter(

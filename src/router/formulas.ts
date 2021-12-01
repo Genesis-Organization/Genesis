@@ -21,6 +21,7 @@ const formulasRoutes: RouteRecordRaw = {
     },
     {
       path: ':id/:branch',
+      name: 'Formulas',
       component: Formulas,
     },
   ],

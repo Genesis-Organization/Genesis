@@ -1,4 +1,4 @@
-import { Group } from "@/types/sciences"
+import { Group } from '@/types/sciences'
 
 export const groups: Group[] = [
   { GroupID: 0, GroupName: 'Natural' },

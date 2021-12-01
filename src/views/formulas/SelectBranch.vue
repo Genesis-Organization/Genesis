@@ -38,18 +38,15 @@ export default defineComponent({
   mounted() {
     axios
       .get(
-        '/shared/sciences/sciences?target=ScienceName&filter=' +
-          toCapitalCase(this.id)
+        '/sciences/sciences?target=ScienceName&filter=' + toCapitalCase(this.id)
       )
       .then((res: AxiosResponse) => {
         this.science = res.data[0]
         this.science && Object.keys(this.science).length != 0
-          ? setMeta(document, {
-              title:
-                this.$t(
-                  'sciences.sciences.' + this.science.ScienceName.toLowerCase()
-                ) + ' | Genesis',
-            })
+          ? (document.title =
+              this.$t(
+                'sciences.sciences.' + this.science.ScienceName.toLowerCase()
+              ) + ' | Genesis')
           : this.$router.push('/404')
       })
   },

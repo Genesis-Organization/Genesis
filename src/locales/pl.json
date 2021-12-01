@@ -50,21 +50,31 @@
       "others":"Pozostałe"
     },
     "sciences": {
-      "physics": "Fizyka"
+      "physics": "Fizyka",
+      "electronics": "Elektronika"
     },
     "branches": {
-      "0": {
-        "0": {
+      "physics": {
+        "kinematics": {
           "name": "Kinematyka",
-          "desc": "Badamy ruch ciał, łącznie z ich przyspieszeniem, torem czy prędkością"
+          "desc": "Badamy ruch ciał, łącznie z ich przyspieszeniem, torem czy prędkością",
+          "subjects": {
+            "0": "Ruch prostoliniowy"
+          }
         },
-        "1": {
+        "dynamics": {
           "name": "Dynamika",
           "desc": "Zajmiemy się opisem sił działających na różne ciała, a także ich skutkami"
         },
-        "2": {
+        "energy": {
           "name": "Energia",
           "desc": "Praca moc i energia to wielkości, które pozwolą nam spojrzeć na mechanikę z innej strony, a także będą wstępem do kolejnych działów fizyki."
+        }
+      },
+      "electronics": {
+        "current": {
+          "name": "Prąd elektryczny",
+          "desc": "Zaczynamy od podstaw, czyli czym jest prąd elektryczny"
         }
       }
     }

@@ -29,7 +29,7 @@ export default defineComponent({
     this.science &&
       axios
         .get(
-          '/shared/sciences/branches?target=Science&filter=' +
+          '/sciences/branchesobj?target=Science&filter=' +
             this.science.ScienceID
         )
         .then((res: AxiosResponse) => (this.branches = res.data))

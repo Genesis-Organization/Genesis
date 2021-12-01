@@ -4,9 +4,9 @@
       {{
         $t(
           'sciences.branches.' +
-            branch.Science +
+            branch.Science.ScienceName.toLowerCase() +
             '.' +
-            branch.BranchID +
+            branch.BranchName.toLowerCase() +
             '.name'
         )
       }}
@@ -15,9 +15,9 @@
       {{
         $t(
           'sciences.branches.' +
-            branch.Science +
+            branch.Science.ScienceName.toLowerCase() +
             '.' +
-            branch.BranchID +
+            branch.BranchName.toLowerCase() +
             '.desc'
         )
       }}

@@ -1,4 +1,4 @@
-import {ProjectOptions} from '@vue/cli-service'
+import { ProjectOptions } from '@vue/cli-service'
 
 const vueConfig: ProjectOptions = {
   pwa: {

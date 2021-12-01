@@ -19,10 +19,8 @@ export default defineComponent({
   methods: {
     setMeta,
   },
-  created() {
-    setMeta(document, {
-      title: this.$t('pages.formulas') + ' | Genesis',
-    })
+  mounted() {
+    document.title = this.$t('pages.formulas') + ' | Genesis'
   },
 })
 </script>
