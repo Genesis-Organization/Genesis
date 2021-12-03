@@ -1,0 +1,52 @@
+{
+  "main": {
+    "slogan": "Porque todo empezó con curiosidad"
+  },
+  "home": {
+    "main": {
+      "header": "Conocimiento disponible como nunca antes",
+      "desc": "Genesis es un proyecto sin fines de lucro que tiene como objetivo aumentar la disponibilidad de educación y crear fuentes integrales de conocimiento totalmente gratuitas. Nos guiamos por la idea de que todas las personas, independientemente de su origen y riqueza, tienen pleno derecho a la educación, y nuestro objetivo es brindar a todas las personas las mismas oportunidades para una vida digna.",
+      "button": "Saber más"
+    },
+    "formulas": {
+      "header": "",
+      "desc": "",
+      "button": ""
+    },
+    "books": {
+      "header": "",
+      "desc": "",
+      "button": ""
+    },
+    "statistics": {
+      "header": "",
+      "desc": "",
+      "button": ""
+    }
+  },
+  "navigation": {
+    "navbar": {
+      "subpages": {
+        "formulas": "Fórmulas",
+        "books":"Libros",
+        "statistics":"Estadísticas",
+        "info":"Información",
+        "donate":"Donar"
+      }
+    },
+    "footer": {
+      "copyrights": ""
+    }
+  },
+  "sciences": {
+    "groups":{
+      "all":"",
+      "natural":"",
+      "social":"",
+      "humanities":"",
+      "technical":"",
+      "artistic":"",
+      "others":""
+    }
+  }
+}

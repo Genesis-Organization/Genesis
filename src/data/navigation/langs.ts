@@ -1,6 +1,6 @@
 export const langs: string[] = [
   'en',
-  // 'es',
+  'es',
   // 'it',
   // 'ru',
   // 'de',
