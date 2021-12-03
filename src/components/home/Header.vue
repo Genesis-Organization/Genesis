@@ -2,7 +2,7 @@
   <header>
     <Slideshow />
     <div class="hello">
-      <img src="@/assets/logo.svg" />
+      <img src="@/assets/icons/logo/logo.svg" />
       <div>
         <div class="title">GENESIS</div>
         <div class="subtitle">{{ $t('main.slogan') }}</div>

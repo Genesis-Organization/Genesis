@@ -15,9 +15,8 @@
       "webpack-env"
     ],
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+      "@/*": ["src/*"],
+      ">>/*": ["public/*"]
     },
     "lib": [
       "esnext",

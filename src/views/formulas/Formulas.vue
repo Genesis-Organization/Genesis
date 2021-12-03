@@ -1,97 +1,59 @@
 <template>
-  <div v-if="science && Object.keys(science).length > 1">
+  <div v-if="BranchObject && Object.keys(BranchObject).length > 1">
     <SmallHero
-      :img="'formulas/sciences/big/' + ScienceID + '.jpg'"
-      :subtitle="$t('sciences.sciences.' + ScienceID)"
+      :img="'formulas/sciences/big/' + ScienceName + '.jpg'"
+      :subtitle="$t('sciences.sciences.' + ScienceName)"
     />
   </div>
-  <!-- <Formulas :branch="branch"/> -->
-  {{ science }}
-  {{ branch }}
-  <br />
-  <strong>{{ FullScienceObject }}</strong>
+  <Formulas :branch="BranchObject" />
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 
 import axios from '@/config/axios'
-import setMeta from '@/scripts/root/setMeta'
-import { Branch, Science, Subject } from '@/types/sciences'
+// import setMeta from '@/scripts/root/setMeta'
+import { Branch } from '@/types/sciences'
 import { AxiosResponse } from 'axios'
-
 import SmallHero from '@/components/shared/SmallHero.vue'
+import Formulas from '@/components/formulas/Formulas.vue'
 import { toCapitalCase } from '@/scripts/strings'
 
 export default defineComponent({
   data() {
     return {
-      ScienceID: this.$route.params.id as string,
-      BranchID: this.$route.params.branch as string,
-      science: {} as Science,
-      branch: {} as Branch,
-      subjects: [] as Subject[],
-
-      FullScienceObject: {} as Branch,
+      ScienceName: this.$route.params.id as string,
+      BranchName: this.$route.params.branch as string,
+      BranchObject: {} as Branch,
     }
   },
   components: {
     SmallHero,
+    Formulas,
   },
   methods: {
-    setMeta,
     toCapitalCase,
   },
   mounted() {
     axios
       .get(
-        '/shared/sciences/sciences?target=ScienceName&filter=' +
-          this.toCapitalCase(this.ScienceID)
+        `/sciences/fetchsciences?science=${this.toCapitalCase(
+          this.ScienceName
+        )}&branch=${this.toCapitalCase(this.BranchName)}`
       )
-      .then((res: AxiosResponse) => {
-        this.science = res.data[0]
-        this.science && Object.keys(this.science).length != 0
-          ? scienceIsLegit()
-          : this.$router.push('/404')
+      .then((res: AxiosResponse<Branch | null>) => {
+        if (res.data) {
+          document.title =
+            this.$t(
+              'sciences.branches.' +
+                this.ScienceName.toLowerCase() +
+                '.' +
+                this.BranchName.toLowerCase() +
+                '.name'
+            ) + ' | Genesis'
+          this.BranchObject = res.data
+        } else this.$router.push('/404')
       })
-
-    const scienceIsLegit = () => {
-      axios
-        .get(
-          '/shared/sciences/branches?target=BranchName&filter=' +
-            this.toCapitalCase(this.BranchID)
-        )
-        .then((res: AxiosResponse) => {
-          this.branch = res.data[0]
-          this.FullScienceObject = res.data[0]
-          this.branch && Object.keys(this.branch).length != 0
-            ? fetchFormulas()
-            : this.$router.push('/404')
-        })
-    }
-
-    const fetchFormulas = () => {
-      setMeta(document, {
-        title:
-          this.$t(
-            'sciences.branches.' +
-              this.science.ScienceID +
-              '.' +
-              this.branch.BranchID +
-              '.name'
-          ) + ' | Genesis',
-      })
-      axios
-        .get(
-          '/shared/sciences/subjects?target=Branch&filter=' +
-            this.branch.BranchID
-        )
-        .then((res: AxiosResponse) => {
-          this.FullScienceObject.Subjects = res.data.filter(
-            (subject: Subject) => subject.Science === this.science.ScienceID
-          )
-        })
-    }
   },
 })
 </script>

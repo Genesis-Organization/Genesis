@@ -22,6 +22,8 @@ export default defineComponent({
   },
   created() {
     setLang(this)
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    // console.log(require('>>/locales/pl'), require('@/locales/pl'))
   },
   components: {
     Navbar,

@@ -6,14 +6,14 @@ export interface Group {
 
 export interface Science {
   _id: string
-  Group: number
+  Group: number | Group
   ScienceID: number
   ScienceName: string
 }
 
 export interface Branch {
   _id: string
-  Science: number
+  Science: Science | number
   BranchID: number
   BranchName: string
   Desc: string
@@ -23,15 +23,23 @@ export interface Branch {
 export interface Subject {
   _id: string
   Science: number
-  BranchID: number
-  BranchName: string
+  SubjectID: number
+  SubjectName: string
   Formulas?: Formula[]
 }
 
 export interface Formula {
-  _id: string
-  Science: number
-  BranchID: number
-  BranchName: string
-  Desc: string
+  Subject: string
+  ID: number
+  Name: string
+  Content: string
+  Difficulty: number
+  Signs: string
+  Unit?: Unit
+  Quantities?: Unit | Unit[]
+}
+
+interface Unit {
+  Symbol: string
+  Content: string
 }

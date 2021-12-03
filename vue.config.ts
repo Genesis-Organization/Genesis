@@ -1,4 +1,5 @@
 import { ProjectOptions } from '@vue/cli-service'
+import * as path from 'path'
 
 const vueConfig: ProjectOptions = {
   pwa: {
@@ -11,6 +12,12 @@ const vueConfig: ProjectOptions = {
   configureWebpack: {
     devServer: {
       historyApiFallback: true,
+    },
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, 'src/'),
+        '>>': path.resolve(__dirname, 'public/'),
+      },
     },
   },
 

@@ -1,6 +1,6 @@
 <template>
   <router-link to="/" class="home">
-    <img src="@/assets/logo.svg" />
+    <img src="@/assets/icons/logo/logo.svg" />
     GENESIS
   </router-link>
 </template>
