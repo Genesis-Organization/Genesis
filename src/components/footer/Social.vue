@@ -26,7 +26,7 @@ a {
   display: block;
   padding: 22px;
   margin: 5px;
-  background: $main;
+  background: theme(main);
   background-size: 70%;
   background-repeat: no-repeat;
   background-position: center;

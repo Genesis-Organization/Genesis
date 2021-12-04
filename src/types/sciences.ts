@@ -13,7 +13,7 @@ export interface Science {
 
 export interface Branch {
   _id: string
-  Science: Science | number
+  Science: Science
   BranchID: number
   BranchName: string
   Desc: string

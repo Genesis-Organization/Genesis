@@ -54,7 +54,7 @@ export default defineComponent({
   display: block;
   padding: 22px;
   margin: 5px;
-  background-color: $main;
+  background-color: theme(main);
   border-radius: 25%;
   background-size: 75%;
   background-repeat: no-repeat;

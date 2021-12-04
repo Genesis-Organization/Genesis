@@ -33,7 +33,7 @@ export default defineComponent({
 @import '@/styles/index.scss';
 
 footer {
-  background: $dark;
+  background: theme(dark);
   color: #e3e3e3;
   margin-top: 5rem;
   padding: 1rem;

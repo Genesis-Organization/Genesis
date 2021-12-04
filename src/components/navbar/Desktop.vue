@@ -65,7 +65,7 @@ section a {
   border-radius: 5px;
   transition: 0.2s all;
   &:hover {
-    background: $main;
+    background: theme(main);
   }
 }
 

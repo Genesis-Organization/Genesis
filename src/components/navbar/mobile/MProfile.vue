@@ -67,7 +67,7 @@ article > div {
 }
 
 .avatarcont {
-  background: #e3e3e3;
+  background: theme(light);
   padding: 5px;
   border-radius: 50%;
 }

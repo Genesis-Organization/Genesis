@@ -42,7 +42,7 @@ export default defineComponent({
   height: 100%;
   backdrop-filter: brightness(0.5);
   font-size: 50px;
-  color: #e3e3e3;
+  color: theme(light);
   @media (max-width: 700px) {
     font-size: 35px;
   }

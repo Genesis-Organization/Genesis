@@ -39,13 +39,15 @@ export default defineComponent({
   justify-content: center;
   align-items: center;
   text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
   width: 100%;
   height: 100%;
   backdrop-filter: brightness(0.5);
-  font-size: 50px;
+  font-size: 55px;
   color: #e3e3e3;
   @media (max-width: 700px) {
-    font-size: 35px;
+    font-size: 45px;
   }
 }
 

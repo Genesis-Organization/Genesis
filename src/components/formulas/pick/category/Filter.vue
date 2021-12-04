@@ -49,7 +49,7 @@ export default defineComponent({
 .filter_option {
   height: 50px;
   padding: 10px;
-  background: $main;
+  background: theme(main);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,7 +70,7 @@ export default defineComponent({
 
 .all {
   @media (max-width: 1000px) {
-    background: $secondary;
+    background: theme(violet);
   }
 }
 </style>

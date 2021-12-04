@@ -45,7 +45,7 @@ b {
 }
 
 a {
-  background: $main;
+  background: theme(main);
   display: inline-block;
   margin: 10px 0;
   padding: 10px;

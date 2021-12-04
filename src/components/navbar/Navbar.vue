@@ -50,7 +50,7 @@ nav {
 }
 
 .changed {
-  background: $dark;
+  background: theme(dark);
   box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.185);
 }
 </style>

@@ -33,7 +33,7 @@ export default defineComponent({
 .down {
   width: 100vw;
   height: $height;
-  background: $dark;
+  background: theme(dark);
 }
 
 .container {

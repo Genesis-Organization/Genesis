@@ -50,7 +50,7 @@ header {
 .title {
   font-size: 70px;
   font-weight: 900;
-  color: #e3e3e3;
+  color: theme(light);
   @media (max-width: 700px) {
     font-size: 50px;
   }
@@ -58,7 +58,7 @@ header {
 
 .subtitle {
   font-size: 40px;
-  color: #e3e3e3;
+  color: theme(light);
   @media (max-width: 700px) {
     font-size: 30px;
   }

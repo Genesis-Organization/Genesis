@@ -4,8 +4,8 @@
       :img="'formulas/sciences/big/' + ScienceName + '.jpg'"
       :subtitle="$t('sciences.sciences.' + ScienceName)"
     />
+    <Formulas :branch="BranchObject" />
   </div>
-  <Formulas :branch="BranchObject" />
 </template>
 
 <script lang="ts">
@@ -25,6 +25,7 @@ export default defineComponent({
       ScienceName: this.$route.params.id as string,
       BranchName: this.$route.params.branch as string,
       BranchObject: {} as Branch,
+      key: 0,
     }
   },
   components: {

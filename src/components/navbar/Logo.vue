@@ -30,6 +30,6 @@ img {
 a {
   display: block;
   height: 90%;
-  color: #e3e3e3 !important;
+  color: theme(light) !important;
 }
 </style>
