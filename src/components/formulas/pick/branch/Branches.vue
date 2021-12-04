@@ -1,5 +1,8 @@
 <template>
-  <div class="pickcategory">{{ $t('formulas.pick.branch') }}</div>
+  <div class="pickcategory">
+    <Back />
+    {{ $t('formulas.pick.branch') }}
+  </div>
   <div class="sciences">
     <SingleBranch v-for="branch in branches" :key="branch" :branch="branch" />
   </div>
@@ -12,6 +15,7 @@ import { AxiosResponse } from 'axios'
 import axios from '@/config/axios'
 import { Branch, Science } from '@/types/sciences'
 import SingleBranch from './SingleBranch.vue'
+import Back from '../../../shared/Back.vue'
 
 export default defineComponent({
   props: {
@@ -19,6 +23,7 @@ export default defineComponent({
   },
   components: {
     SingleBranch,
+    Back,
   },
   data() {
     return {
@@ -41,11 +46,12 @@ export default defineComponent({
 @import '@/styles/index.scss';
 
 .pickcategory {
-  padding: 10px;
+  padding: 25px;
   font-size: 32px;
   font-weight: 500;
   text-align: center;
   @media (max-width: 1000px) {
+    padding: 10px;
     font-size: 24px;
   }
 }

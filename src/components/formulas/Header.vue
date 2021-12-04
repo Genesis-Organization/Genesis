@@ -22,19 +22,21 @@
       />
     </div>
     <div class="line"></div>
-    <router-link to="./" class="back">
-      <ic icon="angle-double-left"></ic>
-    </router-link>
+    <Back />
   </header>
 </template>
 
 <script lang="ts">
 import { Branch } from '@/types/sciences'
 import { defineComponent } from 'vue'
+import Back from '../shared/Back.vue'
 
 export default defineComponent({
   props: {
     branch: Object as () => Branch,
+  },
+  components: {
+    Back,
   },
 })
 </script>
@@ -80,38 +82,6 @@ header {
     @media (max-width: 700px) {
       margin: 5px auto;
     }
-  }
-}
-
-.back {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: theme(dark);
-  width: 50px;
-  height: 50px;
-  font-size: 30px;
-  border-radius: 50%;
-  position: absolute;
-  left: 10%;
-  top: 0;
-  color: theme(light);
-  transition: 0.2s;
-  @media (min-width: 1000px) {
-    transform: translateY(50%);
-    * {
-      transition: 0.2s;
-    }
-    &:hover {
-      * {
-        transform: translateX(-15%);
-      }
-      background-color: theme(main_dark);
-    }
-  }
-  @media (max-width: 1000px) {
-    top: -90%;
-    background-color: theme(main);
   }
 }
 </style>

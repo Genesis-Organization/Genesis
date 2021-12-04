@@ -20,9 +20,7 @@ export default defineComponent({
     setMeta,
   },
   created() {
-    setMeta(document, {
-      title: this.$t('pages.statistics') + ' | Genesis',
-    })
+    document.title = this.$t('pages.statistics') + ' | Genesis'
   },
 })
 </script>
