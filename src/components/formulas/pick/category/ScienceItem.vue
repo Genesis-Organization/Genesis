@@ -3,7 +3,7 @@
     :style="{
       backgroundImage:
         'url(' +
-        require('@/assets/formulas/sciences/thumbnails/' +
+        require('@/assets/pages/formulas/sciences/thumbnails/' +
           science.ScienceName.toLowerCase() +
           '.jpg') +
         ')',

@@ -9,7 +9,7 @@
       />
     </div>
     <div class="imgcont">
-      <img src="@/assets/home/statistics.jpg" />
+      <img src="@/assets/pages/home/statistics.jpg" />
     </div>
   </article>
 </template>

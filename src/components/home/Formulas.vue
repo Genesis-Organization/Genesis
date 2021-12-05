@@ -1,7 +1,7 @@
 <template>
   <article>
     <div class="imgcont">
-      <img src="../../assets/home/formulas.jpg" />
+      <img src="@/assets/pages/home/formulas.jpg" />
     </div>
     <div>
       <Text

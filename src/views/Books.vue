@@ -1,6 +1,6 @@
 <template>
   <Hero
-    img="books/hero.jpg"
+    img="pages/books/hero.jpg"
     icon="navbar/books.svg"
     subtitle="Darmowe podręczniki dla każdego"
   />

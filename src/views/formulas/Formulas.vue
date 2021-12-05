@@ -1,7 +1,7 @@
 <template>
   <div v-if="BranchObject && Object.keys(BranchObject).length > 1">
     <SmallHero
-      :img="'formulas/sciences/big/' + ScienceName + '.jpg'"
+      :img="'pages/formulas/sciences/big/' + ScienceName + '.jpg'"
       :subtitle="$t('sciences.sciences.' + ScienceName)"
     />
     <Formulas :branch="BranchObject" />

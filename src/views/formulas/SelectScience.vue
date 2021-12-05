@@ -1,5 +1,5 @@
 <template>
-  <Hero img="formulas/hero.jpg" :subtitle="$t('formulas.index.hero')" />
+  <Hero img="pages/formulas/hero.jpg" :subtitle="$t('formulas.index.hero')" />
   <Categories />
 </template>
 

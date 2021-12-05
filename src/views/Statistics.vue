@@ -1,6 +1,6 @@
 <template>
   <Hero
-    img="statistics/hero.jpg"
+    img="pages/statistics/hero.jpg"
     icon="navbar/statistics.svg"
     subtitle="Wszystkie statystyki w jednym miejscu"
   />
