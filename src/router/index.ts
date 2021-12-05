@@ -7,7 +7,7 @@ import Home from '../views/Home.vue'
 import Books from '../views/Books.vue'
 import Statistics from '../views/Statistics.vue'
 import Info from '../views/Info.vue'
-import Donate from '../views/Donate.vue'
+import Articles from '../views/Articles.vue'
 
 const routes: RouteRecordRaw[] = [
   formulasRoutes,
@@ -15,6 +15,11 @@ const routes: RouteRecordRaw[] = [
     path: '/',
     name: 'Home',
     component: Home,
+  },
+  {
+    path: '/articles',
+    name: 'Article',
+    component: Articles,
   },
   {
     path: '/books',
@@ -30,11 +35,6 @@ const routes: RouteRecordRaw[] = [
     path: '/info',
     name: 'Info',
     component: Info,
-  },
-  {
-    path: '/donate',
-    name: 'Donate',
-    component: Donate,
   },
   errors,
 ]

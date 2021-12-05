@@ -1,12 +1,20 @@
 <template>
   <header>
-    <div>
-      <div class="box">
-        <img src="@/assets/icons/logo/logo.svg" />
-        <div class="data">
-          <div class="title">Genesis</div>
-          <div class="subtitle">Foundation</div>
-        </div>
+    <OfficialLogo />
+    <div class="subtitle">
+      {{ $t('main.slogan') }}
+    </div>
+    <div class="subtitle ornot">
+      {{ $t('info.sure') }}
+      <div class="pickme">
+        <section>Początki</section>
+        <section>Działalność</section>
+        <section>Cel i plany</section>
+        <section>Oprogramowanie</section>
+        <section>Sponsorzy</section>
+        <section>Autorzy</section>
+        <section>Podziękowania</section>
+        <section>Wesprzyj</section>
       </div>
     </div>
   </header>
@@ -14,53 +22,82 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import OfficialLogo from '@/components/shared/OfficialLogo.vue'
 
-export default defineComponent({})
+export default defineComponent({
+  components: {
+    OfficialLogo,
+  },
+})
 </script>
 
 <style lang="scss" scoped>
 @import '@/styles/index.scss';
 
 header {
-  height: 250px;
-  max-height: 40vh;
+  height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
-  .box {
-    display: flex;
-    align-items: center;
-    background-color: #e3e3e3d0;
-    border-radius: 30px;
-    padding: 10px;
-    img {
-      filter: brightness(0.15);
-      height: 150px;
-      @media (max-width: 1000px) {
-        height: 90px;
-      }
-    }
+  align-items: center;
+  background-image: url('../../assets/pages/info/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  padding-top: $height;
+  &:after {
+    content: '';
+    background: linear-gradient(theme(dark), transparent);
+    width: 100vw;
+    height: calc(2.5 * $height);
+    position: absolute;
+    top: 0;
   }
 }
 
-.data {
+.subtitle {
   text-align: center;
-  font-weight: 700;
-  line-height: 42px;
-  top: 10px;
-  .title {
-    font-size: 60px;
-    text-transform: uppercase;
-    @media (max-width: 1000px) {
-      font-size: 46px;
-      line-height: 27px;
-    }
+  margin: 10px;
+  padding: 10px;
+  color: theme(light);
+  font-weight: 500;
+  background-color: #e3e3e3d0;
+  color: theme(dark);
+  border-radius: 10px;
+  font-size: 32px;
+  @media (max-width: 1000px) {
+    font-size: 26px;
+    max-width: 90vw;
   }
-  .subtitle {
-    font-size: 37px;
-    @media (max-width: 1000px) {
-      font-size: 27px;
-    }
+}
+
+.ornot {
+  background-color: #28353ad0;
+  color: theme(light);
+  font-size: 25px;
+  width: 800px;
+  max-width: 90vw;
+  @media (max-width: 1000px) {
+    font-size: 21px;
+  }
+}
+
+.pickme {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+.pickme section {
+  padding: 10px;
+  background: theme(main_dark);
+  margin: 5px;
+  border-radius: 5px;
+  font-size: 80%;
+  cursor: pointer;
+  flex-grow: 1;
+  @media (max-width: 1000px) {
+    padding: 8px;
   }
 }
 </style>

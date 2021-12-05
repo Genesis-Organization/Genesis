@@ -82,8 +82,8 @@
   "pages": {
     "home": "Strona główna",
     "formulas": "Tablice",
-    "books": "Podręczniki",
     "articles": "Artykuły",
+    "books": "Podręczniki",
     "statistics": "Statystyki",
     "info": "Informacje",
     "donate": "Wesprzyj"
@@ -104,5 +104,8 @@
       "yeah": "Tak, to ten sławny bląd 404",
       "song": "Bit, bit i pusta kartka, drukarka wydaje szmery Nie ma mnie, bo to nocnego marka nocna warta Świeci się tarcza zegarka - 4:04 Nic nie psuje atmosfery, dźwięki smarta czy wiertarka"
     }
+  },
+  "info": {
+    "sure": "Ale czy aby na pewno?"
   }
 }

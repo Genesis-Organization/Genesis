@@ -7,6 +7,13 @@ export const subpages = [
     color: '#00647d',
   },
   {
+    text: 'Artykuły',
+    link: 'articles',
+    corename: 'articles',
+    image: 'donate',
+    color: '#309900',
+  },
+  {
     text: 'Podręczniki',
     link: 'books',
     corename: 'books',
@@ -26,12 +33,5 @@ export const subpages = [
     corename: 'info',
     image: 'info',
     color: '#CC9300',
-  },
-  {
-    text: 'Wesprzyj',
-    link: 'donate',
-    corename: 'donate',
-    image: 'donate',
-    color: '#309900',
   },
 ]
