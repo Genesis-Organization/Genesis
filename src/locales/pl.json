@@ -106,6 +106,38 @@
     }
   },
   "info": {
-    "sure": "Ale czy aby na pewno?"
+    "sure": "Ale czy aby na pewno?",
+    "sections": {
+      "begginings": {
+        "name": "Początki"
+      },
+      "activity": {
+        "name": "Działalność"
+      },
+      "goalsandplans": {
+        "name": "Cel i plany"
+      },
+      "software": {
+        "name": "Oprogramowanie"
+      },
+      "sponsors": {
+        "name": "Sponsorzy"
+      },
+      "authors": {
+        "name": "Autorzy"
+      },
+      "thanks": {
+        "name": "Podziękowania"
+      },
+      "donate": {
+        "name": "Wesprzyj"
+      },
+      "join": {
+        "name": "Dołącz"
+      },
+      "contact": {
+        "name": "Kontakt"
+      }
+    }
   }
 }

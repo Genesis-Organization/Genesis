@@ -1,9 +1,9 @@
 <template>
   <EasterEgg />
   <Navbar />
-  <div id="routerviev">
+  <main id="routerviev">
     <router-view />
-  </div>
+  </main>
   <Footer />
 </template>
 

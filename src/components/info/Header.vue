@@ -4,29 +4,19 @@
     <div class="subtitle">
       {{ $t('main.slogan') }}
     </div>
-    <div class="subtitle ornot">
-      {{ $t('info.sure') }}
-      <div class="pickme">
-        <section>Początki</section>
-        <section>Działalność</section>
-        <section>Cel i plany</section>
-        <section>Oprogramowanie</section>
-        <section>Sponsorzy</section>
-        <section>Autorzy</section>
-        <section>Podziękowania</section>
-        <section>Wesprzyj</section>
-      </div>
-    </div>
+    <Buttons />
   </header>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import Buttons from './Buttons.vue'
 import OfficialLogo from '@/components/shared/OfficialLogo.vue'
 
 export default defineComponent({
   components: {
     OfficialLogo,
+    Buttons,
   },
 })
 </script>
@@ -67,37 +57,6 @@ header {
   @media (max-width: 1000px) {
     font-size: 26px;
     max-width: 90vw;
-  }
-}
-
-.ornot {
-  background-color: #28353ad0;
-  color: theme(light);
-  font-size: 25px;
-  width: 800px;
-  max-width: 90vw;
-  @media (max-width: 1000px) {
-    font-size: 21px;
-  }
-}
-
-.pickme {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin: 10px;
-}
-
-.pickme section {
-  padding: 10px;
-  background: theme(main_dark);
-  margin: 5px;
-  border-radius: 5px;
-  font-size: 80%;
-  cursor: pointer;
-  flex-grow: 1;
-  @media (max-width: 1000px) {
-    padding: 8px;
   }
 }
 </style>
