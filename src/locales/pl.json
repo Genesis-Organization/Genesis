@@ -59,7 +59,7 @@
           "name": "Kinematyka",
           "desc": "Badamy ruch ciał, łącznie z ich przyspieszeniem, torem czy prędkością",
           "subjects": {
-            "0": "Ruch prostoliniowy"
+            "linear-motion": "Ruch prostoliniowy"
           }
         },
         "dynamics": {

@@ -17,6 +17,7 @@ const eslintConfig = {
   rules: {
     'no-console': 'warn',
     'no-debugger': 'warn',
+    '@typescript-eslint/no-non-null-assertion': 'off',
     'explicit-module-boundary-types': 'off',
     'prettier/prettier': [1, { endOfLine: 'auto' }, { usePrettierrc: true }],
   },

@@ -46,6 +46,7 @@ export default defineComponent({
 header {
   margin: 10px;
   text-align: center;
+  padding-bottom: 10px;
   .title {
     font-weight: 600;
     font-size: 38px;

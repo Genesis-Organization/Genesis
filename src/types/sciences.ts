@@ -29,7 +29,7 @@ export interface Subject {
 }
 
 export interface Formula {
-  Subject: string
+  Subject: number
   ID: number
   Name: string
   Content: string

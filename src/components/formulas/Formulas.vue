@@ -1,15 +1,17 @@
 <template>
   <Header :branch="branch" />
-  <div class="test">
-    <!-- {{ branch }}
-    {{ Object.keys(branch) }} -->
-  </div>
+  <Subject
+    v-for="subject in branch.Subjects"
+    :key="subject"
+    :subject="subject"
+  />
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { Branch } from '@/types/sciences'
 import Header from './Header.vue'
+import Subject from './Subject.vue'
 
 export default defineComponent({
   props: {
@@ -17,6 +19,7 @@ export default defineComponent({
   },
   components: {
     Header,
+    Subject,
   },
 })
 </script>
