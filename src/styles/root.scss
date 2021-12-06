@@ -62,6 +62,8 @@ button:focus, input:focus, select:focus, textarea:focus{
   background: #555;
 }
 
-.katex {
-  font-family: 'Rubik' !important;
+.katex-html {
+  * {
+    font-family: 'Rubik' !important;
+  }
 }

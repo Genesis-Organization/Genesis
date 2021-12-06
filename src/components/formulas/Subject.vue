@@ -6,35 +6,31 @@
           'sciences.branches.' +
             `${this.$route.params.id}.${this.$route.params.branch}` +
             '.subjects.' +
-            subject.SubjectName
+            subject.SubjectName +
+            '.name'
         )
       }}
     </header>
-    <div
-      v-html="
-        katex.renderToString('s = v \\cdot t', {
-          displayMode: true,
-          throwOnError: false,
-        })
-      "
-      class="formula"
-    ></div>
+    <SingleFormula
+      v-for="formula in subject.Formulas"
+      :key="formula"
+      :formula="formula"
+      :subject="subject.SubjectName"
+    />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import katex from 'katex'
+import SingleFormula from './SingleFormula.vue'
 import { Subject } from '@/types/sciences'
 
 export default defineComponent({
   props: {
     subject: Object as () => Subject,
   },
-  data() {
-    return {
-      katex,
-    }
+  components: {
+    SingleFormula,
   },
 })
 </script>
@@ -50,6 +46,7 @@ export default defineComponent({
 
 header {
   font-weight: 500;
-  font-size: 20px;
+  font-size: 25px;
+  padding-bottom: 12px;
 }
 </style>

@@ -59,7 +59,15 @@
           "name": "Kinematyka",
           "desc": "Badamy ruch ciał, łącznie z ich przyspieszeniem, torem czy prędkością",
           "subjects": {
-            "linear-motion": "Ruch prostoliniowy"
+            "linear-motion": {
+              "name": "Ruch prostoliniowy",
+              "formulas": {
+                "velocity-basic": "Prędkość średnia",
+                "velocity-deriv": "Prędkość chwilowa",
+                "acceleration-basic": "Przyspieszenie średnie",
+                "acceleration-deriv": "Przyspieszenie chwilowe"
+              }
+            }
           }
         },
         "dynamics": {
@@ -77,6 +85,12 @@
           "desc": "Zaczynamy od podstaw, czyli czym jest prąd elektryczny"
         }
       }
+    },
+    "units": {
+      "velocity": "Prędkość",
+      "distance": "Droga",
+      "time": "Czas",
+      "acceleration": "Przyspieszenie"
     }
   },
   "pages": {

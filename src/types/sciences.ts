@@ -34,12 +34,11 @@ export interface Formula {
   Name: string
   Content: string
   Difficulty: number
-  Signs: string
-  Unit?: Unit
-  Quantities?: Unit | Unit[]
+  Unit?: string
+  Quantities?: Quantity | Quantity[]
 }
 
-interface Unit {
+interface Quantity {
   Symbol: string
   Content: string
 }
