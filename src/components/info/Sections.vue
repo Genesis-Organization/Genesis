@@ -1,19 +1,20 @@
 <template>
   <div>
-    <Beginnings />
+    <!-- <Beginnings />
     <Activity />
-    <GoalsAndPlans />
+    <GoalsAndPlans /> -->
     <Software />
-    <Contact />
+    <!-- <Contact />
     <Donate />
     <Sponsors />
     <Thanks />
     <Authors />
-    <Join />
+    <Join /> -->
   </div>
 </template>
 
 <script lang="ts">
+/* eslint-disable */
 import { defineComponent } from 'vue'
 import Beginnings from './sections/Beginnings.vue'
 import Activity from './sections/Activity.vue'
@@ -28,16 +29,16 @@ import Contact from './sections/Contact.vue'
 
 export default defineComponent({
   components: {
-    Beginnings,
-    Activity,
-    GoalsAndPlans,
+    // Beginnings,
+    // Activity,
+    // GoalsAndPlans,
     Software,
-    Sponsors,
-    Authors,
-    Thanks,
-    Donate,
-    Join,
-    Contact,
+    // Sponsors,
+    // Authors,
+    // Thanks,
+    // Donate,
+    // Join,
+    // Contact,
   },
 })
 </script>

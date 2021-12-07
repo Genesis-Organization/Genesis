@@ -59,10 +59,11 @@ export default defineComponent({
 @import '@/styles/index.scss';
 
 .formula {
-  background: theme(light);
-  margin: 5px 0;
+  background: #dee0e1;
+  margin: 5px;
   border-radius: 15px;
-  width: 800px;
+  width: 300px;
+  flex-grow: 1;
   max-width: 90vw;
   text-align: center;
 }
@@ -87,7 +88,7 @@ export default defineComponent({
   width: 250px;
   margin: auto;
   padding: 10px;
-  background: rgb(198, 203, 204);
+  background: theme(gray);
   margin-bottom: 10px;
   border-radius: 10px;
   @media (max-width: 1000px) {

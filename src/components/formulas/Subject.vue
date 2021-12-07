@@ -11,12 +11,14 @@
         )
       }}
     </header>
-    <SingleFormula
-      v-for="formula in subject.Formulas"
-      :key="formula"
-      :formula="formula"
-      :subject="subject.SubjectName"
-    />
+    <div class="formulas">
+      <SingleFormula
+        v-for="formula in subject.Formulas"
+        :key="formula"
+        :formula="formula"
+        :subject="subject.SubjectName"
+      />
+    </div>
   </div>
 </template>
 
@@ -42,6 +44,16 @@ export default defineComponent({
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+.formulas {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1100px;
+  max-width: 95vw;
+  justify-content: space-around;
+  align-items: space-around;
+  margin: auto;
 }
 
 header {
