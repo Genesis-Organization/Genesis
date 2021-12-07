@@ -12,7 +12,7 @@
         )
       }}
     </div>
-    <div class="unit">{{ formula.Unit }}</div>
+    <div v-if="formula.Unit" class="unit">{{ formula.Unit }}</div>
     <div
       v-html="
         katex.renderToString(formula.Content, {
@@ -23,7 +23,13 @@
     ></div>
     <div class="quantities">
       <div v-for="q in formula.Quantities" :key="q" class="quantity">
-        <b>{{ q.Symbol }}</b>
+        <b
+          v-html="
+            katex.renderToString(q.Symbol, {
+              throwOnError: false,
+            })
+          "
+        ></b>
         <div class="pause">-</div>
         {{ $t('sciences.units.' + q.Content) }}
       </div>
@@ -95,8 +101,15 @@ export default defineComponent({
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  align-items: center;
+  * {
+    font-size: 16px !important;
+  }
   @media (max-width: 1000px) {
     font-size: 15px;
+    * {
+      font-size: 13px !important;
+    }
   }
 }
 

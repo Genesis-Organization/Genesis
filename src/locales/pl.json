@@ -65,7 +65,11 @@
                 "velocity-basic": "Prędkość średnia",
                 "velocity-deriv": "Prędkość chwilowa",
                 "acceleration-basic": "Przyspieszenie średnie",
-                "acceleration-deriv": "Przyspieszenie chwilowe"
+                "acceleration-deriv": "Przyspieszenie chwilowe",
+                "motion-eq-a": "Równania ruchu cz. 1",
+                "motion-eq-b": "Równania ruchu cz. 2",
+                "motion-eq-c": "Równania ruchu cz. 3",
+                "motion-eq-d": "Równania ruchu cz. 4"
               }
             }
           }

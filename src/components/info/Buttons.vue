@@ -5,10 +5,11 @@
       <a
         v-for="section in sections"
         :key="section"
-        :href="'#' + section"
+        :href="'#' + section.title"
         v-smooth-scroll
       >
-        {{ $t('info.sections.' + section + '.name') }}
+        {{ $t('info.sections.' + section.title + '.name') }}
+        <ic :icon="section.icon"></ic>
       </a>
     </div>
   </div>
@@ -21,17 +22,50 @@ export default defineComponent({
   data() {
     return {
       sections: [
-        'begginings',
-        'activity',
-        'goalsandplans',
-        'software',
-        'contact',
-        'donate',
-        'sponsors',
-        'thanks',
-        'authors',
-        'join',
-      ] as string[],
+        {
+          title: 'begginings',
+          icon: 'hourglass-start',
+        },
+        {
+          title: 'activity',
+          icon: 'bullhorn',
+        },
+        {
+          title: 'goalsandplans',
+          icon: 'compass',
+        },
+        {
+          title: 'software',
+          icon: 'code',
+        },
+        {
+          title: 'donate',
+          icon: 'hands-helping',
+        },
+        {
+          title: 'sponsors',
+          icon: 'leaf',
+        },
+        {
+          title: 'thanks',
+          icon: 'heart',
+        },
+        {
+          title: 'authors',
+          icon: 'user',
+        },
+        {
+          title: 'join',
+          icon: 'map-marker-alt',
+        },
+        {
+          title: 'contact',
+          icon: 'paper-plane',
+        },
+      ] as {
+        title: string
+        icon: string
+      }[],
     }
   },
 })
@@ -63,7 +97,7 @@ export default defineComponent({
 }
 
 a {
-  padding: 10px;
+  padding: 10px 20px;
   background: theme(main_dark);
   color: theme(light);
   margin: 5px;
@@ -71,6 +105,13 @@ a {
   font-size: 80%;
   cursor: pointer;
   flex-grow: 1;
+  transition: 0.3s;
+  &:hover {
+    background-color: theme(main);
+  }
+  svg {
+    margin-left: 5px;
+  }
   @media (max-width: 1000px) {
     padding: 8px;
   }

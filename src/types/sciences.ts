@@ -32,7 +32,7 @@ export interface Formula {
   Subject: number
   ID: number
   Name: string
-  Content: string
+  Content: string | string[]
   Difficulty: number
   Unit?: string
   Quantities?: Quantity | Quantity[]
