@@ -3,7 +3,6 @@
     <router-link :to="'/' + subpage.link">
       <span
         :style="{
-          backgroundColor: subpage.color,
           backgroundImage:
             'url(' +
             require('@/assets/icons/navbar/' + subpage.image + '.svg') +
@@ -24,7 +23,6 @@ export default defineComponent({
       text: string
       link: string
       image: string
-      color: string
     },
   },
   data() {

@@ -31,18 +31,42 @@ export default defineComponent({
   data() {
     return {
       langs: [
-        ['Front-end', 'Vue', 'Typescript'],
-        ['Back-end', 'Node', 'Go', 'C#', 'C++'],
-        ['Mobile', 'Dart', 'Flutter'],
-        ['Databases', 'MongoDB'],
-        ['Others', 'Java', 'Python', 'Ruby'],
+        [
+          this.$t('info.sections.software.langscategories.front-end'),
+          'Vue',
+          'Typescript',
+        ],
+        [
+          this.$t('info.sections.software.langscategories.back-end'),
+          'Node',
+          'Go',
+          'C#',
+          'C++',
+        ],
+        [
+          this.$t('info.sections.software.langscategories.mobile'),
+          'Dart',
+          'Flutter',
+        ],
+        [
+          this.$t('info.sections.software.langscategories.databases'),
+          'MongoDB',
+        ],
+        [
+          this.$t('info.sections.software.langscategories.others'),
+          'Java',
+          'Python',
+          'Ruby',
+        ],
       ] as string[][],
     }
   },
   methods: {
     whatIsThatLang(l: string) {
       window.open(
-        `https://www.google.com/search?q=${l}+%28programming+language%29`,
+        `https://www.google.com/search?q=${l
+          .replaceAll('+', '%2B')
+          .replaceAll('#', '%23')}+%28programming+language%29`,
         '_blank'
       )
     },
@@ -58,24 +82,34 @@ h2 {
   text-align: center;
   font-size: 35px;
   margin: 15px;
+  @media (max-width: 1175px) {
+    font-size: 26px;
+    margin: 10px;
+  }
 }
 
 h3 {
   text-align: center;
   font-size: 25px;
   margin: 15px;
+  @media (max-width: 1175px) {
+    font-size: 19px;
+    margin: auto;
+    width: 80vw;
+  }
 }
 
 .langs {
   background-color: theme(light);
   display: flex;
   border-radius: 10px;
-  height: 400px;
   width: 1000px;
   max-width: 85vw;
   margin: 10px auto;
   padding: 0 10px 20px 20px;
-  @media (min-width: 1000px) {
+  flex-wrap: wrap;
+  @media (min-width: 1175px) {
+    height: 400px;
     border-top-right-radius: 100px;
     padding-right: 40px;
     &:before {
@@ -107,6 +141,9 @@ h3 {
       border-top-right-radius: 100px;
     }
   }
+  @media (max-width: 1175px) {
+    padding: 0;
+  }
 }
 
 .langcategory {
@@ -126,16 +163,43 @@ h3 {
     height: 60px;
     cursor: help;
     z-index: 1;
+    padding: 5px;
+    margin: 2px 5px;
+    border-radius: 5px;
+    transition: 0.3s all;
+    &:hover {
+      background: theme(gray);
+    }
   }
   div:first-child {
     font-weight: 600;
     font-size: 125%;
     height: 75px;
     justify-content: center;
+    &:hover {
+      background: transparent;
+    }
   }
   img {
     height: 30px;
     margin-right: 5px;
+  }
+
+  @media (max-width: 1175px) {
+    margin: 0;
+    width: 100%;
+    font-size: 17px;
+    div:first-child {
+      height: 50px;
+      background: theme(sky);
+      margin-bottom: 10px;
+    }
+    div {
+      height: 40px;
+    }
+    img {
+      height: 25px;
+    }
   }
 }
 </style>

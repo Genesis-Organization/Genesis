@@ -1,37 +1,39 @@
 <template>
   <div class="formula" :id="formula.Name">
-    <div class="name">
-      {{
-        $t(
-          'sciences.branches.' +
-            `${this.$route.params.id}.${this.$route.params.branch}` +
-            '.subjects.' +
-            subject +
-            '.formulas.' +
-            formula.Name
-        )
-      }}
-    </div>
-    <div v-if="formula.Unit" class="unit">{{ formula.Unit }}</div>
-    <div
-      v-html="
-        katex.renderToString(formula.Content, {
-          displayMode: true,
-          throwOnError: false,
-        })
-      "
-    ></div>
-    <div class="quantities">
-      <div v-for="q in formula.Quantities" :key="q" class="quantity">
-        <b
-          v-html="
-            katex.renderToString(q.Symbol, {
-              throwOnError: false,
-            })
-          "
-        ></b>
-        <div class="pause">-</div>
-        {{ $t('sciences.units.' + q.Content) }}
+    <div>
+      <div class="name">
+        {{
+          $t(
+            'sciences.branches.' +
+              `${this.$route.params.id}.${this.$route.params.branch}` +
+              '.subjects.' +
+              subject +
+              '.formulas.' +
+              formula.Name
+          )
+        }}
+      </div>
+      <div v-if="formula.Unit" class="unit">{{ formula.Unit }}</div>
+      <div
+        v-html="
+          katex.renderToString(formula.Content, {
+            displayMode: true,
+            throwOnError: false,
+          })
+        "
+      ></div>
+      <div class="quantities">
+        <div v-for="q in formula.Quantities" :key="q" class="quantity">
+          <b
+            v-html="
+              katex.renderToString(q.Symbol, {
+                throwOnError: false,
+              })
+            "
+          ></b>
+          <div class="pause">-</div>
+          {{ $t('sciences.units.' + q.Content) }}
+        </div>
       </div>
     </div>
   </div>
@@ -66,6 +68,9 @@ export default defineComponent({
   flex-grow: 1;
   max-width: 90vw;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .name {

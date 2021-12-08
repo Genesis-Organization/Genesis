@@ -136,7 +136,14 @@
         "name": "Cel i plany"
       },
       "software": {
-        "name": "Oprogramowanie"
+        "name": "Oprogramowanie",
+        "langscategories": {
+          "front-end": "Front-End",
+          "back-end": "Back-End",
+          "mobile": "Mobilne",
+          "databases": "Bazy danych",
+          "others": "Inne"
+        }
       },
       "sponsors": {
         "name": "Sponsorzy"

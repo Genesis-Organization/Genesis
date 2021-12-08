@@ -12,6 +12,7 @@
           :key="subpage"
           :subpage="subpage"
         />
+        <Locale :options="langs" />
       </ul>
     </div>
   </div>
@@ -20,10 +21,12 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { subpages } from '@/data/navigation/subpages'
+import { langs } from '@/data/navigation/langs'
 import MProfile from './mobile/MProfile.vue'
 import NavItem from './mobile/NavItem.vue'
-import Hamburger from './Hamburger.vue'
+import Hamburger from './mobile/Hamburger.vue'
 import Logo from './Logo.vue'
+import Locale from './mobile/Locale.vue'
 
 export default defineComponent({
   components: {
@@ -31,10 +34,12 @@ export default defineComponent({
     MProfile,
     NavItem,
     Logo,
+    Locale,
   },
   data() {
     return {
       subpages,
+      langs,
       showSideMenu: false,
     }
   },
@@ -51,15 +56,17 @@ export default defineComponent({
 
 .site-menu {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   position: fixed;
   bottom: 0;
   left: 0;
+  padding: 5vh 0;
   height: 100vh;
   width: 100vw;
   background: #1c2123ee;
   backdrop-filter: blur(10px);
   transition: 0.3s transform ease-in-out;
+  overflow-x: scroll;
 }
 
 ul {
