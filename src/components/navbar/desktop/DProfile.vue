@@ -26,7 +26,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { User, PremiumUser } from '@/types/user'
+// import { User, PremiumUser } from '@/types/user'
 import DProfileData from './DProfileData.vue'
 
 export default defineComponent({
@@ -35,13 +35,13 @@ export default defineComponent({
   },
   data() {
     return {
-      user: new User(
-        'Mateusz',
-        'Słotwiński',
-        'd2hlcud-a80908b0-2f4a-4046-bd59-9a4c4c9b2414.png',
-        'Paprotka2137',
-        PremiumUser.Admin
-      ),
+      // user: new User(
+      //   'Mateusz',
+      //   'Słotwiński',
+      //   'd2hlcud-a80908b0-2f4a-4046-bd59-9a4c4c9b2414.png',
+      //   'Paprotka2137',
+      //   PremiumUser.Admin
+      // ),
     }
   },
 })

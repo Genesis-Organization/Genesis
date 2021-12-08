@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 
-import formulasRoutes from './formulas'
-import errors from './errors'
+import formulasRoutes from './modules/formulas'
+import errors from './modules/errors'
+import users from './modules/users'
 
 import Home from '../views/Home.vue'
 import Books from '../views/Books.vue'
@@ -10,12 +11,12 @@ import Info from '../views/Info.vue'
 import Articles from '../views/Articles.vue'
 
 const routes: RouteRecordRaw[] = [
-  formulasRoutes,
   {
     path: '/',
     name: 'Home',
     component: Home,
   },
+  formulasRoutes,
   {
     path: '/articles',
     name: 'Article',
@@ -36,8 +37,9 @@ const routes: RouteRecordRaw[] = [
     name: 'Info',
     component: Info,
   },
+  users,
   errors,
-]
+].flat()
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
