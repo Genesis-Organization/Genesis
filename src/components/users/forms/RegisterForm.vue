@@ -65,6 +65,7 @@
       </div>
       <button>Register</button>
     </div>
+    <div v-if="errors.length != 0">{{ errors }}</div>
     <p>Have An Account? <a href="/users/login">Login</a></p>
   </form>
 </template>
@@ -73,7 +74,8 @@
 import { defineComponent } from 'vue'
 import { AxiosResponse } from 'axios'
 import axios from '@/config/axios'
-import { UserRegisterReq } from '@/types/user'
+import { UserRegisterError, UserRegisterReq } from '@/types/user'
+import validateUser from '@/scripts/services/validateUser'
 
 export default defineComponent({
   data() {
@@ -85,21 +87,22 @@ export default defineComponent({
         Email: '',
         DateOfBirth: new Date().toJSON().slice(0, 10).replace(/-/g, '-'),
         Degree: '',
-        Password: 'aaaaaaaaaaaaaaaaaaaa',
+        Password: '',
       } as UserRegisterReq,
       dummyUserData: {
-        ConfirmedPassword: 'aaaaaaaaaaaaaaaaaaaa',
+        ConfirmedPassword: '',
         Rodo: false,
       },
+      errors: [] as UserRegisterError[],
     }
   },
   components: {},
   methods: {
+    validateUser,
     registerUser() {
-      axios
-        .post('users/register', this.userData)
-        // eslint-disable-next-line no-console
-        .then((res: AxiosResponse<UserRegisterReq>) => console.log(res.data))
+      const validation = validateUser(this.userData, this.dummyUserData)
+      this.errors = validation
+      validation.length == 0 && axios.post('users/register', this.userData)
     },
   },
   created() {

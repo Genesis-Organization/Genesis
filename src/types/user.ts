@@ -37,3 +37,13 @@ export interface UserRegisterReq {
   Degree: string
   Password: string
 }
+
+export interface UserRegisterDummy {
+  ConfirmedPassword: string
+  Rodo: boolean
+}
+
+export interface UserRegisterError {
+  T: string
+  ID: number
+}
