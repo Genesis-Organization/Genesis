@@ -170,13 +170,21 @@
       "register": {
         "inputs": {
           "firstname": "Imię",
-          "surname": "Imię",
-          "login": "Imię",
-          "email": "Imię",
-          "dateofbirth": "Imię",
-          "degree": "Imię",
-          "password": "Imię",
-          "confirmpassword": "Imię",
+          "surname": "Nazwisko",
+          "login": "Login",
+          "email": "E-mail",
+          "dateofbirth": "Data urodzenia",
+          "degree": {
+            "index": "Stopień naukowy",
+            "0": "Brak",
+            "1": "Licencjat / Inżynier",
+            "2": "Magister",
+            "3": "Doktor",
+            "4": "Doktor Habilitowany",
+            "5": "Profesor"
+          },
+          "password": "Hasło",
+          "confirmpassword": "Potwierdź hasło",
           "rodo": {
             "accept": "Akceptuję regulamin oraz",
             "privacy": "politykę prywatności"
@@ -184,7 +192,7 @@
           "register": "Zarejestruj",
           "haveaccount": {
             "question": "Posiadasz już konto?",
-            "login": "Zaloguj się"
+            "login": "Zaloguj się!"
           }
         }
       }

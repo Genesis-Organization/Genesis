@@ -4,76 +4,91 @@
     <div>
       <input
         type="text"
-        name="First Name"
-        placeholder="First Name"
+        name="firstname"
+        :placeholder="$t('user.forms.register.inputs.firstname')"
         v-model="userData.Name"
       />
       <input
         type="text"
         name="Surname"
-        placeholder="Surname"
+        :placeholder="$t('user.forms.register.inputs.surname')"
         v-model="userData.Surname"
       />
       <input
         type="text"
         name="Login"
-        placeholder="Login"
+        :placeholder="$t('user.forms.register.inputs.login')"
         maxlength="24"
         v-model="userData.Login"
       />
       <input
         type="email"
         name="E-mail"
-        placeholder="E-mail"
+        :placeholder="$t('user.forms.register.inputs.email')"
         v-model="userData.Email"
       />
-      <input
-        type="date"
-        name="Date of birth"
-        placeholder="Date of Birth"
-        v-model="userData.DateOfBirth"
-        min="1920-01-01"
-        :max="new Date().toJSON().slice(0, 10).replace(/-/g, '-')"
-      />
+      <div class="dob-label">
+        <label for="dateofbirth">
+          {{ $t('user.forms.register.inputs.dateofbirth') }}
+        </label>
+        <input
+          type="date"
+          name="dateofbirth"
+          v-model="userData.DateOfBirth"
+          min="1920-01-01"
+          :max="new Date().toJSON().slice(0, 10).replace(/-/g, '-')"
+        />
+      </div>
       <select v-model="userData.Degree" required>
-        <option value="" disabled selected hidden>Stopień naukowy</option>
-        <option value="0">Brak</option>
-        <option calue="1">Licencjat/Inżynier</option>
-        <option value="2">Magister</option>
-        <option value="3">Doktor</option>
-        <option value="4">Doktor Habilitowany</option>
-        <option value="5">Profesor</option>
+        <option value="" disabled selected hidden>
+          {{ $t('user.forms.register.inputs.degree.index') }}
+        </option>
+        <option value="0">
+          {{ $t('user.forms.register.inputs.degree.0') }}
+        </option>
+        <option calue="1">
+          {{ $t('user.forms.register.inputs.degree.1') }}
+        </option>
+        <option value="2">
+          {{ $t('user.forms.register.inputs.degree.2') }}
+        </option>
+        <option value="3">
+          {{ $t('user.forms.register.inputs.degree.3') }}
+        </option>
+        <option value="4">
+          {{ $t('user.forms.register.inputs.degree.4') }}
+        </option>
+        <option value="5">
+          {{ $t('user.forms.register.inputs.degree.5') }}
+        </option>
       </select>
       <input
         type="password"
         name="Password"
-        placeholder="Password"
+        :placeholder="$t('user.forms.register.inputs.password')"
         v-model="userData.Password"
       />
       <input
         type="password"
         name="ConfirmedPassword"
-        placeholder="Confirm password"
+        :placeholder="$t('user.forms.register.inputs.confirmpassword')"
         v-model="dummyUserData.ConfirmedPassword"
       />
       <div class="rodo">
         <input type="checkbox" name="Rodo" v-model="dummyUserData.Rodo" />
-        <label for="Rodo"
-          >Akceptuję regulamin oraz
-          <router-link to="/privacy">politykę prywatności</router-link>
+        <label for="Rodo">
+          {{ $t('user.forms.register.inputs.rodo.accept') }}
+          <router-link to="/privacy">
+            {{ $t('user.forms.register.inputs.rodo.privacy') }}
+          </router-link>
         </label>
       </div>
-      <button>Register</button>
+      <button>
+        {{ $t('user.forms.register.inputs.register') }}
+      </button>
     </div>
-    <div class="errors" v-if="errors.concat(apiErrors).length != 0">
-      <div class="error" v-for="error in errors" :key="error">
-        {{ error }}
-      </div>
-      <div class="error" v-for="error in apiErrors" :key="error">
-        {{ error }}
-      </div>
-    </div>
-    <p>Have An Account? <a href="/users/login">Login</a></p>
+    <Errors :errors="errors" :apiErrors="apiErrors" />
+    <LetsLogin />
   </form>
 </template>
 
@@ -82,6 +97,8 @@ import { defineComponent } from 'vue'
 import axios from '@/config/axios'
 import { UserRegisterError, UserRegisterReq } from '@/types/user'
 import validateUser from '@/scripts/services/validateUser'
+import Errors from './Errors.vue'
+import LetsLogin from './LetsLogin.vue'
 
 export default defineComponent({
   data() {
@@ -99,11 +116,14 @@ export default defineComponent({
         ConfirmedPassword: '',
         Rodo: false,
       },
-      errors: [{T: "", ID: 0}] as UserRegisterError[],
+      errors: [{ T: '', ID: 0 }] as UserRegisterError[],
       apiErrors: ['sd'] as string[],
     }
   },
-  components: {},
+  components: {
+    Errors,
+    LetsLogin,
+  },
   methods: {
     validateUser,
     async registerUser() {
@@ -121,7 +141,7 @@ export default defineComponent({
     },
   },
   created() {
-    document.title = this.$t('pages.donate') + ' | Genesis'
+    document.title = this.$t('pages.register') + ' | Genesis'
   },
 })
 </script>
@@ -178,19 +198,16 @@ button {
   }
 }
 
-.errors {
-  margin: 5px auto;
-  width: 70%;
-  padding: 5px;
-  width: 370px;
-  border-radius: 10px;
-  background: #cc000030;
-  .error {
-    padding: 10px;
-    margin: 5px;
-    border-radius: 10px;
-    background: #cc000030;
-    color: #cc0000;
+.dob-label {
+  display: flex;
+  label {
+    z-index: 1;
+    position: absolute;
+    right: 70px;
+    font-size: 17px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: gray;
   }
 }
 </style>
