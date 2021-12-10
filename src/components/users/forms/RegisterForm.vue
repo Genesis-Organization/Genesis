@@ -65,14 +65,20 @@
       </div>
       <button>Register</button>
     </div>
-    <div v-if="errors.length != 0">{{ errors }}</div>
+    <div class="errors" v-if="errors.concat(apiErrors).length != 0">
+      <div class="error" v-for="error in errors" :key="error">
+        {{ error }}
+      </div>
+      <div class="error" v-for="error in apiErrors" :key="error">
+        {{ error }}
+      </div>
+    </div>
     <p>Have An Account? <a href="/users/login">Login</a></p>
   </form>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { AxiosResponse } from 'axios'
 import axios from '@/config/axios'
 import { UserRegisterError, UserRegisterReq } from '@/types/user'
 import validateUser from '@/scripts/services/validateUser'
@@ -93,16 +99,25 @@ export default defineComponent({
         ConfirmedPassword: '',
         Rodo: false,
       },
-      errors: [] as UserRegisterError[],
+      errors: [{T: "", ID: 0}] as UserRegisterError[],
+      apiErrors: ['sd'] as string[],
     }
   },
   components: {},
   methods: {
     validateUser,
-    registerUser() {
+    async registerUser() {
       const validation = validateUser(this.userData, this.dummyUserData)
       this.errors = validation
-      validation.length == 0 && axios.post('users/register', this.userData)
+      if (validation.length == 0) {
+        try {
+          await axios.post('users/register', this.userData)
+          this.$router.push('/login')
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        } catch (e: any) {
+          this.apiErrors.push(e.response.data)
+        }
+      }
     },
   },
   created() {
@@ -116,11 +131,15 @@ export default defineComponent({
 
 form {
   text-align: center;
-  width: 450px;
+  width: 500px;
   margin: 10px auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  > div {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 input,
@@ -130,8 +149,8 @@ button,
   display: block;
   font-size: 20px;
   padding: 10px;
-  margin: 10px;
-  width: 100%;
+  margin: 5px 10px;
+  flex-grow: 1;
   border-radius: 7px;
 }
 select:required:invalid {
@@ -156,6 +175,22 @@ button {
   }
   a {
     color: theme(main_dark);
+  }
+}
+
+.errors {
+  margin: 5px auto;
+  width: 70%;
+  padding: 5px;
+  width: 370px;
+  border-radius: 10px;
+  background: #cc000030;
+  .error {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    background: #cc000030;
+    color: #cc0000;
   }
 }
 </style>

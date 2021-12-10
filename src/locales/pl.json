@@ -164,5 +164,30 @@
         "name": "Kontakt"
       }
     }
+  },
+  "user": {
+    "forms": {
+      "register": {
+        "inputs": {
+          "firstname": "Imię",
+          "surname": "Imię",
+          "login": "Imię",
+          "email": "Imię",
+          "dateofbirth": "Imię",
+          "degree": "Imię",
+          "password": "Imię",
+          "confirmpassword": "Imię",
+          "rodo": {
+            "accept": "Akceptuję regulamin oraz",
+            "privacy": "politykę prywatności"
+          },
+          "register": "Zarejestruj",
+          "haveaccount": {
+            "question": "Posiadasz już konto?",
+            "login": "Zaloguj się"
+          }
+        }
+      }
+    }
   }
 }
