@@ -10,8 +10,8 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
-import Navbar from '@/components/navbar/Navbar.vue'
-import Footer from '@/components/footer/Footer.vue'
+import Navbar from '@/components/Shared/Navbar/Navbar.vue'
+import Footer from '@/components/Shared/Footer/Footer.vue'
 import EasterEgg from '@/components/EasterEgg.vue'
 
 import setLang from '@/scripts/root/setLang'

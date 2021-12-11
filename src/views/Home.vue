@@ -8,10 +8,10 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
-import Header from '@/components/home/Header.vue'
-import About from '@/components/home/About.vue'
-import Formulas from '@/components/home/Formulas.vue'
-import Statistics from '@/components/home/Statistics.vue'
+import Header from '@/components/Home/Header.vue'
+import About from '@/components/Home/About.vue'
+import Formulas from '@/components/Home/Formulas.vue'
+import Statistics from '@/components/Home/Statistics.vue'
 
 import setMeta from '@/scripts/root/setMeta'
 

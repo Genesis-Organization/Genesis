@@ -17,8 +17,8 @@ import { Science } from '@/types/sciences'
 import { toCapitalCase } from '@/scripts/strings'
 import setMeta from '@/scripts/root/setMeta'
 
-import SmallHero from '@/components/shared/SmallHero.vue'
-import Branches from '@/components/formulas/pick/branch/Branches.vue'
+import SmallHero from '@/components/Shared/SmallHero.vue'
+import Branches from '@/components/Formulas/pick/branch/Branches.vue'
 
 export default defineComponent({
   components: {

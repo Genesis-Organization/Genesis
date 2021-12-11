@@ -6,8 +6,8 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
-import Hero from '@/components/shared/Hero.vue'
-import Categories from '@/components/formulas/pick/category/Categories.vue'
+import Hero from '@/components/Shared/Hero.vue'
+import Categories from '@/components/Formulas/pick/category/Categories.vue'
 
 import setMeta from '@/scripts/root/setMeta'
 

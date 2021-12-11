@@ -29,7 +29,7 @@
 <script lang="ts">
 import { Branch } from '@/types/sciences'
 import { defineComponent } from 'vue'
-import Back from '../shared/Back.vue'
+import Back from '../Shared/Back.vue'
 
 export default defineComponent({
   props: {

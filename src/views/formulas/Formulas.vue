@@ -15,8 +15,8 @@ import axios from '@/config/axios'
 // import setMeta from '@/scripts/root/setMeta'
 import { Branch } from '@/types/sciences'
 import { AxiosResponse } from 'axios'
-import SmallHero from '@/components/shared/SmallHero.vue'
-import Formulas from '@/components/formulas/Formulas.vue'
+import SmallHero from '@/components/Shared/SmallHero.vue'
+import Formulas from '@/components/Formulas/Formulas.vue'
 import { toCapitalCase } from '@/scripts/strings'
 
 export default defineComponent({

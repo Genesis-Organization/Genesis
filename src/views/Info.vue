@@ -5,8 +5,8 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Header from '@/components/info/Header.vue'
-import Sections from '@/components/info/Sections.vue'
+import Header from '@/components/Info/Header.vue'
+import Sections from '@/components/Info/Sections.vue'
 
 export default defineComponent({
   components: {

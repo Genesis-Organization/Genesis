@@ -15,7 +15,7 @@ import { AxiosResponse } from 'axios'
 import axios from '@/config/axios'
 import { Branch, Science } from '@/types/sciences'
 import SingleBranch from './SingleBranch.vue'
-import Back from '../../../shared/Back.vue'
+import Back from '../../../Shared/Back.vue'
 
 export default defineComponent({
   props: {

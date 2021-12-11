@@ -66,14 +66,14 @@ export default defineComponent({
 }
 
 .link_user {
-  background-image: url('../../../assets/icons/navbar/login.svg');
+  background-image: url('../../../../assets/icons/navbar/login.svg');
 }
 
 .link_settings {
-  background-image: url('../../../assets/icons/navbar/settings.svg');
+  background-image: url('../../../../assets/icons/navbar/settings.svg');
 }
 
 .link_logout {
-  background-image: url('../../../assets/icons/navbar/logout.svg');
+  background-image: url('../../../../assets/icons/navbar/logout.svg');
 }
 </style>

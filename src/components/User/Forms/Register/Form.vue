@@ -7,12 +7,14 @@
         name="firstname"
         :placeholder="$t('user.forms.register.inputs.name')"
         v-model="userData.Name"
+        required
       />
       <input
         type="text"
         name="Surname"
         :placeholder="$t('user.forms.register.inputs.surname')"
         v-model="userData.Surname"
+        required
       />
       <input
         type="text"
@@ -20,12 +22,14 @@
         :placeholder="$t('user.forms.register.inputs.login')"
         maxlength="24"
         v-model="userData.Login"
+        required
       />
       <input
         type="email"
         name="E-mail"
         :placeholder="$t('user.forms.register.inputs.email')"
         v-model="userData.Email"
+        required
       />
       <div class="dob-label">
         <label for="dateofbirth">
@@ -67,12 +71,14 @@
         name="Password"
         :placeholder="$t('user.forms.register.inputs.password')"
         v-model="userData.Password"
+        required
       />
       <input
         type="password"
         name="ConfirmedPassword"
         :placeholder="$t('user.forms.register.inputs.confirmpassword')"
         v-model="dummyUserData.ConfirmedPassword"
+        required
       />
       <div class="rodo">
         <input type="checkbox" name="Rodo" v-model="dummyUserData.Rodo" />

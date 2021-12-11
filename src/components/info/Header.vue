@@ -11,7 +11,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import Buttons from './Buttons.vue'
-import OfficialLogo from '@/components/shared/OfficialLogo.vue'
+import OfficialLogo from '@/components/Shared/OfficialLogo.vue'
 
 export default defineComponent({
   components: {
