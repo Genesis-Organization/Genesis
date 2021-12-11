@@ -47,3 +47,8 @@ export interface UserRegisterError {
   T: string
   ID: number
 }
+
+export interface UserLoginReq {
+  Login: string
+  Password: string
+}

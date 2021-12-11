@@ -13,6 +13,9 @@ export default defineComponent({
   components: {
     RegisterForm,
   },
+  created() {
+    document.title = this.$t('pages.register') + ' | Genesis'
+  },
 })
 </script>
 

@@ -1,10 +1,18 @@
 <template>
   <div class="errors" v-if="errors.concat(apiErrors).length != 0">
     <div class="error" v-for="error in errors" :key="error">
-      {{ error }}
+      <div class="witht" v-if="error.ID == 0">
+        <b>
+          {{ $t(`user.forms.register.inputs.${error.T.toLowerCase()}`) }}
+        </b>
+        - {{ $t(`user.forms.register.errors.${error.ID}`) }}
+      </div>
+      <div v-else>
+        {{ $t(`user.forms.register.errors.${error.ID}`) }}
+      </div>
     </div>
     <div class="error" v-for="error in apiErrors" :key="error">
-      {{ error }}
+      {{ $t(`user.forms.register.errors.api.${error}`) }}
     </div>
   </div>
 </template>

@@ -1,8 +1,8 @@
 <template>
   <p>
-    {{ $t('user.forms.register.inputs.haveaccount.question') }}
-    <router-link to="/login">
-      {{ $t('user.forms.register.inputs.haveaccount.login') }}
+    {{ $t('user.forms.login.inputs.donthaveaccount.question') }}
+    <router-link to="/register">
+      {{ $t('user.forms.login.inputs.donthaveaccount.register') }}
     </router-link>
   </p>
 </template>

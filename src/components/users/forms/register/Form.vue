@@ -1,11 +1,11 @@
 <template>
   <form @submit.prevent="registerUser">
-    <h1>Register</h1>
+    <h1>{{ $t('pages.register') }}</h1>
     <div>
       <input
         type="text"
         name="firstname"
-        :placeholder="$t('user.forms.register.inputs.firstname')"
+        :placeholder="$t('user.forms.register.inputs.name')"
         v-model="userData.Name"
       />
       <input
@@ -116,8 +116,8 @@ export default defineComponent({
         ConfirmedPassword: '',
         Rodo: false,
       },
-      errors: [{ T: '', ID: 0 }] as UserRegisterError[],
-      apiErrors: ['sd'] as string[],
+      errors: [] as UserRegisterError[],
+      apiErrors: [] as string[],
     }
   },
   components: {
@@ -139,9 +139,6 @@ export default defineComponent({
         }
       }
     },
-  },
-  created() {
-    document.title = this.$t('pages.register') + ' | Genesis'
   },
 })
 </script>
@@ -181,7 +178,7 @@ option {
 }
 
 button {
-  outline: 3px solid theme(black);
+  outline: none;
   background: theme(dark);
   color: theme(light);
 }

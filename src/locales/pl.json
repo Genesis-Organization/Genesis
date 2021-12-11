@@ -104,7 +104,9 @@
     "books": "Podręczniki",
     "statistics": "Statystyki",
     "info": "Informacje",
-    "donate": "Wesprzyj"
+    "donate": "Wesprzyj",
+    "register": "Rejestracja",
+    "login": "Logowanie"
   },
   "formulas": {
     "index": {
@@ -169,7 +171,7 @@
     "forms": {
       "register": {
         "inputs": {
-          "firstname": "Imię",
+          "name": "Imię",
           "surname": "Nazwisko",
           "login": "Login",
           "email": "E-mail",
@@ -194,7 +196,28 @@
             "question": "Posiadasz już konto?",
             "login": "Zaloguj się!"
           }
+        },
+        "errors": {
+          "0": "Wartość jest zbyt krótka",
+          "1": "Nieprawidłowa wartość",
+          "2": "Hasła nie pasują do siebie",
+          "3": "Zaakceptuj regulamin",
+          "4": "Aby założyc konto należy mieć 14 lat - poproś rodzica o założenie konta",
+          "api": {
+            "user-exist": "Użytkownik o podanym loginie już istnieje"
+          }
         }
+      },
+      "login": {
+        "inputs": {
+          "login": "Login",
+          "password": "Hasło",
+          "donthaveaccount": {
+            "question": "Nie masz jeszcze konta?",
+            "register": "Zarejestruj się"
+          }
+        },
+        "login": "Zaloguj się"
       }
     }
   }
