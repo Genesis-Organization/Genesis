@@ -3,16 +3,16 @@
     <div class="error" v-for="error in errors" :key="error">
       <div class="witht" v-if="error.ID == 0">
         <b>
-          {{ $t(`user.forms.register.inputs.${error.T.toLowerCase()}`) }}
+          {{ $t(`auth.inputs.${error.T.toLowerCase()}`) }}
         </b>
-        - {{ $t(`user.forms.register.errors.${error.ID}`) }}
+        - {{ $t(`auth.errors.${error.ID}`) }}
       </div>
       <div v-else>
-        {{ $t(`user.forms.register.errors.${error.ID}`) }}
+        {{ $t(`auth.errors.${error.ID}`) }}
       </div>
     </div>
     <div class="error" v-for="error in apiErrors" :key="error">
-      {{ $t(`user.forms.register.errors.api.${error}`) }}
+      {{ $t(`auth.errors.api.${error}`) }}
     </div>
   </div>
 </template>

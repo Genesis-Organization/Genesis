@@ -5,21 +5,21 @@
       <input
         type="text"
         name="firstname"
-        :placeholder="$t('user.forms.register.inputs.name')"
+        :placeholder="$t('auth.inputs.name')"
         v-model="userData.Name"
         required
       />
       <input
         type="text"
         name="Surname"
-        :placeholder="$t('user.forms.register.inputs.surname')"
+        :placeholder="$t('auth.inputs.surname')"
         v-model="userData.Surname"
         required
       />
       <input
         type="text"
         name="Login"
-        :placeholder="$t('user.forms.register.inputs.login')"
+        :placeholder="$t('auth.inputs.login')"
         maxlength="24"
         v-model="userData.Login"
         required
@@ -27,13 +27,13 @@
       <input
         type="email"
         name="E-mail"
-        :placeholder="$t('user.forms.register.inputs.email')"
+        :placeholder="$t('auth.inputs.email')"
         v-model="userData.Email"
         required
       />
       <div class="dob-label">
         <label for="dateofbirth">
-          {{ $t('user.forms.register.inputs.dateofbirth') }}
+          {{ $t('auth.inputs.dateofbirth') }}
         </label>
         <input
           type="date"
@@ -45,52 +45,52 @@
       </div>
       <select v-model="userData.Degree" required>
         <option value="" disabled selected hidden>
-          {{ $t('user.forms.register.inputs.degree.index') }}
+          {{ $t('auth.inputs.degree.index') }}
         </option>
         <option value="0">
-          {{ $t('user.forms.register.inputs.degree.0') }}
+          {{ $t('auth.inputs.degree.0') }}
         </option>
         <option calue="1">
-          {{ $t('user.forms.register.inputs.degree.1') }}
+          {{ $t('auth.inputs.degree.1') }}
         </option>
         <option value="2">
-          {{ $t('user.forms.register.inputs.degree.2') }}
+          {{ $t('auth.inputs.degree.2') }}
         </option>
         <option value="3">
-          {{ $t('user.forms.register.inputs.degree.3') }}
+          {{ $t('auth.inputs.degree.3') }}
         </option>
         <option value="4">
-          {{ $t('user.forms.register.inputs.degree.4') }}
+          {{ $t('auth.inputs.degree.4') }}
         </option>
         <option value="5">
-          {{ $t('user.forms.register.inputs.degree.5') }}
+          {{ $t('auth.inputs.degree.5') }}
         </option>
       </select>
       <input
         type="password"
         name="Password"
-        :placeholder="$t('user.forms.register.inputs.password')"
+        :placeholder="$t('auth.inputs.password')"
         v-model="userData.Password"
         required
       />
       <input
         type="password"
         name="ConfirmedPassword"
-        :placeholder="$t('user.forms.register.inputs.confirmpassword')"
+        :placeholder="$t('auth.inputs.confirmpassword')"
         v-model="dummyUserData.ConfirmedPassword"
         required
       />
       <div class="rodo">
         <input type="checkbox" name="Rodo" v-model="dummyUserData.Rodo" />
         <label for="Rodo">
-          {{ $t('user.forms.register.inputs.rodo.accept') }}
+          {{ $t('auth.inputs.rodo.accept') }}
           <router-link to="/privacy">
-            {{ $t('user.forms.register.inputs.rodo.privacy') }}
+            {{ $t('auth.inputs.rodo.privacy') }}
           </router-link>
         </label>
       </div>
       <button>
-        {{ $t('user.forms.register.inputs.register') }}
+        {{ $t('auth.register.register') }}
       </button>
     </div>
     <Errors :errors="errors" :apiErrors="apiErrors" />
@@ -103,7 +103,7 @@ import { defineComponent } from 'vue'
 import axios from '@/config/axios'
 import { UserRegisterError, UserRegisterReq } from '@/types/user'
 import validateUser from '@/scripts/services/validateUser'
-import Errors from './Errors.vue'
+import Errors from '../Errors.vue'
 import LetsLogin from './LetsLogin.vue'
 
 export default defineComponent({
@@ -139,9 +139,9 @@ export default defineComponent({
         try {
           await axios.post('users/register', this.userData)
           this.$router.push('/login')
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          // eslint-disable-next-line
         } catch (e: any) {
-          this.apiErrors.push(e.response.data)
+          this.apiErrors = e.response.data
         }
       }
     },

@@ -1,10 +1,5 @@
 <template>
-  <p>
-    {{ $t('user.forms.register.inputs.haveaccount.question') }}
-    <router-link to="/login">
-      {{ $t('user.forms.register.inputs.haveaccount.login') }}
-    </router-link>
-  </p>
+  <div></div>
 </template>
 
 <script lang="ts">

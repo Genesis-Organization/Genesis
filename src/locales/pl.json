@@ -167,58 +167,55 @@
       }
     }
   },
-  "user": {
-    "forms": {
-      "register": {
-        "inputs": {
-          "name": "Imię",
-          "surname": "Nazwisko",
-          "login": "Login",
-          "email": "E-mail",
-          "dateofbirth": "Data urodzenia",
-          "degree": {
-            "index": "Stopień naukowy",
-            "0": "Brak",
-            "1": "Licencjat / Inżynier",
-            "2": "Magister",
-            "3": "Doktor",
-            "4": "Doktor Habilitowany",
-            "5": "Profesor"
-          },
-          "password": "Hasło",
-          "confirmpassword": "Potwierdź hasło",
-          "rodo": {
-            "accept": "Akceptuję regulamin oraz",
-            "privacy": "politykę prywatności"
-          },
-          "register": "Zarejestruj",
-          "haveaccount": {
-            "question": "Posiadasz już konto?",
-            "login": "Zaloguj się!"
-          }
-        },
-        "errors": {
-          "0": "Wartość jest zbyt krótka",
-          "1": "Nieprawidłowa wartość",
-          "2": "Hasła nie pasują do siebie",
-          "3": "Zaakceptuj regulamin",
-          "4": "Aby założyc konto należy mieć 14 lat - poproś rodzica o założenie konta",
-          "api": {
-            "user-exist": "Użytkownik o podanym loginie już istnieje"
-          }
-        }
+  "auth": {
+    "inputs": {
+      "name": "Imię",
+      "surname": "Nazwisko",
+      "login": "Login",
+      "email": "E-mail",
+      "dateofbirth": "Data urodzenia",
+      "degree": {
+        "index": "Stopień naukowy",
+        "0": "Brak",
+        "1": "Licencjat / Inżynier",
+        "2": "Magister",
+        "3": "Doktor",
+        "4": "Doktor Habilitowany",
+         "5": "Profesor"
       },
-      "login": {
-        "inputs": {
-          "login": "Login",
-          "password": "Hasło",
-          "donthaveaccount": {
-            "question": "Nie masz jeszcze konta?",
-            "register": "Zarejestruj się"
-          }
-        },
-        "login": "Zaloguj się"
+      "password": "Hasło",
+      "confirmpassword": "Potwierdź hasło",
+      "rodo": {
+        "accept": "Akceptuję regulamin oraz",
+        "privacy": "politykę prywatności"
+      }
+    },
+    "errors": {
+      "0": "Wartość jest zbyt krótka",
+      "1": "Nieprawidłowa wartość",
+      "2": "Hasła nie pasują do siebie",
+      "3": "Zaakceptuj regulamin",
+      "4": "Aby założyc konto należy mieć 14 lat - poproś rodzica o założenie konta",
+      "api": {
+        "user-exist": "Użytkownik o podanym loginie już istnieje",
+        "wrong-data": "Nieprawidłowe dane",
+        "wrong-password": "Nieprawidłowe hasło"
+      }
+    },
+    "register": {
+      "register": "Zarejestruj",
+      "haveaccount": {
+        "question": "Posiadasz już konto?",
+        "login": "Zaloguj się!"
+      }
+    },
+    "login": {
+      "login": "Zaloguj się",
+      "donthaveaccount": {
+        "question": "Nie masz jeszcze konta?",
+        "register": "Zarejestruj się"
       }
     }
-  }
+  },
+  "user": {}
 }

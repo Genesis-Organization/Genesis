@@ -1,31 +1,34 @@
 <template>
-  <form @submit.prevent="registerUser">
+  <form @submit.prevent="loginUser">
     <h1>{{ $t('pages.login') }}</h1>
     <div>
       <input
         type="text"
         name="login"
-        :placeholder="$t('user.forms.login.inputs.login')"
+        :placeholder="$t('auth.inputs.login')"
         maxlength="24"
         v-model="userData.Login"
       />
       <input
-        type="text"
+        type="password"
         name="password"
-        :placeholder="$t('user.forms.login.inputs.password')"
+        :placeholder="$t('auth.inputs.password')"
         maxlength="24"
-        v-model="userData.Login"
+        v-model="userData.Password"
       />
       <button>
-        {{ $t('user.forms.login.login') }}
+        {{ $t('auth.login.login') }}
       </button>
     </div>
+    <Errors :errors="[]" :apiErrors="apiErrors" />
     <LetsRegister />
   </form>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import axios from '@/config/axios'
+import Errors from '../Errors.vue'
 import LetsRegister from './LetsRegister.vue'
 import { UserLoginReq } from '@/types/user'
 
@@ -36,9 +39,23 @@ export default defineComponent({
         Login: '',
         Password: '',
       } as UserLoginReq,
+      apiErrors: [] as string[],
     }
   },
+  methods: {
+    async loginUser() {
+      try {
+        await axios.post('users/login', this.userData)
+        // localStorage.setItem('token', 'response.data.token')
+        this.$router.push('/')
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      } catch (e: any) {
+        this.apiErrors = [e.response.data]
+      }
+    },
+  },
   components: {
+    Errors,
     LetsRegister,
   },
 })
