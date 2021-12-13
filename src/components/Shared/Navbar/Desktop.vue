@@ -9,20 +9,24 @@
         >{{ $t('navigation.navbar.subpages.' + subpage.corename) }}</router-link
       >
     </section>
-    <DProfile />
+    <DProfile :user="user" />
     <Locale :options="langs" />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import DProfile from './desktop/DProfile.vue'
+import Logo from './Logo.vue'
+import Locale from './desktop/Locale.vue'
 import { subpages } from '@/data/navigation/subpages'
 import { langs } from '@/data/navigation/langs'
-import DProfile from './desktop/DProfile.vue'
-import Locale from './desktop/Locale.vue'
-import Logo from './Logo.vue'
+import { User } from '@/types/user'
 
 export default defineComponent({
+  props: {
+    user: Object as () => User,
+  },
   data() {
     return {
       subpages,

@@ -32,16 +32,14 @@ export default defineComponent({
 @import '@/styles/index.scss';
 .errors {
   margin: 5px auto;
-  width: 70%;
   padding: 5px;
-  width: 370px;
+  width: 70%;
   border-radius: 10px;
-  background: #cc000030;
   .error {
     padding: 10px;
     margin: 5px;
     border-radius: 10px;
-    background: #cc000030;
+    background: #cc000040;
     color: #cc0000;
   }
 }

@@ -1,5 +1,5 @@
 import { RouteRecordRaw } from 'vue-router'
-import PageNotFound from '@/views/errors/PageNotFound.vue'
+import PageNotFound from '@/views/Errors/PageNotFound.vue'
 
 const errors: RouteRecordRaw[] = [
   {

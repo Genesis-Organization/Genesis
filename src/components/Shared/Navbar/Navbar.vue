@@ -1,12 +1,13 @@
 <template>
   <nav>
-    <Desktop :class="{ changed: setNavColor }" />
-    <Mobile :class="{ changed: setNavColor }" />
+    <Desktop :user="user" :class="{ changed: setNavColor }" />
+    <Mobile :user="user" :class="{ changed: setNavColor }" />
   </nav>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { User } from '@/types/user'
 import Desktop from './Desktop.vue'
 import Mobile from './Mobile.vue'
 
@@ -18,6 +19,15 @@ export default defineComponent({
   data() {
     return {
       setNavColor: false,
+      user: {
+        Name: 'Mateusz',
+        Surname: 'Słotwiński',
+        Login: 'test',
+        Email: 'test@test.test',
+        DateOfBirth: '21-37-2137',
+        Degree: '3',
+        avatarFileID: 'd2hlcud-a80908b0-2f4a-4046-bd59-9a4c4c9b2414.png',
+      } as User,
     }
   },
   methods: {

@@ -1,5 +1,5 @@
 <template>
-  <span v-if="user">
+  <span v-if="user && jwt">
     <article>
       <div class="avatarcont">
         <section
@@ -10,7 +10,7 @@
         ></section>
       </div>
       <div class="username">
-        {{ user.name }}
+        {{ user.Name }}
       </div>
     </article>
     <div class="profile_hitbox">
@@ -26,22 +26,20 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-// import { User, PremiumUser } from '@/types/user'
+import Cookies from 'js-cookie'
+import { User } from '@/types/user'
 import DProfileData from './DProfileData.vue'
 
 export default defineComponent({
+  props: {
+    user: Object as () => User,
+  },
   components: {
     DProfileData,
   },
   data() {
     return {
-      // user: new User(
-      //   'Mateusz',
-      //   'Słotwiński',
-      //   'd2hlcud-a80908b0-2f4a-4046-bd59-9a4c4c9b2414.png',
-      //   'Paprotka2137',
-      //   PremiumUser.Admin
-      // ),
+      jwt: Cookies.get('jwt'),
     }
   },
 })

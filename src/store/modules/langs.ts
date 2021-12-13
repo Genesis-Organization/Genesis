@@ -1,6 +1,8 @@
-import { StoreModule } from '../types'
+/* eslint-disable */
 
-const langs: StoreModule = {
+import { StoreOptions } from 'vuex'
+
+const langs: StoreOptions<any> = {
   state: {
     appLanguage:
       localStorage.getItem('appLanguage') ||
@@ -8,10 +10,10 @@ const langs: StoreModule = {
       'en',
   },
   getters: {
-    getAppLanguage: (state: any) => state.appLanguage,
+    getAppLanguage: (state) => state.appLanguage,
   },
   mutations: {
-    setAppLanguage(state: { appLanguage: any }, language: string) {
+    setAppLanguage(state, language: string) {
       state.appLanguage = language
       localStorage.setItem('language', language) // Whenever we change the appLanguage we save it to the localStorage
     },

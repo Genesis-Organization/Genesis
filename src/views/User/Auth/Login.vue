@@ -1,20 +1,20 @@
 <template>
   <div class="top"></div>
   <div class="container">
-    <RegisterForm />
+    <LoginForm />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import RegisterForm from '@/components/User/Auth/Register/Form.vue'
+import LoginForm from '@/components/User/Auth/Login/Form.vue'
 
 export default defineComponent({
   components: {
-    RegisterForm,
+    LoginForm,
   },
   created() {
-    document.title = this.$t('pages.register') + ' | Genesis'
+    document.title = this.$t('pages.login') + ' | Genesis'
   },
 })
 </script>
@@ -28,6 +28,6 @@ export default defineComponent({
 .container {
   display: flex;
   align-content: center;
-  min-height: 80vh;
+  padding: 3vh 0;
 }
 </style>

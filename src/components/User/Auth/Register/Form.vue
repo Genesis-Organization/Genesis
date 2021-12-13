@@ -137,11 +137,11 @@ export default defineComponent({
       this.errors = validation
       if (validation.length == 0) {
         try {
-          await axios.post('users/register', this.userData)
-          this.$router.push('/login')
+          await axios.post('users/auth', this.userData)
+          window.location.href = '/'
           // eslint-disable-next-line
         } catch (e: any) {
-          this.apiErrors = e.response.data
+          this.apiErrors = [e.response.data]
         }
       }
     },
@@ -155,6 +155,7 @@ export default defineComponent({
 form {
   text-align: center;
   width: 500px;
+  max-width: 95vw;
   margin: 10px auto;
   display: flex;
   flex-direction: column;
@@ -175,6 +176,9 @@ button,
   margin: 5px 10px;
   flex-grow: 1;
   border-radius: 7px;
+  @media (max-width: 1000px) {
+    font-size: 17px;
+  }
 }
 select:required:invalid {
   color: gray;
@@ -198,6 +202,9 @@ button {
   }
   a {
     color: theme(main_dark);
+  }
+  @media (max-width: 1000px) {
+    font-size: 16px;
   }
 }
 

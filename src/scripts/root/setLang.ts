@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import { CreateComponentPublicInstance } from 'vue'
 
 const setLang = (app: CreateComponentPublicInstance<any>) => {

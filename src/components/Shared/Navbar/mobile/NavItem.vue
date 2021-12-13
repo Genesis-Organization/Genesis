@@ -1,6 +1,9 @@
 <template>
   <li>
-    <router-link :to="'/' + subpage.link">
+    <router-link
+      :to="'/' + subpage.link"
+      :class="{ login: subpage.link === 'login' }"
+    >
       <span
         :style="{
           backgroundImage:
@@ -40,6 +43,7 @@ li {
   font-size: 20px;
   flex-basis: 100%;
   height: 55px;
+  display: flex;
 }
 
 a {
@@ -59,5 +63,11 @@ span {
   background-size: 75%;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.login {
+  background: #81e6ff50;
+  margin: 0 10px;
+  border-radius: 10px;
 }
 </style>

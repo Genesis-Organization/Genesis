@@ -16,9 +16,12 @@
         maxlength="24"
         v-model="userData.Password"
       />
-      <button>
-        {{ $t('auth.login.login') }}
-      </button>
+      <div class="bottombar">
+        <button>
+          {{ $t('auth.login.login') }}
+        </button>
+        <div class="que">?</div>
+      </div>
     </div>
     <Errors :errors="[]" :apiErrors="apiErrors" />
     <LetsRegister />
@@ -45,9 +48,8 @@ export default defineComponent({
   methods: {
     async loginUser() {
       try {
-        await axios.post('users/login', this.userData)
-        // localStorage.setItem('token', 'response.data.token')
-        this.$router.push('/')
+        await axios.post('auth/login', this.userData)
+        window.location.href = '/'
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } catch (e: any) {
         this.apiErrors = [e.response.data]
@@ -66,6 +68,7 @@ export default defineComponent({
 form {
   text-align: center;
   width: 500px;
+  max-width: 95vw;
   margin: 10px auto;
   display: flex;
   flex-direction: column;
@@ -78,7 +81,8 @@ form {
 
 input,
 select,
-button {
+button,
+.que {
   display: block;
   font-size: 20px;
   padding: 10px;
@@ -91,5 +95,21 @@ button {
   outline: none;
   background: theme(dark);
   color: theme(light);
+  width: 70%;
+  flex-shrink: 1;
+}
+
+.que {
+  background: theme(main);
+  color: theme(light);
+  margin-left: 0;
+  cursor: help;
+}
+
+.bottombar {
+  display: flex;
+  .que {
+    flex-grow: 1;
+  }
 }
 </style>

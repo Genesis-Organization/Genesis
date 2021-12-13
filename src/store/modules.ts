@@ -1,9 +1,9 @@
-import { StoreModule } from './types'
-
 import langs from './modules/langs'
+// import auth from './modules/auth'
 
-const modules: { [key: string]: StoreModule } = {
+const modules = {
   langs,
+  // auth,
 }
 
 export default modules

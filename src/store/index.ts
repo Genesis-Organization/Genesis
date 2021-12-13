@@ -1,8 +1,7 @@
 import { createStore } from 'vuex'
-import { Store } from './types'
 import modules from './modules'
 
-const store: Store = {
+const store = {
   state: {},
   getters: {},
   mutations: {},

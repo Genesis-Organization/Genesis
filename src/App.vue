@@ -1,10 +1,10 @@
 <template>
-  <EasterEgg />
-  <Navbar />
-  <main id="routerviev">
+  <main class="genesis-app">
+    <EasterEgg />
+    <Navbar />
     <router-view />
+    <Footer />
   </main>
-  <Footer />
 </template>
 
 <script lang="ts">
@@ -22,8 +22,6 @@ export default defineComponent({
   },
   created() {
     setLang(this)
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    // console.log(require('>>/locales/pl'), require('@/locales/pl'))
   },
   components: {
     Navbar,
@@ -36,8 +34,11 @@ export default defineComponent({
 <style lang="scss">
 @import '@/styles/index.scss';
 
-#routerviev {
-  min-height: 80vh;
+.genesis-app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
 }
 
 .moved {

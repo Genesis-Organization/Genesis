@@ -1,14 +1,14 @@
 <template>
   <ul class="profiledata">
-    <li class="username">{{ user.username() }}</li>
-    <li class="login">@{{ user.login }}</li>
+    <li class="username">{{ user.Name + ' ' + user.Surname }}</li>
+    <li class="login">@{{ user.Login }}</li>
     <section class="icons">
       <router-link
         class="link_user"
-        :to="'/user/' + user.login.toLowerCase()"
+        :to="'/user/' + user.Login.toLowerCase()"
       ></router-link>
-      <router-link class="link_settings" to="/a"></router-link>
-      <router-link class="link_logout" to="/a"></router-link>
+      <router-link class="link_settings" to="/settings"></router-link>
+      <router-link class="link_logout" to="/logout"></router-link>
     </section>
   </ul>
 </template>

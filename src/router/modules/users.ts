@@ -1,18 +1,24 @@
 import { RouteRecordRaw } from 'vue-router'
 
-import Register from '@/views/user/Register.vue'
-import Login from '@/views/user/Login.vue'
+import Login from '@/views/User/Auth/Login.vue'
+import Register from '@/views/User/Auth/Register.vue'
+import Logout from '@/views/User/Auth/Logout.vue'
 
 const users: RouteRecordRaw[] = [
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login,
+  },
   {
     path: '/register',
     name: 'Register',
     component: Register,
   },
   {
-    path: '/login',
-    name: 'Login',
-    component: Login,
+    path: '/logout',
+    name: 'Logout',
+    component: Logout,
   },
 ]
 
