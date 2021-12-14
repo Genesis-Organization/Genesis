@@ -4,6 +4,8 @@ import formulasRoutes from './modules/formulas'
 import errors from './modules/errors'
 import users from './modules/users'
 
+import hideForAuth from './middlewares/auth'
+
 import Home from '../views/Home.vue'
 import Books from '../views/Books.vue'
 import Statistics from '../views/Statistics.vue'
@@ -45,5 +47,7 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
 })
+
+router.beforeEach(hideForAuth)
 
 export default router

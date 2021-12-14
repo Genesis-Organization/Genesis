@@ -46,7 +46,7 @@ article {
   justify-content: center;
   align-items: center;
   &:hover ~ .profile_hitbox .profile {
-    height: 200px;
+    height: 150px;
     opacity: 1;
   }
 }
@@ -60,7 +60,7 @@ article {
   left: 0;
   margin: 10px;
   &:hover .profile {
-    height: 200px;
+    height: 150px;
     opacity: 1;
   }
   width: 350px;

@@ -1,8 +1,20 @@
-import axios from '@/config/axios'
-import { AxiosResponse } from 'axios'
+import { RouteLocationNormalized, NavigationGuardNext } from 'vue-router'
+import Cookies from 'js-cookie'
 
-const auth = {
-  Logout: (): Promise<AxiosResponse> => axios.get('/api/auth/logout'),
+const hideForAuth = (
+  to: RouteLocationNormalized,
+  from: RouteLocationNormalized,
+  next: NavigationGuardNext
+): void => {
+  if (to.path === '/register' || to.path === '/login') {
+    if (Cookies.get('jwt')) {
+      next({ path: '/' })
+    } else {
+      next()
+    }
+  } else {
+    next()
+  }
 }
 
-export default auth
+export default hideForAuth

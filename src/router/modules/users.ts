@@ -3,6 +3,7 @@ import { RouteRecordRaw } from 'vue-router'
 import Login from '@/views/User/Auth/Login.vue'
 import Register from '@/views/User/Auth/Register.vue'
 import Logout from '@/views/User/Auth/Logout.vue'
+import User from '@/views/User/User.vue'
 
 const users: RouteRecordRaw[] = [
   {
@@ -19,6 +20,11 @@ const users: RouteRecordRaw[] = [
     path: '/logout',
     name: 'Logout',
     component: Logout,
+  },
+  {
+    path: '/users/:login',
+    name: 'User',
+    component: User,
   },
 ]
 

@@ -4,6 +4,8 @@
     <li class="login">@{{ user.Login }}</li>
     <section class="icons">
       <router-link class="link_user" :to="'/users/' + user.Login"></router-link>
+      <router-link class="link_messages" :to="'/messages'"></router-link>
+      <router-link class="link_bell" :to="'/notifications'"></router-link>
       <router-link class="link_settings" to="/settings"></router-link>
       <router-link class="link_logout" to="/logout"></router-link>
     </section>
@@ -50,10 +52,10 @@ export default defineComponent({
 .icons a {
   display: block;
   padding: 22px;
-  margin: 5px;
-  background-color: theme(main);
+  margin: 5px 3px;
+  background-color: theme(black);
   border-radius: 25%;
-  background-size: 75%;
+  background-size: 65%;
   background-repeat: no-repeat;
   background-position: center;
   transition: 0.2s;
@@ -64,6 +66,14 @@ export default defineComponent({
 
 .link_user {
   background-image: url('../../../../assets/icons/navbar/login.svg');
+}
+
+.link_messages {
+  background-image: url('../../../../assets/icons/navbar/messages.svg');
+}
+
+.link_bell {
+  background-image: url('../../../../assets/icons/navbar/bell.svg');
 }
 
 .link_settings {
