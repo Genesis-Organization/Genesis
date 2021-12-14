@@ -3,10 +3,7 @@
     <li class="username">{{ user.Name + ' ' + user.Surname }}</li>
     <li class="login">@{{ user.Login }}</li>
     <section class="icons">
-      <router-link
-        class="link_user"
-        :to="'/user/' + user.Login.toLowerCase()"
-      ></router-link>
+      <router-link class="link_user" :to="'/users/' + user.Login"></router-link>
       <router-link class="link_settings" to="/settings"></router-link>
       <router-link class="link_logout" to="/logout"></router-link>
     </section>

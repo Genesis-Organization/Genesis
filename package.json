@@ -18,6 +18,7 @@
     "core-js": "^3.6.5",
     "i18n": "^0.13.3",
     "js-cookie": "^3.0.1",
+    "jwt-decode": "^3.1.2",
     "katex": "^0.15.1",
     "less-loader": "^10.2.0",
     "register-service-worker": "^1.7.1",

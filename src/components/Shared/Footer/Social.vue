@@ -1,40 +1,44 @@
 <template>
-  <a
-    :href="media.Link"
-    :style="{
-      backgroundImage:
-        'url(' +
-        require('@/assets/icons/navbar/footer/' +
-          media.Name.toLowerCase() +
-          '.svg') +
-        ')',
-    }"
-  ></a>
+  <a :href="media.Link" :class="{ supp: media.Support }">
+    <ic v-if="media.Collection == 'fas'" :icon="['fas', media.Icon]" />
+    <ic v-else :icon="['fab', media.Icon]" />
+  </a>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  props: ['media'],
+  props: {
+    media: Object,
+  },
 })
 </script>
 
 <style lang="scss" scoped>
 @import '@/styles/index.scss';
 a {
-  display: block;
-  padding: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  padding: 5px;
   margin: 5px;
   background: theme(main);
   background-size: 70%;
   background-repeat: no-repeat;
   background-position: center;
-  color: white;
   border-radius: 5px;
   transition: 0.2s;
   &:hover {
     filter: brightness(1.2);
   }
+  color: theme(light) !important;
+}
+
+.supp {
+  background: theme(aqua);
 }
 </style>

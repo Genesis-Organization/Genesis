@@ -1,11 +1,11 @@
 <template>
-  <span v-if="user && jwt">
+  <span v-if="user && Object.keys(user).length > 0">
     <article>
       <div class="avatarcont">
         <section
           class="avatar"
           :style="{
-            backgroundImage: 'url(/user/avatar/' + user.avatarFileID + ')',
+            backgroundImage: 'url(/user/avatar/' + user.avatarFileID + '.png)',
           }"
         ></section>
       </div>
@@ -26,7 +26,6 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Cookies from 'js-cookie'
 import { User } from '@/types/user'
 import DProfileData from './DProfileData.vue'
 
@@ -36,11 +35,6 @@ export default defineComponent({
   },
   components: {
     DProfileData,
-  },
-  data() {
-    return {
-      jwt: Cookies.get('jwt'),
-    }
   },
 })
 </script>

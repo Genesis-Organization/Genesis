@@ -4,6 +4,7 @@
     <Navbar />
     <router-view />
     <Footer />
+    <!-- <Privacy /> -->
   </main>
 </template>
 

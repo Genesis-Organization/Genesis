@@ -137,7 +137,7 @@ export default defineComponent({
       this.errors = validation
       if (validation.length == 0) {
         try {
-          await axios.post('users/auth', this.userData)
+          await axios.post('auth/register', this.userData)
           window.location.href = '/'
           // eslint-disable-next-line
         } catch (e: any) {

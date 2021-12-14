@@ -1,13 +1,24 @@
 <template>
   <footer>
     <div class="title">Genesis™</div>
-    <div class="social_medias">
-      <Social :key="media" v-for="media in socialMedia" :media="media" />
+    <div class="flex">
+      <div class="aard">
+        <b>AARD</b>
+      </div>
+      <div>
+        <div class="social_medias">
+          <Social :key="media" v-for="media in socialMedia" :media="media" />
+        </div>
+        <div class="pages">
+          <router-link to="/">Regulamin</router-link>
+          <router-link to="/">Prywatność</router-link>
+        </div>
+      </div>
     </div>
-    <div class="law">
+    <!-- <div class="law">
       <div>Copyrights {{ year }} by Mateusz Słotwiński.</div>
       <div>{{ $t('navigation.footer.copyrights') }}</div>
-    </div>
+    </div> -->
   </footer>
 </template>
 
@@ -34,6 +45,8 @@ export default defineComponent({
 
 footer {
   background: theme(dark);
+  display: flex;
+  flex-direction: column;
   color: #e3e3e3;
   margin-top: 5rem;
   padding: 1rem;
@@ -46,13 +59,21 @@ footer {
   text-align: center;
 }
 
-.law {
-  text-align: center;
-  max-width: 900px;
-  margin: auto;
-  @media (max-width: 700px) {
-    font-size: 11.5px;
-  }
+.flex {
+  margin: 10px auto;
+  width: 1400px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.pages {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.pages a {
+  display: block;
+  color: theme(light);
 }
 
 .social_medias {

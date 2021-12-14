@@ -7,6 +7,8 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import Cookies from 'js-cookie'
+import jwtDecode, { JwtPayload } from 'jwt-decode'
 import { User } from '@/types/user'
 import Desktop from './Desktop.vue'
 import Mobile from './Mobile.vue'
@@ -19,15 +21,7 @@ export default defineComponent({
   data() {
     return {
       setNavColor: false,
-      user: {
-        Name: 'Mateusz',
-        Surname: 'Słotwiński',
-        Login: 'test',
-        Email: 'test@test.test',
-        DateOfBirth: '21-37-2137',
-        Degree: '3',
-        avatarFileID: 'd2hlcud-a80908b0-2f4a-4046-bd59-9a4c4c9b2414.png',
-      } as User,
+      user: {} as User,
     }
   },
   methods: {
@@ -41,6 +35,8 @@ export default defineComponent({
   },
   mounted() {
     document.addEventListener('scroll', () => this.scrollHandler())
+    const jwt = Cookies.get('jwt')
+    if (jwt) this.user = jwtDecode<JwtPayload & { user: User }>(jwt).user
   },
 })
 </script>

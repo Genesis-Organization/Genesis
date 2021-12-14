@@ -36,8 +36,8 @@ export default defineComponent({
 
 .text {
   max-width: 800px;
-  margin-left: calc(1vw + 10px);
-  margin-bottom: 3vh;
+  margin: 3vh calc(1vw + 10px);
+  margin-top: 0;
 }
 
 b {
