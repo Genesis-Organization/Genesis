@@ -3,15 +3,11 @@
     <div class="bannercont">
       <div
         class="bannerblur"
-        :style="{
-          backgroundImage: 'url(/user/banner/' + banner + '.png)',
-        }"
+        :style="{ backgroundImage: `url(/user/banner/${banner}.png)` }"
       ></div>
       <div
         class="bannerimage"
-        :style="{
-          backgroundImage: 'url(/user/banner/' + banner + '.png)',
-        }"
+        :style="{ backgroundImage: `url(/user/banner/${banner}.png)` }"
       ></div>
     </div>
   </div>
@@ -51,8 +47,8 @@ export default defineComponent({
     background-position: center;
     border-radius: 0 0 100px 100px;
     overflow: hidden;
-    @media (min-width: 1000px) {
-      border-radius: 0 0 50px 50px;
+    @media (max-width: 1000px) {
+      border-radius: 0 0;
     }
   }
   .bannerblur {

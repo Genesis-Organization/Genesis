@@ -221,5 +221,32 @@
   "loading": {
     "wait": "Prosimy czekać"
   },
-  "user": {}
+  "user": {
+    "degrees": {
+      "0": {
+        "full": "",
+        "short": ""
+      },
+      "1": {
+        "full": "Inżynier",
+        "short": "Inż."
+      },
+      "2": {
+        "full": "Magister",
+        "short": "Mgr."
+      },
+      "3": {
+        "full": "Doktor",
+        "short": "Dr"
+      },
+      "4": {
+        "full": "Doktor Habilitowany",
+        "short": "Dr Hab."
+      },
+      "5": {
+        "full": "Profesor",
+        "short": "Prof."
+      }
+    }
+  }
 }
