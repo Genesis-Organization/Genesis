@@ -215,7 +215,11 @@
         "question": "Nie masz jeszcze konta?",
         "register": "Zarejestruj się"
       }
-    }
+    },
+    "logout": "Wyloguj"
+  },
+  "loading": {
+    "wait": "Prosimy czekać"
   },
   "user": {}
 }

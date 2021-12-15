@@ -52,6 +52,11 @@ footer {
   padding: 1rem;
 }
 
+.aard {
+  width: 200px;
+  padding: 10px;
+}
+
 .title {
   text-transform: uppercase;
   font-weight: 800;
@@ -62,8 +67,10 @@ footer {
 .flex {
   margin: 10px auto;
   width: 1400px;
+  max-width: 95vw;
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 .pages {

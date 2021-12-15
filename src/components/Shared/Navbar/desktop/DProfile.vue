@@ -15,7 +15,7 @@
     </article>
     <div class="profile_hitbox">
       <section class="profile">
-        <DProfileData :user="user" />
+        <DProfileData />
       </section>
     </div>
   </span>
@@ -30,8 +30,10 @@ import { User } from '@/types/user'
 import DProfileData from './DProfileData.vue'
 
 export default defineComponent({
-  props: {
-    user: Object as () => User,
+  data() {
+    return {
+      user: this.$store.getters.getUser as User,
+    }
   },
   components: {
     DProfileData,

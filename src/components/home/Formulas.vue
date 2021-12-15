@@ -44,6 +44,7 @@ article {
   min-height: 18vh;
   max-width: 1500px;
   @media (max-width: 700px) {
+    padding: 0;
     font-size: 16px;
   }
 }
@@ -53,6 +54,7 @@ img {
   position: relative;
   @media (max-width: 700px) {
     width: 100vw;
+    padding-bottom: 10px;
   }
 }
 

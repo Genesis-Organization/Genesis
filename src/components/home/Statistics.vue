@@ -39,6 +39,7 @@ article {
   max-width: 1500px;
   @media (max-width: 700px) {
     font-size: 16px;
+    padding: 0;
   }
 }
 

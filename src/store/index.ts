@@ -1,11 +1,8 @@
-import { createStore } from 'vuex'
+import { createStore, StoreOptions } from 'vuex'
 import modules from './modules'
 
-const store = {
-  state: {},
-  getters: {},
-  mutations: {},
-  actions: {},
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const store: StoreOptions<any> = {
   modules,
 }
 

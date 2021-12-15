@@ -67,7 +67,12 @@ span {
 
 .login {
   background: #81e6ff50;
-  margin: 0 10px;
+  margin: 10px 10px;
+  height: 50px;
   border-radius: 10px;
+  font-size: 90%;
+  span {
+    padding: 20px;
+  }
 }
 </style>

@@ -1,24 +1,25 @@
 <template>
-  {{ user }}
+  <div>
+    <div class="top"></div>
+    <Profile :user="user" />
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { AxiosResponse } from 'axios'
-
 import axios from '@/config/axios'
-import setMeta from '@/scripts/root/setMeta'
+import Profile from '@/components/User/Profile.vue'
 import { User } from '@/types/user'
 
 export default defineComponent({
-  components: {},
+  components: {
+    Profile,
+  },
   data() {
     return {
       user: {} as User,
     }
-  },
-  methods: {
-    setMeta,
   },
   async created() {
     const login = this.$route.params.login
@@ -30,4 +31,10 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@import '@/styles/index.scss';
+.top {
+  height: $height;
+  background: theme(dark);
+}
+</style>

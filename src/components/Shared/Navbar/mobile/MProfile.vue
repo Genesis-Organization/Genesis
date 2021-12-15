@@ -5,17 +5,20 @@
         <section
           class="avatar"
           :style="{
-            backgroundImage: 'url(/user/avatar/' + user.avatarFileID + ')',
+            backgroundImage: 'url(/user/avatar/' + user.avatarFileID + '.png)',
           }"
         ></section>
       </div>
       <section class="shortdata">
         <div>
-          <b class="username">{{ user.username() }}</b>
-          <i class="login">@{{ user.login }}</i>
+          <b class="username">{{ user.Name + ' ' + user.Surname }}</b>
+          <i class="login">@{{ user.Login }}</i>
         </div>
       </section>
     </div>
+    <router-link to="/logout" class="logout">
+      {{ $t('auth.logout') }}
+    </router-link>
   </article>
   <NavItem
     v-else
@@ -29,8 +32,8 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-// import { User, PremiumUser } from '@/types/user'
 import NavItem from './NavItem.vue'
+import { User } from '@/types/user'
 
 export default defineComponent({
   components: {
@@ -38,13 +41,7 @@ export default defineComponent({
   },
   data() {
     return {
-      // user: new User(
-      //   'Mateusz',
-      //   'Słotwiński',
-      //   'd2hlcud-a80908b0-2f4a-4046-bd59-9a4c4c9b2414.png',
-      //   'Paprotka2137',
-      //   PremiumUser.Admin
-      // ),
+      user: this.$store.getters.getUser as User,
     }
   },
 })
@@ -56,7 +53,7 @@ article {
   width: 100%;
   padding: 5% 2%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -98,5 +95,17 @@ article > div {
 .username {
   font-size: 22px;
   font-weight: 500;
+}
+
+.logout {
+  color: theme(light);
+  background: theme(main_dark);
+  font-size: 18px;
+  font-weight: 500;
+  padding: 7px 10px;
+  border-radius: 5px;
+  position: absolute;
+  right: 10px;
+  bottom: 0;
 }
 </style>

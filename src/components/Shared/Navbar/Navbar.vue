@@ -1,14 +1,12 @@
 <template>
   <nav>
-    <Desktop :user="user" :class="{ changed: setNavColor }" />
-    <Mobile :user="user" :class="{ changed: setNavColor }" />
+    <Desktop :class="{ changed: setNavColor }" />
+    <Mobile :class="{ changed: setNavColor }" />
   </nav>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Cookies from 'js-cookie'
-import jwtDecode, { JwtPayload } from 'jwt-decode'
 import { User } from '@/types/user'
 import Desktop from './Desktop.vue'
 import Mobile from './Mobile.vue'
@@ -35,8 +33,6 @@ export default defineComponent({
   },
   mounted() {
     document.addEventListener('scroll', () => this.scrollHandler())
-    const jwt = Cookies.get('jwt')
-    if (jwt) this.user = jwtDecode<JwtPayload & { user: User }>(jwt).user
   },
 })
 </script>

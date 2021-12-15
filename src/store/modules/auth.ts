@@ -1,16 +1,18 @@
-/* eslint-disable */
-
-import Cookies from 'js-cookie'
 import { StoreOptions } from 'vuex'
+import Cookies from 'js-cookie'
+import jwtDecode, { JwtPayload } from 'jwt-decode'
+import { User } from '@/types/user'
 
-const formulas: StoreOptions<any> = {
+const auth: StoreOptions<{ user: User | null }> = {
   state: {
-    jwt: Cookies.get('jwt')
+    user: Cookies.get('jwt')
+      ? jwtDecode<JwtPayload & { user: User }>(Cookies.get('jwt')!)?.user
+      : null,
   },
   getters: {
-    getUser: (state) => { return state.jwt },
+    getUser: (state) => state.user,
   },
   mutations: {},
   actions: {},
 }
-export default formulas
+export default auth

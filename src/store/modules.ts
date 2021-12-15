@@ -1,9 +1,9 @@
 import langs from './modules/langs'
-// import auth from './modules/auth'
+import auth from './modules/auth'
 
 const modules = {
   langs,
-  // auth,
+  auth,
 }
 
 export default modules

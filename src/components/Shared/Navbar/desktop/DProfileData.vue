@@ -17,8 +17,10 @@ import { defineComponent } from 'vue'
 import { User } from '@/types/user'
 
 export default defineComponent({
-  props: {
-    user: Object as () => User,
+  data() {
+    return {
+      user: this.$store.getters.getUser as User,
+    }
   },
 })
 </script>

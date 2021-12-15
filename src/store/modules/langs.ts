@@ -1,8 +1,6 @@
-/* eslint-disable */
-
 import { StoreOptions } from 'vuex'
 
-const langs: StoreOptions<any> = {
+const langs: StoreOptions<{ appLanguage: string }> = {
   state: {
     appLanguage:
       localStorage.getItem('appLanguage') ||
