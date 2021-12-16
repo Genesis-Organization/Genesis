@@ -11,6 +11,7 @@
           v-for="subpage in subpages"
           :key="subpage"
           :subpage="subpage"
+          v-on:click="setSideMenu(false)"
         />
         <Locale :options="langs" />
       </ul>
@@ -66,7 +67,7 @@ export default defineComponent({
   background: #1c2123ee;
   backdrop-filter: blur(10px);
   transition: 0.3s transform ease-in-out;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 
 ul {

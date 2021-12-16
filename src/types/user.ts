@@ -15,20 +15,44 @@ export interface User {
   bannerFileID?: string
   isEmailPublic?: boolean
   isAgePublic?: boolean
-  socialMedias?: SocialMedia[]
+  isGenesisMember?: boolean
+  isProtected?: boolean
+  isSponsor?: boolean
+
+  researchInterests?: ResearchInterest[]
   education?: University[]
+  research?: Research[]
+  work?: Work[]
   description?: string
   home?: string
   country?: string
-  work?: string
   interests?: string[]
   languages?: string[]
+  socialMedias?: SocialMedia[]
+}
+
+export interface ResearchInterest {
+  science: SciencesList
+  level: ScienceLevel
+  description?: string
+}
+
+export interface Work {
+  name: string
+  position: string
+  since: string
 }
 
 export interface University {
   science: string
   degree: string
   specialization?: string
+}
+
+export interface Research {
+  science: SciencesList
+  title: string
+  description: string
 }
 
 export interface SocialMedia {
@@ -51,6 +75,19 @@ export enum SocialMediaList {
   SPOTIFY = 'Spotify',
   LINKEDIN = 'LinkedIn',
   TWITCH = 'Twitch',
+}
+
+export enum SciencesList {
+  MATH = 'Mathematics',
+}
+
+export enum ScienceLevel {
+  BEGINNER = '1',
+  INTERMEDIATE = '2',
+  ADVANCED = '3',
+  EXPERT = '4',
+  MASTER = '5',
+  VISIONARY = '6',
 }
 
 export interface UserRegisterReq {

@@ -2,9 +2,7 @@
   <footer>
     <div class="title">Genesis™</div>
     <div class="flex">
-      <div class="aard">
-        <b>AARD</b>
-      </div>
+      <Brands />
       <div>
         <div class="social_medias">
           <Social :key="media" v-for="media in socialMedia" :media="media" />
@@ -15,10 +13,6 @@
         </div>
       </div>
     </div>
-    <!-- <div class="law">
-      <div>Copyrights {{ year }} by Mateusz Słotwiński.</div>
-      <div>{{ $t('navigation.footer.copyrights') }}</div>
-    </div> -->
   </footer>
 </template>
 
@@ -26,6 +20,7 @@
 import { defineComponent } from 'vue'
 import { socialMedia } from '@/data/navigation/footer'
 import Social from './Social.vue'
+import Brands from './Brands.vue'
 
 export default defineComponent({
   data() {
@@ -36,6 +31,7 @@ export default defineComponent({
   },
   components: {
     Social,
+    Brands,
   },
 })
 </script>
@@ -66,7 +62,7 @@ footer {
 
 .flex {
   margin: 10px auto;
-  width: 1400px;
+  width: 1600px;
   max-width: 95vw;
   display: flex;
   justify-content: space-evenly;

@@ -6,16 +6,30 @@
       ${user.Name} ${user.Surname}`"
       :login="user.Login"
       :avatar="user.avatarFileID"
+      :visionary="
+        user.researchInterests.filter((e) => e.level === '6').length > 0
+      "
+      :isProtected="user.isProtected"
+      :isGenesisMember="user.isGenesisMember"
+      :isSponsor="user.isSponsor"
     />
     <Description :description="user.description" :login="user.Login" />
+    <ResearchInterests
+      v-if="user.researchInterests"
+      :researchInterests="user.researchInterests"
+      :login="user.Login"
+    />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+
 import Banner from './Profile/Banner.vue'
 import UserHeader from './Profile/UserHeader.vue'
 import Description from './Profile/Description.vue'
+import ResearchInterests from './Profile/ResearchInterests.vue'
+
 import { User } from '@/types/user'
 
 export default defineComponent({
@@ -26,6 +40,7 @@ export default defineComponent({
     Banner,
     UserHeader,
     Description,
+    ResearchInterests,
   },
 })
 </script>

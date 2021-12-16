@@ -28,6 +28,32 @@
       image: 'login',
     }"
   />
+  <div class="buttons">
+    <router-link
+      :to="'/users/' + user.Login"
+      :style="{
+        backgroundImage: `url(${require('@/assets/icons/navbar/login.svg')})`,
+      }"
+    ></router-link>
+    <router-link
+      to="/messages"
+      :style="{
+        backgroundImage: `url(${require('@/assets/icons/user/messages.svg')})`,
+      }"
+    ></router-link>
+    <router-link
+      to="/notifications"
+      :style="{
+        backgroundImage: `url(${require('@/assets/icons/user/bell.svg')})`,
+      }"
+    ></router-link>
+    <router-link
+      to="/settings"
+      :style="{
+        backgroundImage: `url(${require('@/assets/icons/user/settings.svg')})`,
+      }"
+    ></router-link>
+  </div>
 </template>
 
 <script lang="ts">
@@ -69,8 +95,8 @@ article > div {
 }
 
 .avatar {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   background-position: center;
   background-size: cover;
@@ -107,5 +133,25 @@ article > div {
   position: absolute;
   right: 10px;
   bottom: 0;
+}
+
+.buttons {
+  display: flex;
+}
+
+.buttons a {
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-color: theme(main);
+  margin: 5px 10px;
+  border-radius: 10px;
+  background-size: 65%;
+  background-repeat: no-repeat;
+  background-position: center;
+  @media (max-width: 1000px) {
+    width: 40px;
+    height: 40px;
+  }
 }
 </style>

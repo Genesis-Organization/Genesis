@@ -31,9 +31,12 @@ export default defineComponent({
   display: block;
   font-size: 18px;
   text-align: center;
-  margin: 5px auto;
+  margin: 0 auto 15px auto;
   width: 600px;
-  max-width: 70%;
+  max-width: 90%;
+  @media (max-width: 1000px) {
+    font-size: 16.5px;
+  }
 }
 
 .edit {

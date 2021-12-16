@@ -50,6 +50,7 @@
       "others":"Pozostałe"
     },
     "sciences": {
+      "mathematics": "Matematyka",
       "physics": "Fizyka",
       "electronics": "Elektronika"
     },
@@ -222,6 +223,35 @@
     "wait": "Prosimy czekać"
   },
   "user": {
+    "sections": {
+      "scienceinterests": "Obszar mojej wiedzy i zainteresowań naukowych"
+    },
+    "badges": {
+      "protected": {
+        "name": "Zweryfikowany",
+        "desc": "Tożsamość użytkownika została zweryfikowana."
+      },
+      "sponsor": {
+        "name": "Wspierający",
+        "desc": "Dzięki takim jak oni projekt ma szansę na rozwój! Dziękujemy wam wszystkim <3"
+      },
+      "writer": {
+        "name": "Zasłużony",
+        "desc": "Ten użytkownik miał duży wkład w rozwój projektu nie będąc jego częścią."
+      },
+      "mod": {
+        "name": "Moderator",
+        "desc": "To właśnie oni czuwają nad porządkiem, wyglądem, działaniem i merytoryką strony."
+      },
+      "visionary": {
+        "name": "Wizjoner",
+        "desc": "Ten człowiek posiada ogromny wkład w rozwój nauki, a jego rozumienie przedmiotu jest na najwyższym poziomie."
+      },
+      "creator": {
+        "name": "Założyciel Genesis",
+        "desc": "Ten człowiek założył fundację Genesis oraz projekty pokrewne i to on jest najwyższym administratorem strony."
+      }
+    },
     "degrees": {
       "0": {
         "full": "",
@@ -247,6 +277,14 @@
         "full": "Profesor",
         "short": "Prof."
       }
+    },
+    "levels": {
+      "1": "Podstawowy",
+      "2": "Rozszerzony",
+      "3": "Zaawansowany",
+      "4": "Ekspert",
+      "5": "Mistrz",
+      "6": "Wizjoner"
     }
   }
 }

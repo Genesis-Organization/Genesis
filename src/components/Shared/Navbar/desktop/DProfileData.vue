@@ -71,18 +71,18 @@ export default defineComponent({
 }
 
 .link_messages {
-  background-image: url('../../../../assets/icons/navbar/messages.svg');
+  background-image: url('../../../../assets/icons/user/messages.svg');
 }
 
 .link_bell {
-  background-image: url('../../../../assets/icons/navbar/bell.svg');
+  background-image: url('../../../../assets/icons/user/bell.svg');
 }
 
 .link_settings {
-  background-image: url('../../../../assets/icons/navbar/settings.svg');
+  background-image: url('../../../../assets/icons/user/settings.svg');
 }
 
 .link_logout {
-  background-image: url('../../../../assets/icons/navbar/logout.svg');
+  background-image: url('../../../../assets/icons/user/logout.svg');
 }
 </style>

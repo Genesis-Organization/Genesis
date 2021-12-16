@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="top"></div>
-    <Profile :user="user" />
+    <Profile v-if="user" :user="user" />
   </div>
 </template>
 

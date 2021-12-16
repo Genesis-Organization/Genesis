@@ -1,31 +1,106 @@
 <template>
-  <div class="header">
-    <div
-      class="avatar"
-      v-if="avatar"
-      :style="{ backgroundImage: `url(/user/avatar/${avatar}.png)` }"
-    ></div>
-    <div class="data">
-      <div class="username">{{ username }}</div>
-      <div class="login">{{ `@${login}` }}</div>
+  <div class="headcont">
+    <div class="header">
+      <div
+        class="avatar"
+        v-if="avatar"
+        :style="{ backgroundImage: `url(/user/avatar/${avatar}.png)` }"
+      ></div>
+      <div class="data">
+        <div class="username">
+          {{ username }}
+        </div>
+        <div class="login">
+          {{ `@${login}` }}
+          <Badges
+            :visionary="visionary"
+            :isSponsor="isSponsor"
+            :isProtected="isProtected"
+            :isGenesisMember="isGenesisMember"
+            :isCreator="login == 'Aard_'"
+          />
+        </div>
+        <div class="visionary" v-if="visionary">
+          <ic icon="star-half-alt" /> {{ $t('user.levels.6') }}
+        </div>
+      </div>
+    </div>
+    <div class="buttons">
+      <router-link
+        to="/messages"
+        :style="{
+          backgroundImage: `url(${require('@/assets/icons/user/messages.svg')})`,
+        }"
+      ></router-link>
+      <router-link
+        to="/notifications"
+        :style="{
+          backgroundImage: `url(${require('@/assets/icons/user/bell.svg')})`,
+        }"
+      ></router-link>
+      <router-link
+        to="/settings"
+        :style="{
+          backgroundImage: `url(${require('@/assets/icons/user/settings.svg')})`,
+        }"
+      ></router-link>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import Badges from './Minor/Badges.vue'
 
 export default defineComponent({
   props: {
     username: String,
     login: String,
     avatar: String,
+    visionary: Boolean,
+    isSponsor: Boolean,
+    isProtected: Boolean,
+    isGenesisMember: Boolean,
+  },
+  components: {
+    Badges,
   },
 })
 </script>
 
 <style lang="scss" scoped>
 @import '@/styles/index.scss';
+.headcont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.buttons {
+  display: flex;
+  @media (max-width: 1000px) {
+    justify-content: center;
+    margin: auto;
+  }
+}
+
+a {
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-color: theme(main);
+  margin: 10px;
+  border-radius: 10px;
+  background-size: 65%;
+  background-repeat: no-repeat;
+  background-position: center;
+  @media (max-width: 1000px) {
+    width: 40px;
+    height: 40px;
+  }
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -42,13 +117,12 @@ export default defineComponent({
   border-radius: 50%;
   @media (max-width: 1000px) {
     margin: 5px;
-    width: 110px;
-    height: 110px;
+    width: 100px;
+    height: 100px;
   }
 }
 .username {
-  font-size: 26px;
-  margin: 5px 0;
+  font-size: 28px;
   font-weight: 600;
   @media (max-width: 1000px) {
     font-size: 22px;
@@ -56,9 +130,20 @@ export default defineComponent({
   }
 }
 .login {
-  font-size: 18px;
+  font-size: 20px;
+  margin: 5px 0;
   @media (max-width: 1000px) {
     font-size: 16px;
   }
+}
+
+.visionary {
+  font-weight: 900;
+  font-size: 24px;
+  color: theme(main_dark);
+  border-bottom: 4px solid theme(main_dark);
+  padding-bottom: 3px;
+  border-radius: 2px;
+  text-transform: uppercase;
 }
 </style>
