@@ -1,5 +1,5 @@
 <template>
-  <article v-if="user">
+  <article v-if="user && Object.keys(user).length > 0">
     <div>
       <div class="avatarcont">
         <section
@@ -28,7 +28,7 @@
       image: 'login',
     }"
   />
-  <div class="buttons">
+  <div class="buttons" v-if="user">
     <router-link
       :to="'/users/' + user.Login"
       :style="{

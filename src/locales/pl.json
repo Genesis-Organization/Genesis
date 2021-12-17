@@ -52,6 +52,8 @@
     "sciences": {
       "mathematics": "Matematyka",
       "physics": "Fizyka",
+      "informatics": "Informatyka",
+      "economics": "Ekonomia",
       "electronics": "Elektronika"
     },
     "branches": {
@@ -224,7 +226,8 @@
   },
   "user": {
     "sections": {
-      "scienceinterests": "Obszar mojej wiedzy i zainteresowań naukowych"
+      "scienceinterests": "Obszar mojej wiedzy i zainteresowań naukowych",
+      "education": "Wykształcenie"
     },
     "badges": {
       "protected": {

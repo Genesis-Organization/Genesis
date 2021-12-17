@@ -1,5 +1,5 @@
 <template>
-  <div class="cont" v-if="researchInterests">
+  <div class="cont" v-if="researchInterests && researchInterests.length > 0">
     <header>{{ $t('user.sections.scienceinterests') }}</header>
     <div class="item" v-for="interest in sortedArray[0]" :key="interest">
       <div class="itemcont" :class="{ visionary: interest.level === '6' }">
@@ -83,11 +83,18 @@ header {
   font-weight: 500;
   text-transform: uppercase;
   width: 600px;
+  max-width: 97%;
+  @media (max-width: 1000px) {
+    font-size: 22px;
+  }
 }
 
 .item {
   padding: 5px;
   font-size: 24px;
+  @media (max-width: 1000px) {
+    font-size: 17px;
+  }
 }
 
 .itemcont {
@@ -95,7 +102,7 @@ header {
   justify-content: space-between;
   align-items: center;
   width: 700px;
-  max-width: 90%;
+  max-width: 100%;
   margin: auto;
 }
 
@@ -111,11 +118,18 @@ header {
   background-size: cover;
   background-position: center;
   filter: brightness(0.15);
+  @media (max-width: 1000px) {
+    width: 35px;
+    height: 35px;
+  }
 }
 
 .level {
   text-transform: uppercase;
   font-weight: 800;
+  @media (max-width: 1000px) {
+    font-size: 14px;
+  }
 }
 
 .visionary {
@@ -133,5 +147,9 @@ button {
   width: 140px;
   border-radius: 10px;
   color: theme(light);
+  @media (max-width: 1000px) {
+    width: 100px;
+    font-size: 20px;
+  }
 }
 </style>

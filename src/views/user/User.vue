@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="top"></div>
-    <Profile v-if="user" :user="user" />
+    <Profile v-if="user && Object.keys(user).length > 0" :user="user" />
   </div>
 </template>
 

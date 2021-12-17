@@ -25,31 +25,13 @@
         </div>
       </div>
     </div>
-    <div class="buttons">
-      <router-link
-        to="/messages"
-        :style="{
-          backgroundImage: `url(${require('@/assets/icons/user/messages.svg')})`,
-        }"
-      ></router-link>
-      <router-link
-        to="/notifications"
-        :style="{
-          backgroundImage: `url(${require('@/assets/icons/user/bell.svg')})`,
-        }"
-      ></router-link>
-      <router-link
-        to="/settings"
-        :style="{
-          backgroundImage: `url(${require('@/assets/icons/user/settings.svg')})`,
-        }"
-      ></router-link>
-    </div>
+    <HeaderButtons />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import HeaderButtons from './Minor/HeaderButtons.vue'
 import Badges from './Minor/Badges.vue'
 
 export default defineComponent({
@@ -64,6 +46,7 @@ export default defineComponent({
   },
   components: {
     Badges,
+    HeaderButtons,
   },
 })
 </script>
@@ -75,30 +58,6 @@ export default defineComponent({
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-}
-
-.buttons {
-  display: flex;
-  @media (max-width: 1000px) {
-    justify-content: center;
-    margin: auto;
-  }
-}
-
-a {
-  display: block;
-  width: 50px;
-  height: 50px;
-  background-color: theme(main);
-  margin: 10px;
-  border-radius: 10px;
-  background-size: 65%;
-  background-repeat: no-repeat;
-  background-position: center;
-  @media (max-width: 1000px) {
-    width: 40px;
-    height: 40px;
-  }
 }
 
 .header {

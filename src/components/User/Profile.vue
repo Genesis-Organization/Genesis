@@ -15,10 +15,11 @@
     />
     <Description :description="user.description" :login="user.Login" />
     <ResearchInterests
-      v-if="user.researchInterests"
       :researchInterests="user.researchInterests"
       :login="user.Login"
     />
+    <Education :education="user.education" />
+    <Work />
   </div>
 </template>
 
@@ -29,6 +30,8 @@ import Banner from './Profile/Banner.vue'
 import UserHeader from './Profile/UserHeader.vue'
 import Description from './Profile/Description.vue'
 import ResearchInterests from './Profile/ResearchInterests.vue'
+import Education from './Profile/Education.vue'
+import Work from './Profile/Work.vue'
 
 import { User } from '@/types/user'
 
@@ -41,6 +44,8 @@ export default defineComponent({
     UserHeader,
     Description,
     ResearchInterests,
+    Education,
+    Work,
   },
 })
 </script>

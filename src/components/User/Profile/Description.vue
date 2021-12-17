@@ -29,13 +29,15 @@ export default defineComponent({
 @import '@/styles/index.scss';
 .description {
   display: block;
-  font-size: 18px;
+  font-size: 21px;
   text-align: center;
   margin: 0 auto 15px auto;
-  width: 600px;
+  width: 700px;
   max-width: 90%;
+  padding-bottom: 10px;
+  border-bottom: 1px solid theme(black);
   @media (max-width: 1000px) {
-    font-size: 16.5px;
+    font-size: 18.5px;
   }
 }
 
