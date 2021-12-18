@@ -1,27 +1,11 @@
 <template>
   <div class="cont" v-if="researchInterests && researchInterests.length > 0">
     <header>{{ $t('user.sections.scienceinterests') }}</header>
-    <div class="item" v-for="interest in sortedArray[0]" :key="interest">
-      <div class="itemcont" :class="{ visionary: interest.level === '6' }">
-        <div class="science">
-          <div
-            class="icon"
-            :style="{
-              backgroundImage: `url(${require(`@/assets/icons/sciences/${interest.science.toLowerCase()}.svg`)})`,
-            }"
-          ></div>
-          <div class="title">
-            {{ $t(`sciences.sciences.${interest.science.toLowerCase()}`) }}
-          </div>
-        </div>
-        <div class="level" :style="{ color: colors[interest.level - 1] }">
-          {{ $t(`user.levels.${interest.level}`) }}
-        </div>
-      </div>
-      <div v-if="interest.description" class="description">
-        {{ interest.description }}
-      </div>
-    </div>
+    <ResearchInterestItem
+      v-for="interest in sortedArray[0]"
+      :key="interest"
+      :interest="interest"
+    />
     <button v-on:click="expandItems()" v-if="extendButton">
       <ic icon="angle-double-up" v-if="sortedArray[0].length > 4" />
       <ic icon="angle-double-down" v-else />
@@ -31,6 +15,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import ResearchInterestItem from './Minor/ItemResearchInterest.vue'
 import { ResearchInterest } from '@/types/user'
 
 export default defineComponent({
@@ -42,15 +27,10 @@ export default defineComponent({
     return {
       sortedArray: [] as ResearchInterest[][],
       extendButton: false,
-      colors: [
-        '#177b00',
-        '#80b900',
-        '#CEA600',
-        '#fd7000',
-        '#cc0000',
-        '#00647d',
-      ],
     }
+  },
+  components: {
+    ResearchInterestItem,
   },
   methods: {
     expandItems() {
@@ -87,56 +67,6 @@ header {
   @media (max-width: 1000px) {
     font-size: 22px;
   }
-}
-
-.item {
-  padding: 5px;
-  font-size: 24px;
-  @media (max-width: 1000px) {
-    font-size: 17px;
-  }
-}
-
-.itemcont {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 700px;
-  max-width: 100%;
-  margin: auto;
-}
-
-.science {
-  display: flex;
-  align-items: center;
-}
-
-.icon {
-  height: 40px;
-  width: 40px;
-  margin: 0 3px;
-  background-size: cover;
-  background-position: center;
-  filter: brightness(0.15);
-  @media (max-width: 1000px) {
-    width: 35px;
-    height: 35px;
-  }
-}
-
-.level {
-  text-transform: uppercase;
-  font-weight: 800;
-  @media (max-width: 1000px) {
-    font-size: 14px;
-  }
-}
-
-.visionary {
-  border: 7px solid #00647d;
-  padding: 5px 5px;
-  border-radius: 10px;
-  width: 719px;
 }
 
 button {

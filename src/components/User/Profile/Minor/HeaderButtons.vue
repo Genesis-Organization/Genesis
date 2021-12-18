@@ -2,18 +2,21 @@
   <div>
     <router-link
       to="/messages"
+      v-if="currentUser"
       :style="{
         backgroundImage: `url(${require('@/assets/icons/user/messages.svg')})`,
       }"
     ></router-link>
     <router-link
       to="/notifications"
+      v-if="currentUser"
       :style="{
         backgroundImage: `url(${require('@/assets/icons/user/bell.svg')})`,
       }"
     ></router-link>
     <router-link
       to="/settings"
+      v-if="currentUser && login === currentUser.Login"
       :style="{
         backgroundImage: `url(${require('@/assets/icons/user/settings.svg')})`,
       }"
@@ -24,7 +27,16 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
-export default defineComponent({})
+export default defineComponent({
+  props: {
+    login: String,
+  },
+  data() {
+    return {
+      currentUser: this.$store.getters.getUser,
+    }
+  },
+})
 </script>
 
 <style lang="scss" scoped>

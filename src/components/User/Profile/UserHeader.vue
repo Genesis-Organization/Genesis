@@ -25,7 +25,7 @@
         </div>
       </div>
     </div>
-    <HeaderButtons />
+    <HeaderButtons :login="login" />
   </div>
 </template>
 

@@ -19,7 +19,7 @@
       :login="user.Login"
     />
     <Education :education="user.education" />
-    <Work />
+    <Work :work="user.work" />
   </div>
 </template>
 
