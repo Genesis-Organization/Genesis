@@ -5,6 +5,7 @@
     <router-view />
     <Footer />
     <!-- <Privacy /> -->
+    <notifications position="bottom left" width="400px" />
   </main>
 </template>
 

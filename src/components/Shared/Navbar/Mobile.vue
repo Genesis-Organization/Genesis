@@ -6,7 +6,7 @@
       <ul>
         <div class="close" v-on:click="setSideMenu(false)"></div>
         <Logo class="logo" />
-        <MProfile />
+        <MProfile v-on:close="setSideMenu(false)" />
         <NavItem
           v-for="subpage in subpages"
           :key="subpage"

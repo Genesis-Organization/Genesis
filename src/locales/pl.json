@@ -192,7 +192,8 @@
       "rodo": {
         "accept": "Akceptuję regulamin oraz",
         "privacy": "politykę prywatności"
-      }
+      },
+      "confirm":"Potwierdź"
     },
     "errors": {
       "0": "Wartość jest zbyt krótka",
@@ -227,6 +228,7 @@
   },
   "user": {
     "sections": {
+      "description": "Opis profilu",
       "scienceinterests": "Obszar mojej wiedzy i zainteresowań naukowych",
       "education": "Wykształcenie"
     },
@@ -289,6 +291,21 @@
       "4": "Ekspert",
       "5": "Mistrz",
       "6": "Wizjoner"
+    }
+  },
+  "notifications": {
+    "types": {
+      "succes": "Sukces!",
+      "warn": "Ostrzeżenie!",
+      "error": "Niepowodzenie"
+    },
+    "text": {
+      "user": {
+        "description": {
+          "done": "Pomyślnie zaktualizowano opis",
+          "didnt": "Nie udało się zaktualizować opisu ;c"
+        }
+      }
     }
   }
 }
