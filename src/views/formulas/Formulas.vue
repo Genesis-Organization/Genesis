@@ -17,7 +17,7 @@ import { Branch } from '@/types/sciences'
 import { AxiosResponse } from 'axios'
 import SmallHero from '@/components/Shared/SmallHero.vue'
 import Formulas from '@/components/Formulas/Formulas.vue'
-import { toCapitalCase } from '@/scripts/strings'
+import { toCapitalCase } from '@/scripts/helpers/strings'
 
 export default defineComponent({
   data() {

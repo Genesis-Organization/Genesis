@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <form class="description" @submit.prevent="changeDesc">
+    <form class="description" @submit.prevent="changeDesc(user)">
       <div>{{ $t('user.sections.description') }}</div>
       <textarea v-model="user.description" maxlength="300"></textarea>
       <button>{{ $t('auth.inputs.confirm') }}</button>
@@ -11,32 +11,13 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Cookies from 'js-cookie'
-import axios from '@/config/axios'
+import { changeDesc } from '@/scripts/services/settings'
 import { User } from '@/types/user'
 
 export default defineComponent({
   emits: ['update'],
   methods: {
-    async changeDesc() {
-      try {
-        await axios.put(`/users/desc/${this.user?.Login}`, {
-          token: Cookies.get('jwt'),
-          description: this.user.description,
-        })
-        this.$notify({
-          type: 'success',
-          title: this.$t('notifications.types.succes'),
-          text: this.$t('notifications.text.user.description.done'),
-        })
-      } catch (e) {
-        this.$notify({
-          type: 'error',
-          title: this.$t('notifications.types.error'),
-          text: this.$t('notifications.text.user.description.didnt'),
-        })
-      }
-    },
+    changeDesc,
   },
   data() {
     return {

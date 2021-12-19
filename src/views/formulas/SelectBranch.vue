@@ -14,7 +14,7 @@ import { AxiosResponse } from 'axios'
 
 import axios from '@/config/axios'
 import { Science } from '@/types/sciences'
-import { toCapitalCase } from '@/scripts/strings'
+import { toCapitalCase } from '@/scripts/helpers/strings'
 import setMeta from '@/scripts/root/setMeta'
 
 import SmallHero from '@/components/Shared/SmallHero.vue'
