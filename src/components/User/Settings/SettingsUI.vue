@@ -1,6 +1,6 @@
 <template>
+  <Filter v-on:setSection="setSection" />
   <div class="container">
-    <Filter v-on:setSection="setSection" />
     <div v-if="currentSection == 0 || currentSection == 1">
       <Description />
       <ResearchInterests />

@@ -1,6 +1,10 @@
 <template>
   <header>{{ $t('user.sections.researchinterests') }}</header>
-  <form class="researchinterests" v-if="showForm">
+  <form
+    class="researchinterests"
+    v-if="showForm"
+    @submit.prevent="changeInterests(user)"
+  >
     <div class="addinterest" v-on:click="addInterest">
       <ic icon="plus" />
     </div>
@@ -59,7 +63,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { changeDesc } from '@/scripts/services/settings'
+import { changeInterests } from '@/scripts/services/settings'
 import { User, SciencesList, ScienceLevel } from '@/types/user'
 
 export default defineComponent({
@@ -73,12 +77,12 @@ export default defineComponent({
     removeInterest(index: number) {
       index > -1 && this.user.researchInterests?.splice(index, 1)
     },
-    changeDesc,
+    changeInterests,
   },
   data() {
     return {
       user: this.$store.getters.getUser as User,
-      showForm: true,
+      showForm: false,
       SciencesList,
       ScienceLevel,
     }
@@ -131,6 +135,9 @@ header {
     padding: 5px;
     font-size: 17px;
     flex-grow: 1;
+    @media (max-width: 1000px) {
+      font-size: 15px;
+    }
   }
 }
 
@@ -179,11 +186,19 @@ header {
   color: theme(light);
   border-radius: 10px;
   font-size: 20px;
+  cursor: pointer;
+  margin: 10px;
 }
 
 .sciencecont {
   display: flex;
   align-items: center;
+  select,
+  option {
+    @media (max-width: 1000px) {
+      font-size: 13px;
+    }
+  }
 }
 
 img {

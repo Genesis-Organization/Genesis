@@ -33,7 +33,7 @@ export default defineComponent({
   data() {
     return {
       colors: {
-        begginer: '#177b00',
+        beginner: '#177b00',
         intermediate: '#80b900',
         advanced: '#CEA600',
         expert: '#fd7000',

@@ -1,19 +1,21 @@
 <template>
-  <header>{{ $t('pages.settings') }}</header>
-  <div class="filter">
-    <div class="button" v-on:click="emitSection(0)">
-      <ic icon="home" />
+  <header>
+    <nav>{{ $t('pages.settings') }}</nav>
+    <div class="filter">
+      <div class="button" v-on:click="emitSection(0)">
+        <ic icon="home" />
+      </div>
+      <div class="button" v-on:click="emitSection(1)">
+        <ic icon="user" />
+      </div>
+      <div class="button" v-on:click="emitSection(2)">
+        <ic icon="shield-alt" />
+      </div>
+      <div class="button" v-on:click="emitSection(3)">
+        <ic icon="lock" />
+      </div>
     </div>
-    <div class="button" v-on:click="emitSection(1)">
-      <ic icon="user" />
-    </div>
-    <div class="button" v-on:click="emitSection(2)">
-      <ic icon="shield-alt" />
-    </div>
-    <div class="button" v-on:click="emitSection(3)">
-      <ic icon="lock" />
-    </div>
-  </div>
+  </header>
 </template>
 
 <script lang="ts">
@@ -31,14 +33,20 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import '@/styles/index.scss';
 header {
-  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  background: theme(gray);
+}
+nav {
+  margin: 5px;
   font-size: 30px;
 }
 .filter {
   display: flex;
   padding: 5px;
   border-radius: 10px;
-  background: theme(gray);
   .button {
     display: flex;
     margin: 0 5px;

@@ -363,6 +363,10 @@
         "description": {
           "done": "Pomyślnie zaktualizowano opis",
           "didnt": "Nie udało się zaktualizować opisu ;c"
+        },
+        "interests": {
+          "done": "Pomyślnie zaktualizowano zainteresowania",
+          "didnt": "Nie udało się zaktualizować zainteresowań ;c"
         }
       }
     }
