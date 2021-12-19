@@ -1,6 +1,6 @@
 <template>
   <div class="cont" v-if="researchInterests && researchInterests.length > 0">
-    <header>{{ $t('user.sections.scienceinterests') }}</header>
+    <header>{{ $t('user.sections.researchinterests') }}</header>
     <ResearchInterestItem
       v-for="interest in sortedArray[0]"
       :key="interest"

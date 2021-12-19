@@ -12,7 +12,7 @@
           {{ $t(`sciences.sciences.${interest.science.toLowerCase()}`) }}
         </div>
       </div>
-      <div class="level" :style="{ color: colors[interest.level - 1] }">
+      <div class="level" :style="{ color: colors[interest.level] }">
         {{ $t(`user.levels.${interest.level}`) }}
       </div>
     </div>
@@ -32,14 +32,14 @@ export default defineComponent({
   },
   data() {
     return {
-      colors: [
-        '#177b00',
-        '#80b900',
-        '#CEA600',
-        '#fd7000',
-        '#cc0000',
-        '#00647d',
-      ],
+      colors: {
+        begginer: '#177b00',
+        intermediate: '#80b900',
+        advanced: '#CEA600',
+        expert: '#fd7000',
+        master: '#cc0000',
+        visionary: '#00647d',
+      },
       showDesc: false,
     }
   },

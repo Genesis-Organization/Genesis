@@ -1,27 +1,25 @@
 <template>
-  <div class="container">
-    <form class="description" @submit.prevent="changeDesc(user)">
-      <div>{{ $t('user.sections.description') }}</div>
-      <textarea v-model="user.description" maxlength="300"></textarea>
-      <button>{{ $t('auth.inputs.confirm') }}</button>
-    </form>
-  </div>
-  <!-- <div>{{ user }}</div> -->
+  <form class="description" @submit.prevent="changeDesc(user)">
+    <div>{{ $t('user.sections.description') }}</div>
+    <textarea v-model="user.description" maxlength="300"></textarea>
+    <button>{{ $t('auth.inputs.confirm') }}</button>
+  </form>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { changeDesc } from '@/scripts/services/settings'
-import { User } from '@/types/user'
+import { User, SciencesList, ScienceLevel } from '@/types/user'
 
 export default defineComponent({
-  emits: ['update'],
   methods: {
     changeDesc,
   },
   data() {
     return {
       user: this.$store.getters.getUser as User,
+      SciencesList,
+      ScienceLevel,
     }
   },
 })
@@ -29,17 +27,12 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import '@/styles/index.scss';
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 10px;
-}
 .description {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 10px;
   > div {
     font-size: 22px;
   }

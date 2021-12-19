@@ -1,33 +1,22 @@
 <template>
   <div>
     <div class="top"></div>
-    <SettingsUI
-      v-if="user && Object.keys(user).length > 0"
-      v-on:update="updateUI"
-      :key="key"
-    />
+    <SettingsUI v-if="user && Object.keys(user).length > 0" />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import SettingsUI from '@/components/User/Settings/SettingsUI.vue'
+import SettingsUI from '@/components/User/SettingsUI.vue'
 
 export default defineComponent({
   data() {
     return {
       user: this.$store.getters.getUser,
-      key: 0,
     }
   },
   components: {
     SettingsUI,
-  },
-  methods: {
-    updateUI() {
-      this.user = this.$store.getters.getUser
-      this.key++
-    },
   },
   mounted() {
     document.title = this.$t('pages.settings') + ' | Genesis'
