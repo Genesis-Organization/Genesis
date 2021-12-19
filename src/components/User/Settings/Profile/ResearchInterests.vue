@@ -1,21 +1,34 @@
 <template>
   <header>{{ $t('user.sections.researchinterests') }}</header>
   <form class="researchinterests" v-if="showForm">
+    <div class="addinterest" v-on:click="addInterest">
+      <ic icon="plus" />
+    </div>
     <section
       v-for="(interest, index) in user.researchInterests"
       :key="index"
       class="item"
     >
       <!-- SCIENCE -->
-      <select v-model="user.researchInterests[index].science">
-        <option
-          v-for="science in SciencesList"
-          :key="science"
-          :value="science.toLowerCase()"
+      <div class="sciencecont">
+        <img
+          :src="
+            require(`@/assets/icons/sciences/${interest.science.toLowerCase()}.svg`)
+          "
+        />
+        <select
+          v-model="user.researchInterests[index].science"
+          class="scienceinput"
         >
-          {{ $t(`sciences.sciences.${science.toLowerCase()}`) }}
-        </option>
-      </select>
+          <option
+            v-for="science in SciencesList"
+            :key="science"
+            :value="science.toLowerCase()"
+          >
+            {{ $t(`sciences.sciences.${science.toLowerCase()}`) }}
+          </option>
+        </select>
+      </div>
       <!-- DESCRIPTION -->
       <input v-model="user.researchInterests[index].desc" />
       <!-- LEVEL -->
@@ -51,6 +64,12 @@ import { User, SciencesList, ScienceLevel } from '@/types/user'
 
 export default defineComponent({
   methods: {
+    addInterest() {
+      this.user.researchInterests?.unshift({
+        science: SciencesList.PHILOLOGY_IBERIAN.toLowerCase() as SciencesList,
+        level: ScienceLevel.BEGINNER.toLowerCase() as ScienceLevel,
+      })
+    },
     removeInterest(index: number) {
       index > -1 && this.user.researchInterests?.splice(index, 1)
     },
@@ -59,7 +78,7 @@ export default defineComponent({
   data() {
     return {
       user: this.$store.getters.getUser as User,
-      showForm: false,
+      showForm: true,
       SciencesList,
       ScienceLevel,
     }
@@ -127,7 +146,7 @@ header {
     margin-left: 5px;
     width: 30px;
     height: 30px;
-    font-size: 17px;
+    font-size: 15px;
     background-color: theme(dark);
     cursor: pointer;
   }
@@ -148,5 +167,28 @@ header {
     width: 100px;
     font-size: 20px;
   }
+}
+
+.addinterest {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: theme(dark);
+  color: theme(light);
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.sciencecont {
+  display: flex;
+  align-items: center;
+}
+
+img {
+  width: 40px;
+  height: 40px;
+  filter: brightness(0.15);
 }
 </style>

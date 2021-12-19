@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import SettingsUI from '@/components/User/SettingsUI.vue'
+import SettingsUI from '@/components/User/Settings/SettingsUI.vue'
 
 export default defineComponent({
   data() {
