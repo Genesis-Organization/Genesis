@@ -1,0 +1,108 @@
+{
+  "main": {
+    "slogan": "Bo od ciekawości wszystko się zaczęło"
+  },
+  "home": {
+    "main": {
+      "header": "Wiedza dostępna jak nigdy dotąd",
+      "desc": "Genesis to projekt non-profit, który ma na celu zwiększenie dostępności edukacji i utworzenie w pełni darmowych kompleksowych źródeł wiedzy. Przyświeca nam idea, że każdy niezależnie od pochodzenia i zamożności ma pełne prawo do nauki, a naszym celem jest zapewnienie wszystkim ludziom równości szans na godne życie.",
+      "button": "Dowiedz się więcej"
+    },
+    "formulas": {
+      "header": "Cała wiedza w pigułce",
+      "desc": "Na stronie Genesis dostępne są najważniejsze wzory i tablice z takich przedmiotów jak fizyka, biologia czy matematyka. Wszystkie podzielone są na dziedziny nauk oraz 3 poziomy trudności, aby każdy mógł z nich korzystać. Naukę ułatwiają również podpisy mówiące z jakim wzorem mamy do czynienia oraz czym są wielkości, które go budują.",
+      "button": "Dowiedz się więcej"
+    },
+    "books": {
+      "header": "Darmowe podręczniki dla każdego",
+      "desc": "Docelowo projekt Genesis ma w planach zapewnić darmową edukację każdemu człowiekowi na świecie. W tym celu w przyszłości powstaną darmowe podręczniki wolne od licencji tłumaczone na jak najwięcej języków świata. Obecnie podręczniki akademickie są najczęściej drogie, a studenci zmuszeni do kupowania dziesiątek różnych ksiązek na każdy temat. Zadaniem naszego projektu jest nie tylko utworzenie książek darmowych, ale również na tyle kompleksowych, że nie będą potrzebować żadnych innych.",
+      "button": "Zobacz listę podręczników"
+    },
+    "statistics": {
+      "header": "Wszystkie statystyki w jednym miejscu",
+      "desc": "Strona genesis zajmuje się również składowaniem wszelkich statystyk wykresów i danych, które mogą okazać sie pomocne dla każdego. W dalekiej przyszłości przy wsparciu wolontariuszy możliwe będzie też prowadzenie własnych badań.",
+      "button": "Sprawdź statystyki"
+    }
+  },
+  "navigation": {
+    "navbar": {
+      "subpages": {
+        "formulas": "Tablice",
+        "articles": "Artykuły",
+        "books":"Podręczniki",
+        "statistics":"Statystyki",
+        "info":"Informacje",
+        "donate":"Wesprzyj"
+      }
+    },
+    "footer": {
+      "copyrights": "Wszelkie użyte zdjęcia i logotypy są wolne od praw autorskich udostępniane na licencji MIT lub CC. Zezwala się na nieograniczone użytkowanie, kopiowanie, modyfikowanie lub rozpowszechnianie oryginalnej lub zmodyfikowanej zawartości udostępnionej na tej stronie pod warunkiem uznania autorstwa i umieszenia informacji o źródle."
+    }
+  },
+  "sciences": {
+    "groups":{
+      "all":"Wszystkie",
+      "natural":"Przyrodnicze",
+      "social":"Społeczne",
+      "humanities":"Humanistyczne",
+      "technical":"Techniczne",
+      "artistic":"Artystyczne",
+      "others":"Pozostałe"
+    },
+    "sciences": {
+      "physics": "Fizyka",
+      "electronics": "Elektronika"
+    },
+    "branches": {
+      "physics": {
+        "kinematics": {
+          "name": "Kinematyka",
+          "desc": "Badamy ruch ciał, łącznie z ich przyspieszeniem, torem czy prędkością",
+          "subjects": {
+            "0": "Ruch prostoliniowy"
+          }
+        },
+        "dynamics": {
+          "name": "Dynamika",
+          "desc": "Zajmiemy się opisem sił działających na różne ciała, a także ich skutkami"
+        },
+        "energy": {
+          "name": "Energia",
+          "desc": "Praca moc i energia to wielkości, które pozwolą nam spojrzeć na mechanikę z innej strony, a także będą wstępem do kolejnych działów fizyki."
+        }
+      },
+      "electronics": {
+        "current": {
+          "name": "Prąd elektryczny",
+          "desc": "Zaczynamy od podstaw, czyli czym jest prąd elektryczny"
+        }
+      }
+    }
+  },
+  "pages": {
+    "home": "Strona główna",
+    "formulas": "Tablice",
+    "books": "Podręczniki",
+    "articles": "Artykuły",
+    "statistics": "Statystyki",
+    "info": "Informacje",
+    "donate": "Wesprzyj"
+  },
+  "formulas": {
+    "index": {
+      "hero": "Wzory i tablice naukowe"
+    },
+    "pick": {
+      "science": "Wybierz jedną z kategorii",
+      "branch": "Wybierz dziedzinę nauki, która cię interesuje"
+    }
+  },
+  "errors": {
+    "404": {
+      "header": "Nasz system nie znalazł takiej strony :c",
+      "duck": "Więc łap chociaż na pocieszenie kaczkę",
+      "yeah": "Tak, to ten sławny bląd 404",
+      "song": "Bit, bit i pusta kartka, drukarka wydaje szmery Nie ma mnie, bo to nocnego marka nocna warta Świeci się tarcza zegarka - 4:04 Nic nie psuje atmosfery, dźwięki smarta czy wiertarka"
+    }
+  }
+}

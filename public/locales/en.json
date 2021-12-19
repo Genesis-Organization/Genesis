@@ -1,0 +1,52 @@
+{
+  "main": {
+    "slogan": "Cause it all started with curiosity"
+  },
+  "home": {
+    "main": {
+      "header": "Knowledge available like never before",
+      "desc": "",
+      "button": ""
+    },
+    "formulas": {
+      "header": "All knowledge in one place",
+      "desc": "",
+      "button": ""
+    },
+    "books": {
+      "header": "Free books for everyone",
+      "desc": "",
+      "button": ""
+    },
+    "statistics": {
+      "header": "",
+      "desc": "",
+      "button": ""
+    }
+  },
+  "navigation": {
+    "navbar": {
+      "subpages": {
+        "formulas": "Formulas",
+        "books":"Books",
+        "statistics":"Statistics",
+        "info":"Informations",
+        "donate":"Donate"
+      }
+    },
+    "footer": {
+      "copyrights": ""
+    }
+  },
+  "sciences": {
+    "groups":{
+      "all":"All",
+      "natural":"Natural",
+      "social":"Social",
+      "humanities":"Humanities",
+      "technical":"Technical",
+      "artistic":"Artistic",
+      "others":"Others"
+    }
+  }
+}

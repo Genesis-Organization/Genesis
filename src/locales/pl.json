@@ -1,0 +1,370 @@
+{
+  "main": {
+    "slogan": "Bo od ciekawości wszystko się zaczęło"
+  },
+  "home": {
+    "main": {
+      "header": "Wiedza dostępna jak nigdy dotąd",
+      "desc": "Genesis to projekt non-profit, który ma na celu zwiększenie dostępności edukacji i utworzenie w pełni darmowych kompleksowych źródeł wiedzy. Przyświeca nam idea, że każdy niezależnie od pochodzenia i zamożności ma pełne prawo do nauki, a naszym celem jest zapewnienie wszystkim ludziom równości szans na godne życie.",
+      "button": "Dowiedz się więcej"
+    },
+    "formulas": {
+      "header": "Cała wiedza w pigułce",
+      "desc": "Na stronie Genesis dostępne są najważniejsze wzory i tablice z takich przedmiotów jak fizyka, biologia czy matematyka. Wszystkie podzielone są na dziedziny nauk oraz 3 poziomy trudności, aby każdy mógł z nich korzystać. Naukę ułatwiają również podpisy mówiące z jakim wzorem mamy do czynienia oraz czym są wielkości, które go budują.",
+      "button": "Dowiedz się więcej"
+    },
+    "books": {
+      "header": "Darmowe podręczniki dla każdego",
+      "desc": "Docelowo projekt Genesis ma w planach zapewnić darmową edukację każdemu człowiekowi na świecie. W tym celu w przyszłości powstaną darmowe podręczniki wolne od licencji tłumaczone na jak najwięcej języków świata. Obecnie podręczniki akademickie są najczęściej drogie, a studenci zmuszeni do kupowania dziesiątek różnych ksiązek na każdy temat. Zadaniem naszego projektu jest nie tylko utworzenie książek darmowych, ale również na tyle kompleksowych, że nie będą potrzebować żadnych innych.",
+      "button": "Zobacz listę podręczników"
+    },
+    "statistics": {
+      "header": "Wszystkie statystyki w jednym miejscu",
+      "desc": "Strona genesis zajmuje się również składowaniem wszelkich statystyk wykresów i danych, które mogą okazać sie pomocne dla każdego. W dalekiej przyszłości przy wsparciu wolontariuszy możliwe będzie też prowadzenie własnych badań.",
+      "button": "Sprawdź statystyki"
+    }
+  },
+  "navigation": {
+    "navbar": {
+      "subpages": {
+        "formulas": "Tablice",
+        "articles": "Artykuły",
+        "books":"Podręczniki",
+        "statistics":"Statystyki",
+        "info":"Informacje",
+        "donate":"Wesprzyj"
+      }
+    },
+    "footer": {
+      "copyrights": "Wszelkie użyte zdjęcia i logotypy są wolne od praw autorskich udostępniane na licencji MIT lub CC. Zezwala się na nieograniczone użytkowanie, kopiowanie, modyfikowanie lub rozpowszechnianie oryginalnej lub zmodyfikowanej zawartości udostępnionej na tej stronie pod warunkiem uznania autorstwa i umieszenia informacji o źródle."
+    }
+  },
+  "sciences": {
+    "groups":{
+      "all":"Wszystkie",
+      "natural":"Przyrodnicze",
+      "social":"Społeczne",
+      "humanities":"Humanistyczne",
+      "technical":"Techniczne",
+      "artistic":"Artystyczne",
+      "others":"Pozostałe"
+    },
+    "sciences": {
+      "philology_iberian": "Iberian Philology",
+      "philology_english": "English Philology",
+      "philology_france": "French and Benelux Philology",
+      "philology_italian": "Italian Philology",
+      "philology_german": "German Philology",
+      "philology_poland": "Polish, Ukrainian and Lithuanian Philology",
+      "philology_baltic": "Baltic Philology",
+      "philology_nordic": "Nordic Philology",
+      "philology_russian": "Russian Philology",
+      "philology_carpathian": "Carpathian Philology",
+      "philology_romanian": "Romanian nad Bulgarian Philology",
+      "philology_balkan": "West-Balkan Philology",
+      "philology_greek": "Greek Philology",
+      "philology_turkish": "Turkish Philology",
+      "philology_middleeast": "Middle East, Arabic and Persian Philology",
+      "philology_indian": "Indian Philology",
+      "philology_chinese": "Chinese Philology",
+      "philology_korean": "Korean Philology",
+      "philology_japanese": "Japanese Philology",
+    
+      "antropology": "Antropology",
+      "philosophy": "Philosophy",
+      "history": "History",
+      "historyofart": "History of Art",
+      "culturalstudies": "Cultural Studies",
+      "politology": "Politology",
+      "law": "Law",
+      "psychology": "Psychology",
+      "theology": "Theology",
+      "defensestudies": "Defense Studies",
+      "sociology": "Sociology",
+      "internationalstudies": "International Studies",
+    
+      "economics": "Economics",
+      "finances": "Finances",
+      "accountancy": "Accountancy",
+      "econometrics": "Econometrics",
+      "governance": "Governance",
+      "management": "Management",
+    
+      "astronomy": "Astronomy",
+      "bioinformatics": "Bioinformatics",
+      "biochemistry": "Biochemistry",
+      "biophysics": "Biophysics",
+      "biotechnology": "Biotechnology",
+      "biology": "Biology",
+      "chemistry": "Chemistry",
+      "physics": "Physics",
+      "geography": "Geography",
+      "geology": "Geology",
+      "informatics": "Informatics",
+      "mathematics": "Mathematics",
+      "ecology": "Ecology",
+    
+      "architecture": "Architecture",
+      "robotics": "Robotics",
+      "building_eng": "Building Engeenering",
+      "energetics": "Energetics",
+      "electronics": "Electronics",
+      "quantum_eng": "Quantum Engeenering",
+      "cosmonautics": "Cosmonautics",
+      "mechanics": "Mechanics",
+      "mechatronics": "Mechatronics",
+      "transport": "Transport"
+    },
+    "branches": {
+      "physics": {
+        "kinematics": {
+          "name": "Kinematyka",
+          "desc": "Badamy ruch ciał, łącznie z ich przyspieszeniem, torem czy prędkością",
+          "subjects": {
+            "linear-motion": {
+              "name": "Ruch prostoliniowy",
+              "formulas": {
+                "velocity-basic": "Prędkość średnia",
+                "velocity-deriv": "Prędkość chwilowa",
+                "acceleration-basic": "Przyspieszenie średnie",
+                "acceleration-deriv": "Przyspieszenie chwilowe",
+                "motion-eq-a": "Równania ruchu cz. 1",
+                "motion-eq-b": "Równania ruchu cz. 2",
+                "motion-eq-c": "Równania ruchu cz. 3",
+                "motion-eq-d": "Równania ruchu cz. 4"
+              }
+            }
+          }
+        },
+        "dynamics": {
+          "name": "Dynamika",
+          "desc": "Zajmiemy się opisem sił działających na różne ciała, a także ich skutkami"
+        },
+        "energy": {
+          "name": "Energia",
+          "desc": "Praca moc i energia to wielkości, które pozwolą nam spojrzeć na mechanikę z innej strony, a także będą wstępem do kolejnych działów fizyki."
+        }
+      },
+      "electronics": {
+        "current": {
+          "name": "Prąd elektryczny",
+          "desc": "Zaczynamy od podstaw, czyli czym jest prąd elektryczny"
+        }
+      }
+    },
+    "units": {
+      "velocity": "Prędkość",
+      "distance": "Droga",
+      "time": "Czas",
+      "acceleration": "Przyspieszenie"
+    }
+  },
+  "pages": {
+    "home": "Strona główna",
+    "formulas": "Tablice",
+    "articles": "Artykuły",
+    "books": "Podręczniki",
+    "statistics": "Statystyki",
+    "info": "Informacje",
+    "donate": "Wesprzyj",
+    "register": "Rejestracja",
+    "login": "Logowanie",
+    "settings": "Ustawienia"
+  },
+  "formulas": {
+    "index": {
+      "hero": "Wzory i tablice naukowe"
+    },
+    "pick": {
+      "science": "Wybierz jedną z kategorii",
+      "branch": "Wybierz dziedzinę nauki, która cię interesuje"
+    }
+  },
+  "errors": {
+    "404": {
+      "header": "Nasz system nie znalazł takiej strony :c",
+      "duck": "Więc łap chociaż na pocieszenie kaczkę",
+      "yeah": "Tak, to ten sławny bląd 404",
+      "song": "Bit, bit i pusta kartka, drukarka wydaje szmery Nie ma mnie, bo to nocnego marka nocna warta Świeci się tarcza zegarka - 4:04 Nic nie psuje atmosfery, dźwięki smarta czy wiertarka"
+    }
+  },
+  "info": {
+    "sure": "Ale czy aby na pewno?",
+    "sections": {
+      "begginings": {
+        "name": "Początki"
+      },
+      "activity": {
+        "name": "Działalność"
+      },
+      "goalsandplans": {
+        "name": "Cel i plany"
+      },
+      "software": {
+        "name": "Oprogramowanie",
+        "langscategories": {
+          "front-end": "Front-End",
+          "back-end": "Back-End",
+          "mobile": "Mobilne",
+          "databases": "Bazy danych",
+          "others": "Inne"
+        }
+      },
+      "sponsors": {
+        "name": "Sponsorzy"
+      },
+      "authors": {
+        "name": "Autorzy"
+      },
+      "thanks": {
+        "name": "Podziękowania"
+      },
+      "donate": {
+        "name": "Wesprzyj"
+      },
+      "join": {
+        "name": "Dołącz"
+      },
+      "contact": {
+        "name": "Kontakt"
+      }
+    }
+  },
+  "auth": {
+    "inputs": {
+      "name": "Imię",
+      "surname": "Nazwisko",
+      "login": "Login",
+      "email": "E-mail",
+      "dateofbirth": "Data urodzenia",
+      "degree": {
+        "index": "Stopień naukowy",
+        "0": "Brak",
+        "1": "Licencjat / Inżynier",
+        "2": "Magister",
+        "3": "Doktor",
+        "4": "Doktor Habilitowany",
+         "5": "Profesor"
+      },
+      "password": "Hasło",
+      "confirmpassword": "Potwierdź hasło",
+      "rodo": {
+        "accept": "Akceptuję regulamin oraz",
+        "privacy": "politykę prywatności"
+      },
+      "confirm":"Potwierdź"
+    },
+    "errors": {
+      "0": "Wartość jest zbyt krótka",
+      "1": "Nieprawidłowa wartość",
+      "2": "Hasła nie pasują do siebie",
+      "3": "Zaakceptuj regulamin",
+      "4": "Aby założyc konto należy mieć 14 lat - poproś rodzica o założenie konta",
+      "api": {
+        "user-exist": "Użytkownik o podanym loginie już istnieje",
+        "wrong-data": "Nieprawidłowe dane",
+        "wrong-password": "Nieprawidłowe hasło"
+      }
+    },
+    "register": {
+      "register": "Zarejestruj",
+      "haveaccount": {
+        "question": "Posiadasz już konto?",
+        "login": "Zaloguj się!"
+      }
+    },
+    "login": {
+      "login": "Zaloguj się",
+      "donthaveaccount": {
+        "question": "Nie masz jeszcze konta?",
+        "register": "Zarejestruj się"
+      }
+    },
+    "logout": "Wyloguj"
+  },
+  "loading": {
+    "wait": "Prosimy czekać"
+  },
+  "user": {
+    "sections": {
+      "description": "Opis profilu",
+      "researchinterests": "Zainteresowania naukowe",
+      "education": "Wykształcenie"
+    },
+    "badges": {
+      "protected": {
+        "name": "Zweryfikowany",
+        "desc": "Tożsamość użytkownika została zweryfikowana."
+      },
+      "sponsor": {
+        "name": "Wspierający",
+        "desc": "Dzięki takim jak oni projekt ma szansę na rozwój! Dziękujemy wam wszystkim <3"
+      },
+      "writer": {
+        "name": "Zasłużony",
+        "desc": "Ten użytkownik miał duży wkład w rozwój projektu nie będąc jego częścią."
+      },
+      "mod": {
+        "name": "Moderator",
+        "desc": "To właśnie oni czuwają nad porządkiem, wyglądem, działaniem i merytoryką strony."
+      },
+      "visionary": {
+        "name": "Wizjoner",
+        "desc": "Ten człowiek posiada ogromny wkład w rozwój nauki, a jego rozumienie przedmiotu jest na najwyższym poziomie."
+      },
+      "creator": {
+        "name": "Założyciel Genesis",
+        "desc": "Ten człowiek założył fundację Genesis oraz projekty pokrewne i to on jest najwyższym administratorem strony."
+      }
+    },
+    "degrees": {
+      "0": {
+        "full": "",
+        "short": ""
+      },
+      "1": {
+        "full": "Inżynier",
+        "short": "Inż."
+      },
+      "2": {
+        "full": "Magister",
+        "short": "Mgr."
+      },
+      "3": {
+        "full": "Doktor",
+        "short": "Dr"
+      },
+      "4": {
+        "full": "Doktor Habilitowany",
+        "short": "Dr Hab."
+      },
+      "5": {
+        "full": "Profesor",
+        "short": "Prof."
+      }
+    },
+    "levels": {
+      "beginner": "Podstawowy",
+      "intermediate": "Rozszerzony",
+      "advanced": "Zaawansowany",
+      "expert": "Ekspert",
+      "master": "Mistrz",
+      "visionary": "Wizjoner"
+    }
+  },
+  "notifications": {
+    "types": {
+      "succes": "Sukces!",
+      "warn": "Ostrzeżenie!",
+      "error": "Niepowodzenie"
+    },
+    "text": {
+      "user": {
+        "description": {
+          "done": "Pomyślnie zaktualizowano opis",
+          "didnt": "Nie udało się zaktualizować opisu ;c"
+        }
+      }
+    }
+  }
+}

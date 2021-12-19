@@ -1,0 +1,65 @@
+<template>
+  <Banner v-if="user.bannerFileID" :banner="user.bannerFileID" />
+  <div class="content">
+    <UserHeader
+      :username="`${$t('user.degrees.' + user.Degree + '.short')}
+      ${user.Name} ${user.Surname}`"
+      :login="user.Login"
+      :avatar="user.avatarFileID"
+      :visionary="
+        user.researchInterests.filter((e) => e.level === '6').length > 0
+      "
+      :isProtected="user.isProtected"
+      :isGenesisMember="user.isGenesisMember"
+      :isSponsor="user.isSponsor"
+    />
+    <Description :description="user.description" :login="user.Login" />
+    <ResearchInterests
+      :researchInterests="user.researchInterests"
+      :login="user.Login"
+    />
+    <Education :education="user.education" />
+    <Work :work="user.work" />
+  </div>
+</template>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+import Banner from './Profile/Banner.vue'
+import UserHeader from './Profile/UserHeader.vue'
+import Description from './Profile/Description.vue'
+import ResearchInterests from './Profile/ResearchInterests.vue'
+import Education from './Profile/Education.vue'
+import Work from './Profile/Work.vue'
+
+import { User } from '@/types/user'
+
+export default defineComponent({
+  props: {
+    user: Object as () => User,
+  },
+  components: {
+    Banner,
+    UserHeader,
+    Description,
+    ResearchInterests,
+    Education,
+    Work,
+  },
+})
+</script>
+
+<style lang="scss" scoped>
+@import '@/styles/index.scss';
+.content {
+  margin: 10px auto;
+  width: 1000px;
+  max-width: 95vw;
+  background-color: #e3e3e3f3;
+  color: theme(black);
+  margin-top: 30vh;
+  padding: 20px;
+  border-radius: 20px;
+}
+</style>
