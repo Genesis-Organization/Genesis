@@ -11,7 +11,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import UniversityItem from './Minor/ItemUniversity.vue'
+import UniversityItem from '../items/ItemUniversity.vue'
 import { University } from '@/types/user'
 
 export default defineComponent({

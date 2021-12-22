@@ -7,7 +7,7 @@ import { User, ResearchInterest } from '@/types/user'
 
 export const changeDesc = async (user: User): Promise<void> => {
   try {
-    await axios.put(`/users/desc/${user?.Login}`, {
+    await axios.put(`/users/${user?.Login}/desc`, {
       token: Cookies.get('jwt'),
       description: user.description,
     })
@@ -35,7 +35,7 @@ export const changeInterests = async (user: User): Promise<void> => {
     visionary: 6,
   }
   try {
-    await axios.put(`/users/interests/${user?.Login}`, {
+    await axios.put(`/users/${user?.Login}/interests`, {
       token: Cookies.get('jwt'),
       interests: user.researchInterests?.sort(
         (a: ResearchInterest, b: ResearchInterest) =>

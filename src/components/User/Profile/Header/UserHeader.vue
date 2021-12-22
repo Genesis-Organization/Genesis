@@ -27,17 +27,20 @@
     </div>
     <HeaderButtons :login="login" />
   </div>
+  <Description :description="description" :login="login" />
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import HeaderButtons from './Minor/HeaderButtons.vue'
-import Badges from './Minor/Badges.vue'
+import Description from './Description.vue'
+import HeaderButtons from './HeaderButtons.vue'
+import Badges from './Badges.vue'
 
 export default defineComponent({
   props: {
     username: String,
     login: String,
+    description: String,
     avatar: String,
     visionary: Boolean,
     isSponsor: Boolean,
@@ -45,6 +48,7 @@ export default defineComponent({
     isGenesisMember: Boolean,
   },
   components: {
+    Description,
     Badges,
     HeaderButtons,
   },

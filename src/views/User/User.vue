@@ -9,7 +9,7 @@
 import { defineComponent } from 'vue'
 import { AxiosResponse } from 'axios'
 import axios from '@/config/axios'
-import Profile from '@/components/User/Profile.vue'
+import Profile from '@/components/User/Profile/Profile.vue'
 import { User } from '@/types/user'
 
 export default defineComponent({

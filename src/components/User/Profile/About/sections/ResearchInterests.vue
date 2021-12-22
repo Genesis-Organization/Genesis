@@ -15,7 +15,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import ResearchInterestItem from './Minor/ItemResearchInterest.vue'
+import ResearchInterestItem from '../items/ItemResearchInterest.vue'
 import { ResearchInterest } from '@/types/user'
 
 export default defineComponent({

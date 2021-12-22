@@ -12,27 +12,22 @@
       :isProtected="user.isProtected"
       :isGenesisMember="user.isGenesisMember"
       :isSponsor="user.isSponsor"
+      :description="user.description"
     />
-    <Description :description="user.description" :login="user.Login" />
-    <ResearchInterests
-      :researchInterests="user.researchInterests"
-      :login="user.Login"
-    />
-    <Education :education="user.education" />
-    <Work :work="user.work" />
+    <Filter v-on:setSection="setSection" />
+    <Home :user="user" v-if="currentSection == 0" />
+    <!-- WIP -->
+    <About :user="user" v-if="currentSection == 4" />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-
-import Banner from './Profile/Banner.vue'
-import UserHeader from './Profile/UserHeader.vue'
-import Description from './Profile/Description.vue'
-import ResearchInterests from './Profile/ResearchInterests.vue'
-import Education from './Profile/Education.vue'
-import Work from './Profile/Work.vue'
-
+import Banner from './Banner.vue'
+import UserHeader from './Header/UserHeader.vue'
+import Filter from './Filter.vue'
+import Home from './Home/Home.vue'
+import About from './About/About.vue'
 import { User } from '@/types/user'
 
 export default defineComponent({
@@ -42,10 +37,19 @@ export default defineComponent({
   components: {
     Banner,
     UserHeader,
-    Description,
-    ResearchInterests,
-    Education,
-    Work,
+    Filter,
+    Home,
+    About,
+  },
+  data() {
+    return {
+      currentSection: 0,
+    }
+  },
+  methods: {
+    setSection(number: number) {
+      this.currentSection = number
+    },
   },
 })
 </script>
