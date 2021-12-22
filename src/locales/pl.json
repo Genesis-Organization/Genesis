@@ -383,5 +383,12 @@
         }
       }
     }
+  },
+  "modal": {
+    "modals": {
+      "login": {
+        "title": "Wszystko o systemie logowania."
+      }
+    }
   }
 }

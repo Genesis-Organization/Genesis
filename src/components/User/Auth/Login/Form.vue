@@ -20,7 +20,10 @@
         <button>
           {{ $t('auth.login.login') }}
         </button>
-        <div class="que">?</div>
+        <div class="que" v-on:click="showModal">?</div>
+        <Modal ref="modal" :title="$t('modal.modals.login.title')">
+          dasdasd
+        </Modal>
       </div>
     </div>
     <Errors :errors="[]" :apiErrors="apiErrors" />
@@ -33,6 +36,7 @@ import { defineComponent } from 'vue'
 import axios from '@/config/axios'
 import Errors from '../Errors.vue'
 import LetsRegister from './LetsRegister.vue'
+import Modal from '@/components/Shared/Modals/Modal.vue'
 import { UserLoginReq } from '@/types/user'
 
 export default defineComponent({
@@ -46,6 +50,10 @@ export default defineComponent({
     }
   },
   methods: {
+    showModal() {
+      const modal = this.$refs.modal as InstanceType<typeof Modal>
+      if (modal) modal.toggleModal()
+    },
     async loginUser() {
       try {
         await axios.post('auth/login', this.userData)
@@ -59,6 +67,7 @@ export default defineComponent({
   components: {
     Errors,
     LetsRegister,
+    Modal,
   },
 })
 </script>
