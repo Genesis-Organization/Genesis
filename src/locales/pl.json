@@ -365,6 +365,17 @@
       "visionary": "Wizjoner"
     }
   },
+  "settings": {
+    "menu": {
+      "overview": "Ogólne",
+      "account": "Konto",
+      "profile": "Profil",
+      "privacy": "Prywatność",
+      "security": "Bezpieczeństwo",
+      "cookies": "Ciasteczka",
+      "bug": "Zgłoś błąd"
+    } 
+  },
   "notifications": {
     "types": {
       "succes": "Sukces!",

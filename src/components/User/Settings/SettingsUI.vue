@@ -1,18 +1,21 @@
 <template>
-  <Filter v-on:setSection="setSection" />
   <div class="container">
-    <div v-if="currentSection == 0 || currentSection == 1">
+    <Menu v-on:setSection="setSection" />
+    <Section v-if="currentSection == 0 || currentSection == 1">
       <Description />
       <ResearchInterests />
-    </div>
+      <Education />
+    </Section>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Filter from './Filter.vue'
+import Menu from './Menu.vue'
+import Section from './Section.vue'
 import Description from './Profile/Description.vue'
 import ResearchInterests from './Profile/ResearchInterests.vue'
+import Education from './Profile/Education.vue'
 
 export default defineComponent({
   data() {
@@ -21,9 +24,11 @@ export default defineComponent({
     }
   },
   components: {
-    Filter,
+    Menu,
+    Section,
     Description,
     ResearchInterests,
+    Education,
   },
   methods: {
     setSection(number: number) {
@@ -37,9 +42,6 @@ export default defineComponent({
 @import '@/styles/index.scss';
 .container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin: 10px;
+  flex-grow: 1;
 }
 </style>

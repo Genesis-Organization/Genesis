@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bigcontainer">
     <div class="top"></div>
     <SettingsUI v-if="user && Object.keys(user).length > 0" />
   </div>
@@ -31,6 +31,11 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import '@/styles/index.scss';
+.bigcontainer {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
 .top {
   height: $height;
   background: theme(dark);
