@@ -1,6 +1,14 @@
 <template>
+  <button class="open" ref="open">
+    <ic icon="angle-double-right" />
+  </button>
   <nav>
     <div class="pick">
+      <div class="closecontainer">
+        <div class="close" v-on:click="unfocusMenu">
+          <ic icon="angle-double-left" />
+        </div>
+      </div>
       <div
         class="button"
         v-for="(section, index) in sections"
@@ -61,6 +69,10 @@ export default defineComponent({
       this.activeSection = number
       this.$emit('setSection', number)
     },
+    unfocusMenu() {
+      const open = this.$refs.open as HTMLButtonElement
+      open.blur()
+    },
   },
 })
 </script>
@@ -73,6 +85,14 @@ nav {
   align-items: center;
   padding: 10px;
   background: theme(gray);
+  @media (max-width: 1000px) {
+    width: 100vw;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    transform: translateX(-100%);
+    transition: 0.3s all;
+  }
   @media (min-width: 1000px) {
     &:before {
       content: '';
@@ -109,6 +129,41 @@ nav {
       background: theme(dark);
       color: theme(light);
     }
+  }
+  @media (max-width: 1000px) {
+    margin: 0 auto;
+    width: 90%;
+  }
+}
+.closecontainer {
+  display: none;
+  @media (max-width: 1000px) {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 10px;
+    margin: auto;
+    width: 90%;
+    .close {
+      font-size: 40px;
+    }
+  }
+}
+.open {
+  display: block;
+  position: absolute;
+  background: theme(gray);
+  top: 10px;
+  left: 10px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 40px;
+  z-index: 1;
+  &:focus ~ nav {
+    transform: translateX(0);
+  }
+  @media (min-width: 1000px) {
+    display: none;
   }
 }
 </style>

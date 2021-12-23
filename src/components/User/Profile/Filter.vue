@@ -1,20 +1,14 @@
 <template>
   <header>
     <div class="filter">
-      <div class="button" v-on:click="emitSection(0)">
-        <ic icon="home" />
-      </div>
-      <div class="button" v-on:click="emitSection(1)">
-        <ic icon="feather-alt" />
-      </div>
-      <div class="button" v-on:click="emitSection(2)">
-        <ic icon="flask" />
-      </div>
-      <div class="button" v-on:click="emitSection(3)">
-        <ic icon="blog" />
-      </div>
-      <div class="button" v-on:click="emitSection(4)">
-        <ic icon="user" />
+      <div
+        class="button"
+        v-for="(section, index) in sections"
+        :key="index"
+        :class="{ isActive: currentSection == index }"
+        v-on:click="emitSection(index)"
+      >
+        <ic :icon="section" />
       </div>
     </div>
   </header>
@@ -26,8 +20,15 @@ export default defineComponent({
   emits: ['setSection'],
   methods: {
     emitSection(number: number) {
+      this.currentSection = number
       this.$emit('setSection', number)
     },
+  },
+  data() {
+    return {
+      currentSection: 0,
+      sections: ['home', 'feather-alt', 'flask', 'blog', 'user'],
+    }
   },
 })
 </script>
@@ -56,6 +57,9 @@ header {
     background-color: theme(dark);
     border-radius: 10px;
     cursor: pointer;
+    &.isActive {
+      background-color: theme(main_dark);
+    }
   }
 }
 </style>

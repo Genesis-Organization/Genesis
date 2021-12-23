@@ -1,11 +1,17 @@
 <template>
   <div class="container">
     <Menu v-on:setSection="setSection" />
-    <Section v-if="currentSection == 0 || currentSection == 1">
+    <Section v-if="currentSection == 0">Work in Progress</Section>
+    <Section v-if="currentSection == 1">Work in Progress</Section>
+    <Section v-if="currentSection == 2">
       <Description />
       <ResearchInterests />
       <Education />
     </Section>
+    <Section v-if="currentSection == 3">Work in Progress</Section>
+    <Section v-if="currentSection == 4">Work in Progress</Section>
+    <Section v-if="currentSection == 5">Work in Progress</Section>
+    <Section v-if="currentSection == 6">Work in Progress</Section>
   </div>
 </template>
 
