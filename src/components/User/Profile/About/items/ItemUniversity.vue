@@ -1,18 +1,4 @@
 <template>
-  <!-- <div class="university" v-on:click="ToggleSpec">
-    <div class="science">
-      <div>
-        <div class="sciencename">{{ university.science }}</div>
-        <div class="degree">
-          {{ $t(`user.degrees.${university.degree}.full`) }}
-        </div>
-      </div>
-      <div class="school">{{ university.university }}</div>
-    </div>
-    <div class="spec" v-if="university.spec && this.showSpec">
-      {{ university.spec }}
-    </div>
-  </div> -->
   <div class="university" :class="{ notlast: !last }">
     <header>{{ university.science }}</header>
     <div class="school">{{ university.university }}</div>
