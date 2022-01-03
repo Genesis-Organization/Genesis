@@ -152,6 +152,7 @@ nav {
   display: block;
   position: absolute;
   background: theme(gray);
+  border: 3px solid theme(main);
   top: 10px;
   left: 10px;
   border-radius: 50%;

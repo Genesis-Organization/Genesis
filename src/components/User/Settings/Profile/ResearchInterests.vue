@@ -163,7 +163,7 @@ header {
 }
 
 .show {
-  background-color: theme(main);
+  background-color: theme(dark);
   padding: 5px 10px;
   margin: 12px;
   font-size: 24px;
@@ -182,7 +182,7 @@ header {
   align-items: center;
   width: 40px;
   height: 40px;
-  background-color: theme(dark);
+  background-color: theme(main);
   color: theme(light);
   border-radius: 10px;
   font-size: 20px;

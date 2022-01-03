@@ -54,7 +54,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import '@/styles/index.scss';
 .item {
-  font-size: 24px;
+  font-size: 22px;
   @media (max-width: 1000px) {
     font-size: 17px;
   }
@@ -64,13 +64,9 @@ export default defineComponent({
   display: flex;
   justify-content: space-between;
   align-items: center;
-  cursor: pointer;
-  width: 700px;
-  max-width: 100%;
-  background-color: #dadada;
+  width: 100%;
   padding: 5px 10px;
   margin: 5px auto;
-  border-radius: 10px;
 }
 
 .science {
@@ -79,8 +75,8 @@ export default defineComponent({
 }
 
 .icon {
-  height: 40px;
-  width: 40px;
+  height: 32px;
+  width: 32px;
   margin: 0 3px;
   background-size: cover;
   background-position: center;
@@ -94,6 +90,7 @@ export default defineComponent({
 .level {
   text-transform: uppercase;
   font-weight: 800;
+  font-size: 20px;
   @media (max-width: 1000px) {
     font-size: 14px;
   }

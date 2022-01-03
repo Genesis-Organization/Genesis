@@ -1,8 +1,5 @@
 <template>
-  <ResearchInterests
-    :researchInterests="user.researchInterests"
-    :login="user.Login"
-  />
+  <ResearchInterests :researchInterests="user.researchInterests" />
   <Education :education="user.education" />
   <Work :work="user.work" />
 </template>

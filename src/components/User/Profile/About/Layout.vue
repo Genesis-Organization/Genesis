@@ -1,20 +1,28 @@
 <template>
-  <div></div>
+  <section>
+    <header>{{ $t(`user.sections.${title}`) }}</header>
+    <div class="items">
+      <slot />
+    </div>
+  </section>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { Work } from '@/types/user'
 
 export default defineComponent({
   props: {
-    work: Array as () => Work[],
+    prop: Array,
+    title: String,
   },
 })
 </script>
 
 <style lang="scss" scoped>
 @import '@/styles/index.scss';
+section {
+  text-align: center;
+}
 header {
   margin: 20px auto 10px auto;
   font-size: 27px;
@@ -25,5 +33,12 @@ header {
   @media (max-width: 1000px) {
     font-size: 22px;
   }
+}
+.items {
+  background-color: #dadada;
+  border-radius: 10px;
+  margin: auto;
+  width: 600px;
+  max-width: 95%;
 }
 </style>
