@@ -1,9 +1,10 @@
 <template>
   <Layout :prop="education" title="education">
     <UniversityItem
-      v-for="university in education"
-      :key="university"
+      v-for="(university, index) in education"
+      :key="index"
       :university="university"
+      :last="index == education.length - 1"
     />
   </Layout>
 </template>

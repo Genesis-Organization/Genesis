@@ -302,7 +302,12 @@
     "sections": {
       "description": "Opis profilu",
       "researchinterests": "Zainteresowania naukowe",
-      "education": "Wykształcenie"
+      "education": "Wykształcenie",
+      "items": {
+        "education": {
+          "spec": "Specjalizacja"
+        }
+      }
     },
     "badges": {
       "protected": {
