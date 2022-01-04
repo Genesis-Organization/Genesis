@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section v-if="prop && prop.length > 0">
     <header>{{ $t(`user.sections.${title}`) }}</header>
     <div class="items">
       <slot />

@@ -1,20 +1,32 @@
 <template>
-  <div class="university" :class="{ notlast: !last }">
-    <header>{{ university.science }}</header>
-    <div class="school">{{ university.university }}</div>
-    <div class="details">
-      <div class="time">
-        <ic icon="history" />
-        {{ university.time }}
+  <div
+    class="university"
+    :class="{ notlast: !last }"
+    v-on:click="ToggleDetails"
+  >
+    <div class="headercont">
+      <div>
+        <header>{{ university.science }}</header>
+        <div class="school">{{ university.university }}</div>
       </div>
-      <div class="place">
-        <ic icon="map-marker-alt" />
-        Warsaw
-      </div>
+      <ic icon="angle-double-up" v-if="showDetails" />
+      <ic icon="angle-double-down" v-else />
     </div>
-    <div class="spec" v-if="university.spec">
-      <div>{{ $t('user.sections.items.education.spec') }}:</div>
-      {{ university.spec }}
+    <div v-if="showDetails">
+      <div class="details">
+        <div class="time">
+          <ic icon="history" />
+          {{ university.time }}
+        </div>
+        <div class="place">
+          <ic icon="map-marker-alt" />
+          Warsaw
+        </div>
+      </div>
+      <div class="spec" v-if="university.spec">
+        <div>{{ $t('user.sections.items.education.spec') }}:</div>
+        {{ university.spec }}
+      </div>
     </div>
   </div>
 </template>
@@ -30,12 +42,12 @@ export default defineComponent({
   },
   data() {
     return {
-      showSpec: false,
+      showDetails: false,
     }
   },
   methods: {
-    ToggleSpec() {
-      this.showSpec = !this.showSpec
+    ToggleDetails() {
+      this.showDetails = !this.showDetails
     },
   },
 })
@@ -57,6 +69,16 @@ export default defineComponent({
     background-color: theme(gray);
     position: absolute;
     bottom: -2px;
+  }
+}
+
+.headercont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  svg {
+    margin-right: 10%;
+    font-size: 20px;
   }
 }
 
