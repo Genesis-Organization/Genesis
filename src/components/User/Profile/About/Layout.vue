@@ -35,6 +35,7 @@ header {
   }
 }
 .items {
+  transition: 0.2s all;
   background-color: #dadada;
   border-radius: 10px;
   margin: auto;

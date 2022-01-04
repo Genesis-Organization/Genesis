@@ -1,23 +1,42 @@
 <template>
   <div class="item" v-on:click="ToggleDesc">
-    <div class="itemcont" :class="{ visionary: interest.level === '6' }">
+    <div
+      class="itemcont"
+      :class="{ visionary: interest.level === 'visionary' }"
+    >
       <div class="science">
+        <!-- ICON -->
         <div
           class="icon"
           :style="{
             backgroundImage: `url(${require(`@/assets/icons/sciences/${interest.science.toLowerCase()}.svg`)})`,
           }"
         ></div>
+        <!-- TITLE -->
         <div class="title">
           {{ $t(`sciences.sciences.${interest.science.toLowerCase()}`) }}
         </div>
       </div>
-      <div class="level" :style="{ color: colors[interest.level] }">
-        {{ $t(`user.levels.${interest.level}`) }}
+      <!-- LEVEL -->
+      <div class="flex">
+        <div class="level" :style="{ backgroundColor: colors[interest.level] }">
+          <span>
+            {{ $t(`user.levels.${interest.level}`) }}
+          </span>
+          <ic icon="flask" />
+        </div>
+        <div class="arrows" :class="{ hidden: !interest.desc }">
+          <ic icon="angle-double-up" v-if="showDesc" />
+          <ic icon="angle-double-down" v-else />
+        </div>
       </div>
     </div>
-    <div v-if="interest.description && showDesc == true" class="description">
-      {{ interest.description }}
+    <!-- DESCRIPTION -->
+    <div
+      :class="{ hidden: !interest.desc || showDesc == false }"
+      class="description"
+    >
+      {{ interest.desc }}
     </div>
   </div>
 </template>
@@ -53,10 +72,14 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import '@/styles/index.scss';
+.flex {
+  display: flex;
+  align-items: center;
+}
 .item {
-  font-size: 22px;
+  font-size: 20px;
   @media (max-width: 1000px) {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 
@@ -77,22 +100,43 @@ export default defineComponent({
 .icon {
   height: 32px;
   width: 32px;
-  margin: 0 3px;
+  margin-right: 10px;
   background-size: cover;
   background-position: center;
   filter: brightness(0.15);
   @media (max-width: 1000px) {
-    width: 35px;
-    height: 35px;
+    width: 27px;
+    height: 27px;
   }
 }
 
 .level {
   text-transform: uppercase;
-  font-weight: 800;
-  font-size: 20px;
+  font-weight: 600;
+  font-size: 19px;
+  padding: 4px 10px;
+  border-radius: 5px;
+  color: #e3e3e3;
+  cursor: help;
+  span {
+    display: inline-block;
+    transition: 0.3s all;
+    width: 0;
+    transform: scaleX(0);
+  }
   @media (max-width: 1000px) {
-    font-size: 14px;
+    width: 35px;
+    height: 27px;
+    font-size: 17px;
+    span {
+      display: none;
+    }
+  }
+  @media (min-width: 1000px) {
+    &:hover span {
+      width: 180px;
+      transform: scaleX(1);
+    }
   }
 }
 
@@ -104,10 +148,38 @@ export default defineComponent({
 }
 
 .description {
-  font-size: 17px;
+  font-size: 16px;
   width: 600px;
   max-width: 90%;
+  padding-bottom: 10px;
   margin: 5px auto;
   text-align: left;
+  font-style: italic;
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 400px;
+    max-width: 50vw;
+    height: 2px;
+    background-color: theme(gray);
+  }
+  @media (max-width: 1000px) {
+    font-size: 13px;
+  }
+  &.hidden {
+    display: none;
+  }
+}
+
+.arrows {
+  position: absolute;
+  right: 60px;
+  font-size: 20px;
+  opacity: 0.4;
+  &.hidden {
+    opacity: 0;
+  }
 }
 </style>

@@ -60,6 +60,10 @@ header {
     &.isActive {
       background-color: theme(main_dark);
     }
+    @media (max-width: 1000px) {
+      font-size: 20px;
+      height: 37px;
+    }
   }
 }
 </style>

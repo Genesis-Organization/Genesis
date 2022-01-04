@@ -12,7 +12,7 @@
       <ic icon="angle-double-up" v-if="showDetails" />
       <ic icon="angle-double-down" v-else />
     </div>
-    <div v-if="showDetails">
+    <div class="toggle" :class="[showDetails ? 'show' : 'hide']">
       <div class="details">
         <div class="time">
           <ic icon="history" />
@@ -108,6 +108,20 @@ header {
   > div {
     display: inline-block;
     font-weight: 500;
+  }
+}
+
+.toggle {
+  transition: 0.3s all;
+  &.show {
+    height: 57px;
+  }
+  &.hide,
+  &.hide * {
+    // position: absolute;
+    font-size: 0;
+    height: 0;
+    opacity: 0;
   }
 }
 </style>
