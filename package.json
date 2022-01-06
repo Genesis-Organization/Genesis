@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "build": "vue-cli-service build",
+    "start": "tsc vue.config.ts && vue-cli-service serve",
     "lint": "vue-cli-service lint",
-    "i18n:report": "vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/locales/**/*.json\"",
-    "start": "tsc vue.config.ts && vue-cli-service serve"
+    "format": "prettier --write \"src/**/*\""
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
@@ -24,13 +24,13 @@
     "less-loader": "^10.2.0",
     "register-service-worker": "^1.7.1",
     "vue": "^3.2.24",
-    "vue-i18n": "^9.1.0",
+    "vue-i18n": "^9.1.9",
     "vue-router": "^4.0.0-0",
     "vue3-smooth-scroll": "^0.8.1",
     "vuex": "^4.0.0-0"
   },
   "devDependencies": {
-    "@intlify/vue-i18n-loader": "^3.0.0",
+    "@intlify/vue-i18n-loader": "^4.1.0",
     "@types/js-cookie": "^3.0.1",
     "@types/katex": "^0.11.1",
     "@types/vue": "^2.0.0",

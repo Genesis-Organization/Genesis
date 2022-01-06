@@ -1,21 +1,21 @@
 @function theme($key) {
-    @if map-has-key($theme, $key) {
-      @return map-get($theme, $key);
-    }
-  
-    @warn "Unknown `#{$key}` in $colors.";
-    @return null;
+  @if map-has-key($theme, $key) {
+    @return map-get($theme, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $colors.";
+  @return null;
 }
 
 $theme: (
-    main: #0883a2,
-    main_dark: #00647d,
-    sky: #00AFDB,
-    aqua: #00AF97,
-    gold: #E5B227,
-    violet: #826577,
-    light: #e3e3e3,
-    gray: #c6cbcc,
-    dark: #28353a,
-    black: #262626,
-)
+  main: #0883a2,
+  main_dark: #00647d,
+  sky: #00afdb,
+  aqua: #00af97,
+  gold: #e5b227,
+  violet: #826577,
+  light: #e3e3e3,
+  gray: #c6cbcc,
+  dark: #28353a,
+  black: #262626,
+);

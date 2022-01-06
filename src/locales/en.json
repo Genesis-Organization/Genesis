@@ -28,11 +28,11 @@
     "navbar": {
       "subpages": {
         "formulas": "Formulas",
-        "books":"Books",
+        "books": "Books",
         "articles": "Articles",
-        "statistics":"Statistics",
-        "info":"Informations",
-        "donate":"Donate"
+        "statistics": "Statistics",
+        "info": "Informations",
+        "donate": "Donate"
       }
     },
     "footer": {
@@ -40,14 +40,14 @@
     }
   },
   "sciences": {
-    "groups":{
-      "all":"All",
-      "natural":"Natural",
-      "social":"Social",
-      "humanities":"Humanities",
-      "technical":"Technical",
-      "artistic":"Artistic",
-      "others":"Others"
+    "groups": {
+      "all": "All",
+      "natural": "Natural",
+      "social": "Social",
+      "humanities": "Humanities",
+      "technical": "Technical",
+      "artistic": "Artistic",
+      "others": "Others"
     },
     "sciences": {
       "philology_iberian": "Iberian Philology",
@@ -69,7 +69,7 @@
       "philology_chinese": "Chinese Philology",
       "philology_korean": "Korean Philology",
       "philology_japanese": "Japanese Philology",
-    
+
       "anthropology": "Anthropology",
       "philosophy": "Philosophy",
       "history": "History",
@@ -82,14 +82,14 @@
       "defensestudies": "Defense Studies",
       "sociology": "Sociology",
       "internationalstudies": "International Studies",
-    
+
       "economics": "Economics",
       "finances": "Finances",
       "accountancy": "Accountancy",
       "econometrics": "Econometrics",
       "governance": "Governance",
       "management": "Management",
-    
+
       "astronomy": "Astronomy",
       "bioinformatics": "Bioinformatics",
       "biochemistry": "Biochemistry",
@@ -103,7 +103,7 @@
       "informatics": "Informatics",
       "math": "Mathematics",
       "ecology": "Ecology",
-    
+
       "architecture": "Architecture",
       "robotics": "Robotics",
       "building_eng": "Building Engeenering",

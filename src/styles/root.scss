@@ -1,49 +1,59 @@
-*,*:before,*:after {
-    box-sizing:border-box;
-    position: relative;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  position: relative;
 }
 
-*::-moz-selection { /* Code for Firefox */
-  background: #00A3CC !important;
+*::-moz-selection {
+  /* Code for Firefox */
+  background: #00a3cc !important;
 }
 
 *::selection {
-  background: #00A3CC !important;
+  background: #00a3cc !important;
 }
 
 html {
-    font-family: 'Rubik', sans-serif !important;
+  font-family: 'Rubik', sans-serif !important;
 }
 
 body {
-    padding: 0px !important;
-    margin: 0px !important;
-    overflow-x:hidden;
-    background-color:#EBEAED;
-    min-height:100vh;
-    color:#262626;
+  padding: 0px !important;
+  margin: 0px !important;
+  overflow-x: hidden;
+  background-color: #ebeaed;
+  min-height: 100vh;
+  color: #262626;
 }
 
 a {
-    text-decoration: none;
-    color:#262626;
-    cursor: pointer;
+  text-decoration: none;
+  color: #262626;
+  cursor: pointer;
 }
 
-input, button, select, textarea {
-    font-family: 'Rubik', sans-serif;
-    border:none;
-    background-color:#e3e3e3;
-    color:#333;
-    padding:0;
+input,
+button,
+select,
+textarea {
+  font-family: 'Rubik', sans-serif;
+  border: none;
+  background-color: #e3e3e3;
+  color: #333;
+  padding: 0;
 }
 
-button, select {
-    cursor:pointer;
+button,
+select {
+  cursor: pointer;
 }
 
-button:focus, input:focus, select:focus, textarea:focus{
-    outline:0 !important;
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 0 !important;
 }
 
 ::-webkit-scrollbar {

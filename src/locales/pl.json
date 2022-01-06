@@ -29,10 +29,10 @@
       "subpages": {
         "formulas": "Tablice",
         "articles": "Artykuły",
-        "books":"Podręczniki",
-        "statistics":"Statystyki",
-        "info":"Informacje",
-        "donate":"Wesprzyj"
+        "books": "Podręczniki",
+        "statistics": "Statystyki",
+        "info": "Informacje",
+        "donate": "Wesprzyj"
       }
     },
     "footer": {
@@ -40,14 +40,14 @@
     }
   },
   "sciences": {
-    "groups":{
-      "all":"Wszystkie",
-      "natural":"Przyrodnicze",
-      "social":"Społeczne",
-      "humanities":"Humanistyczne",
-      "technical":"Techniczne",
-      "artistic":"Artystyczne",
-      "others":"Pozostałe"
+    "groups": {
+      "all": "Wszystkie",
+      "natural": "Przyrodnicze",
+      "social": "Społeczne",
+      "humanities": "Humanistyczne",
+      "technical": "Techniczne",
+      "artistic": "Artystyczne",
+      "others": "Pozostałe"
     },
     "sciences": {
       "philology_iberian": "Iberian Philology",
@@ -72,7 +72,7 @@
       "philology_chinese": "Chinese Philology",
       "philology_korean": "Korean Philology",
       "philology_japanese": "Japanese Philology",
-    
+
       "archeology": "Archeology",
       "anthropology": "Anthropology",
       "philosophy": "Philosophy",
@@ -88,14 +88,14 @@
       "internationalstudies": "International Studies",
       "linguistics": "Linguistics",
       "journalism": "Journalism",
-    
+
       "economics": "Economics",
       "finances": "Finances",
       "accountancy": "Accountancy",
       "econometrics": "Econometrics",
       "governance": "Governance",
       "management": "Management",
-    
+
       "astronomy": "Astronomy",
       "bioinformatics": "Bioinformatics",
       "biochemistry": "Biochemistry",
@@ -109,7 +109,7 @@
       "informatics": "Informatics",
       "mathematics": "Mathematics",
       "ecology": "Ecology",
-    
+
       "biomedical_engineering": "Biomedical Engineering",
       "civil_engineering": "Civil Engineering",
       "electrical_engineering": "Electrical Engineering",
@@ -257,7 +257,7 @@
         "2": "Magister",
         "3": "Doktor",
         "4": "Doktor Habilitowany",
-         "5": "Profesor"
+        "5": "Profesor"
       },
       "password": "Hasło",
       "confirmpassword": "Potwierdź hasło",
@@ -265,7 +265,7 @@
         "accept": "Akceptuję regulamin oraz",
         "privacy": "politykę prywatności"
       },
-      "confirm":"Potwierdź"
+      "confirm": "Potwierdź"
     },
     "errors": {
       "0": "Wartość jest zbyt krótka",
@@ -379,7 +379,7 @@
       "security": "Bezpieczeństwo",
       "cookies": "Ciasteczka",
       "bug": "Zgłoś błąd"
-    } 
+    }
   },
   "notifications": {
     "types": {

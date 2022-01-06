@@ -29,10 +29,10 @@
       "subpages": {
         "formulas": "Fórmulas",
         "articles": "Artículos",
-        "books":"Libros",
-        "statistics":"Estadísticas",
-        "info":"Información",
-        "donate":"Donar"
+        "books": "Libros",
+        "statistics": "Estadísticas",
+        "info": "Información",
+        "donate": "Donar"
       }
     },
     "footer": {
@@ -40,14 +40,14 @@
     }
   },
   "sciences": {
-    "groups":{
-      "all":"All",
-      "natural":"Natural",
-      "social":"Social",
-      "humanities":"Humanities",
-      "technical":"Technical",
-      "artistic":"Artistic",
-      "others":"Others"
+    "groups": {
+      "all": "All",
+      "natural": "Natural",
+      "social": "Social",
+      "humanities": "Humanities",
+      "technical": "Technical",
+      "artistic": "Artistic",
+      "others": "Others"
     },
     "sciences": {
       "physics": "Fizyka",
