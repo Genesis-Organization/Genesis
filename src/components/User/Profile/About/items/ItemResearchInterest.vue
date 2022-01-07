@@ -112,6 +112,7 @@ export default defineComponent({
 
 .level {
   text-transform: uppercase;
+  z-index: 1;
   font-weight: 600;
   font-size: 19px;
   padding: 4px 10px;

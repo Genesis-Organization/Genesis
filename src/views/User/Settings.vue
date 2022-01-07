@@ -39,5 +39,16 @@ export default defineComponent({
 .top {
   height: $height;
   background: theme(dark);
+  &:before {
+    content: '';
+    width: 100vw;
+    height: $height;
+    background: theme(dark);
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
 }
 </style>

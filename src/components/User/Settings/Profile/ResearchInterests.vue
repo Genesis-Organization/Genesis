@@ -3,7 +3,7 @@
   <form
     class="researchinterests"
     v-if="showForm"
-    @submit.prevent="changeInterests(user)"
+    @submit.prevent="changeInterests(user), (this.showForm = false)"
   >
     <div class="addinterest" v-on:click="addInterest">
       <ic icon="plus" />

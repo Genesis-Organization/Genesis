@@ -3,6 +3,7 @@
     <ic icon="angle-double-right" />
   </button>
   <nav>
+    <div class="fat"></div>
     <div class="pick">
       <div class="closecontainer">
         <div class="close" v-on:click="unfocusMenu">
@@ -96,18 +97,23 @@ nav {
   @media (min-width: 1000px) {
     &:before {
       content: '';
+      position: absolute;
       width: 100%;
       height: 100vh;
+      bottom: -100px;
+      left: 0;
       background: theme(gray);
-      position: absolute;
-      top: 0;
       z-index: -100;
     }
   }
 }
+.fat {
+  width: 300px;
+}
 .pick {
   display: flex;
   flex-direction: column;
+  position: fixed;
   width: 300px;
   padding: 5px;
   border-radius: 10px;
@@ -150,10 +156,11 @@ nav {
 }
 .open {
   display: block;
-  position: absolute;
-  background: theme(gray);
-  border: 3px solid theme(main);
-  top: 10px;
+  position: fixed;
+  background: theme(dark);
+  color: theme(gray);
+  top: calc(10px + $height);
+  box-shadow: 0 0 1px 1px rgba(58, 58, 58, 0.885);
   left: 10px;
   border-radius: 50%;
   width: 50px;
