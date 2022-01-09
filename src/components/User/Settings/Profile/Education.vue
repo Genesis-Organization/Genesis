@@ -1,17 +1,185 @@
 <template>
   <header>{{ $t('user.sections.education') }}</header>
+  <form
+    class="education"
+    v-if="showForm"
+    @submit.prevent="changeEducation(user), (this.showForm = false)"
+  >
+    <!-- ADD -->
+    <div class="adduniversity" v-on:click="addInterest">
+      <ic icon="plus" />
+    </div>
+    <!-- UNIVERSITIES -->
+    <section
+      v-for="(university, index) in user.education"
+      :key="index"
+      class="item"
+    >
+      <!-- SCHOOL -->
+      <input
+        v-model="user.education[index].university"
+        :placeholder="$t(`settings.common.university`)"
+      />
+      <!-- SCIENCE -->
+      <select v-model="user.education[index].science">
+        <option
+          v-for="science in SciencesList"
+          :key="science"
+          :value="science.toLowerCase()"
+        >
+          {{ $t(`sciences.sciences.${science.toLowerCase()}`) }}
+        </option>
+      </select>
+      <!-- DEGREE -->
+      <select>
+        <option v-for="option in 5" :key="option">
+          {{ $t(`user.degrees.${option}.full`) }}
+        </option>
+      </select>
+      <div class="time-and-place">
+        <!-- TIME -->
+        <input
+          v-model="user.education[index].time"
+          max-length="9"
+          class="time"
+          :placeholder="$t(`settings.common.time`)"
+        />
+        <!-- PLACE -->
+        <input
+          v-model="user.education[index].place"
+          :placeholder="$t(`settings.common.place`)"
+        />
+      </div>
+      <!-- DESCRIPTION -->
+      <input
+        v-model="user.education[index].specialization"
+        :placeholder="$t(`settings.common.specialization`)"
+      />
+    </section>
+  </form>
+  <!-- BUTTON -->
+  <button v-on:click="this.showForm = true" v-if="!showForm" class="show">
+    <ic icon="angle-double-down" />
+  </button>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { changeEducation } from '@/scripts/services/settings'
+import { User, SciencesList } from '@/types/user'
 
-export default defineComponent({})
+export default defineComponent({
+  methods: {
+    addInterest() {
+      this.user.education?.unshift({
+        university: '',
+        science: SciencesList.PHILOLOGY_IBERIAN.toLowerCase() as SciencesList,
+        degree: '1',
+        time: `${String(new Date().getFullYear() - 5)}-${String(
+          new Date().getFullYear()
+        )}`,
+        place: '',
+        specialization: '',
+      })
+    },
+    removeInterest(index: number) {
+      index > -1 && this.user.education?.splice(index, 1)
+    },
+    changeEducation,
+  },
+  data() {
+    return {
+      user: this.$store.getters.getUser as User,
+      showForm: true,
+      SciencesList,
+    }
+  },
+})
 </script>
 
 <style lang="scss" scoped>
 @import '@/styles/index.scss';
+.education {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  width: 500px;
+  max-width: 90vw;
+  > button {
+    font-size: 18px;
+    width: 180px;
+    padding: 10px;
+    background-color: theme(dark);
+    border-radius: 7px;
+    color: theme(light);
+    @media (max-width: 1000px) {
+      width: 120px;
+      font-size: 16px;
+    }
+  }
+}
+
 header {
   font-size: 22px;
   margin-top: 10px;
+}
+
+.item {
+  width: 100%;
+  padding: 10px;
+  margin: 7px 0;
+  background-color: theme(gray);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  input,
+  select,
+  option {
+    display: block;
+    margin: 5px;
+    padding: 5px;
+    font-size: 17px;
+    flex-grow: 1;
+    @media (max-width: 1000px) {
+      font-size: 15px;
+    }
+  }
+}
+
+.show {
+  background-color: theme(dark);
+  padding: 5px 10px;
+  margin: 12px;
+  font-size: 24px;
+  width: 110px;
+  border-radius: 10px;
+  color: theme(light);
+  @media (max-width: 1000px) {
+    width: 100px;
+    font-size: 20px;
+  }
+}
+
+.adduniversity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: theme(main);
+  color: theme(light);
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.time-and-place {
+  display: flex;
+  .time {
+    max-width: 130px;
+  }
 }
 </style>

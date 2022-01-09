@@ -379,6 +379,12 @@
       "security": "Bezpieczeństwo",
       "cookies": "Ciasteczka",
       "bug": "Zgłoś błąd"
+    },
+    "common": {
+      "university": "Uniwersytet",
+      "time": "Czas studiowania (rok)",
+      "place": "Miejscowość",
+      "specialization": "Specjalizacja"
     }
   },
   "notifications": {

@@ -55,3 +55,23 @@ export const changeInterests = async (user: User): Promise<void> => {
     })
   }
 }
+
+export const changeEducation = async (user: User): Promise<void> => {
+  try {
+    await axios.put(`/users/${user?.Login}/education`, {
+      token: Cookies.get('jwt'),
+      interests: user.education,
+    })
+    notify({
+      type: 'success',
+      title: i18n.global.t('notifications.types.succes'),
+      text: i18n.global.t('notifications.text.user.education.done'),
+    })
+  } catch (e) {
+    notify({
+      type: 'error',
+      title: i18n.global.t('notifications.types.error'),
+      text: i18n.global.t('notifications.text.user.education.didnt'),
+    })
+  }
+}

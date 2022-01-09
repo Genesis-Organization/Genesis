@@ -44,8 +44,11 @@ export interface Work {
 }
 
 export interface University {
+  university: string
   science: string
   degree: string
+  time: string
+  place: string
   specialization?: string
 }
 

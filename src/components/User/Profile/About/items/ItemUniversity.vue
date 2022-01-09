@@ -20,7 +20,7 @@
         </div>
         <div class="place">
           <ic icon="map-marker-alt" />
-          Warsaw
+          {{ university.place }}
         </div>
       </div>
       <div class="spec" v-if="university.spec">
