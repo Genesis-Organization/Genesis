@@ -56,6 +56,7 @@ export default defineComponent({
           this.$t('info.sections.software.langscategories.others'),
           'Java',
           'Python',
+          'Elixir',
           'Ruby',
         ],
       ] as string[][],
