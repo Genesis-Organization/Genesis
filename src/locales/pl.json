@@ -384,14 +384,15 @@
       "university": "Uniwersytet",
       "time": "Czas studiowania (rok)",
       "place": "Miejscowość",
-      "specialization": "Specjalizacja"
+      "specialization": "Specjalizacja",
+      "optional": "Opcjonalnie"
     }
   },
   "notifications": {
     "types": {
       "succes": "Sukces!",
       "warn": "Ostrzeżenie!",
-      "error": "Niepowodzenie"
+      "error": "Niepowodzenie!"
     },
     "text": {
       "user": {
@@ -402,6 +403,10 @@
         "interests": {
           "done": "Pomyślnie zaktualizowano zainteresowania",
           "didnt": "Nie udało się zaktualizować zainteresowań ;c"
+        },
+        "education": {
+          "done": "Pomyślnie zaktualizowano wykształcenie",
+          "didnt": "Nie udało się zaktualizować wyształcenia ;c"
         }
       }
     }

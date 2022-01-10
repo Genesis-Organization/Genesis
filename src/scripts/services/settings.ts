@@ -60,7 +60,7 @@ export const changeEducation = async (user: User): Promise<void> => {
   try {
     await axios.put(`/users/${user?.Login}/education`, {
       token: Cookies.get('jwt'),
-      interests: user.education,
+      education: user.education,
     })
     notify({
       type: 'success',

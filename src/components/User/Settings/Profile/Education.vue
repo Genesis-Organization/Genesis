@@ -16,10 +16,14 @@
       class="item"
     >
       <!-- SCHOOL -->
-      <input
-        v-model="user.education[index].university"
-        :placeholder="$t(`settings.common.university`)"
-      />
+      <div class="flex">
+        <input
+          v-model="user.education[index].university"
+          :placeholder="$t(`settings.common.university`)"
+          required
+        />
+        <div class="remove" v-on:click="removeInterest(index)">X</div>
+      </div>
       <!-- SCIENCE -->
       <select v-model="user.education[index].science">
         <option
@@ -36,26 +40,31 @@
           {{ $t(`user.degrees.${option}.full`) }}
         </option>
       </select>
-      <div class="time-and-place">
+      <div class="flex">
         <!-- TIME -->
         <input
           v-model="user.education[index].time"
           max-length="9"
           class="time"
           :placeholder="$t(`settings.common.time`)"
+          required
         />
         <!-- PLACE -->
         <input
           v-model="user.education[index].place"
           :placeholder="$t(`settings.common.place`)"
+          required
         />
       </div>
       <!-- DESCRIPTION -->
       <input
         v-model="user.education[index].specialization"
-        :placeholder="$t(`settings.common.specialization`)"
+        :placeholder="`${$t('settings.common.specialization')} (${$t(
+          'settings.common.optional'
+        )})`"
       />
     </section>
+    <button>{{ $t('auth.inputs.confirm') }}</button>
   </form>
   <!-- BUTTON -->
   <button v-on:click="this.showForm = true" v-if="!showForm" class="show">
@@ -90,7 +99,7 @@ export default defineComponent({
   data() {
     return {
       user: this.$store.getters.getUser as User,
-      showForm: true,
+      showForm: false,
       SciencesList,
     }
   },
@@ -142,6 +151,7 @@ header {
     padding: 5px;
     font-size: 17px;
     flex-grow: 1;
+    border-radius: 7px;
     @media (max-width: 1000px) {
       font-size: 15px;
     }
@@ -176,10 +186,25 @@ header {
   margin: 10px;
 }
 
-.time-and-place {
+.flex {
   display: flex;
+  align-items: center;
   .time {
     max-width: 130px;
   }
+}
+
+.remove {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: theme(light);
+  border-radius: 5px;
+  margin-left: 5px;
+  width: 30px;
+  height: 30px;
+  font-size: 15px;
+  background: theme(main);
+  cursor: pointer;
 }
 </style>
