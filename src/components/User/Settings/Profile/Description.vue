@@ -2,14 +2,15 @@
   <form class="description" @submit.prevent="changeDesc(user)">
     <div>{{ $t('user.sections.description') }}</div>
     <textarea v-model="user.description" maxlength="300"></textarea>
-    <button>{{ $t('auth.inputs.confirm') }}</button>
+    <Submit />
   </form>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import Submit from './Shared/Submit.vue'
 import { changeDesc } from '@/scripts/services/settings'
-import { User, SciencesList, ScienceLevel } from '@/types/user'
+import { User } from '@/types/user'
 
 export default defineComponent({
   methods: {
@@ -18,9 +19,10 @@ export default defineComponent({
   data() {
     return {
       user: this.$store.getters.getUser as User,
-      SciencesList,
-      ScienceLevel,
     }
+  },
+  components: {
+    Submit,
   },
 })
 </script>
@@ -35,18 +37,6 @@ export default defineComponent({
   margin: 10px;
   > div {
     font-size: 22px;
-  }
-  > button {
-    font-size: 18px;
-    width: 180px;
-    padding: 10px;
-    background-color: theme(dark);
-    border-radius: 7px;
-    color: theme(light);
-    @media (max-width: 1000px) {
-      width: 120px;
-      font-size: 16px;
-    }
   }
 }
 

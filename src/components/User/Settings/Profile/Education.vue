@@ -5,10 +5,7 @@
     v-if="showForm"
     @submit.prevent="changeEducation(user), (this.showForm = false)"
   >
-    <!-- ADD -->
-    <div class="adduniversity" v-on:click="addInterest">
-      <ic icon="plus" />
-    </div>
+    <Add v-on:click="addInterest" />
     <!-- UNIVERSITIES -->
     <section
       v-for="(university, index) in user.education"
@@ -64,16 +61,16 @@
         )})`"
       />
     </section>
-    <button>{{ $t('auth.inputs.confirm') }}</button>
+    <Submit />
   </form>
-  <!-- BUTTON -->
-  <button v-on:click="this.showForm = true" v-if="!showForm" class="show">
-    <ic icon="angle-double-down" />
-  </button>
+  <Expand v-on:click="this.showForm = true" v-if="!showForm" />
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import Add from './Shared/Add.vue'
+import Expand from './Shared/Expand.vue'
+import Submit from './Shared/Submit.vue'
 import { changeEducation } from '@/scripts/services/settings'
 import { User, SciencesList } from '@/types/user'
 
@@ -103,6 +100,11 @@ export default defineComponent({
       SciencesList,
     }
   },
+  components: {
+    Add,
+    Expand,
+    Submit,
+  },
 })
 </script>
 
@@ -116,18 +118,6 @@ export default defineComponent({
   margin: 10px;
   width: 500px;
   max-width: 90vw;
-  > button {
-    font-size: 18px;
-    width: 180px;
-    padding: 10px;
-    background-color: theme(dark);
-    border-radius: 7px;
-    color: theme(light);
-    @media (max-width: 1000px) {
-      width: 120px;
-      font-size: 16px;
-    }
-  }
 }
 
 header {
@@ -156,34 +146,6 @@ header {
       font-size: 15px;
     }
   }
-}
-
-.show {
-  background-color: theme(dark);
-  padding: 5px 10px;
-  margin: 12px;
-  font-size: 24px;
-  width: 110px;
-  border-radius: 10px;
-  color: theme(light);
-  @media (max-width: 1000px) {
-    width: 100px;
-    font-size: 20px;
-  }
-}
-
-.adduniversity {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  background-color: theme(main);
-  color: theme(light);
-  border-radius: 10px;
-  font-size: 20px;
-  cursor: pointer;
-  margin: 10px;
 }
 
 .flex {
