@@ -12,7 +12,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { User } from '@/types/user'
+import { User, SciencesList } from '@/types/user'
 
 export default defineComponent({
   props: {
@@ -21,6 +21,7 @@ export default defineComponent({
   data() {
     return {
       user: this.$store.getters.getUser as User,
+      SciencesList,
     }
   },
 })
