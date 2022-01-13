@@ -11,13 +11,9 @@
       :key="index"
       class="item"
     >
-      <Science :index="index" :interest="interest" />
+      <Science :index="index" />
       <input v-model="user.researchInterests[index].desc" />
-      <Level
-        :index="index"
-        :interest="interest"
-        v-on:remove="removeInterest(index)"
-      />
+      <Level :index="index" v-on:remove="removeInterest(index)" />
     </section>
     <Submit />
   </form>

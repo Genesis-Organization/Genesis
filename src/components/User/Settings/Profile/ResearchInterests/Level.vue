@@ -19,13 +19,12 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { User, ScienceLevel, ResearchInterest } from '@/types/user'
+import { User, ScienceLevel } from '@/types/user'
 
 export default defineComponent({
   emits: ['remove'],
   props: {
     index: Number,
-    interest: Object as () => ResearchInterest,
   },
   data() {
     return {

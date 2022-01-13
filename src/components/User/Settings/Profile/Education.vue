@@ -6,60 +6,16 @@
     @submit.prevent="changeEducation(user), (this.showForm = false)"
   >
     <Add v-on:click="addInterest" />
-    <!-- UNIVERSITIES -->
     <section
       v-for="(university, index) in user.education"
       :key="index"
       class="item"
     >
-      <!-- SCHOOL -->
-      <div class="flex">
-        <input
-          v-model="user.education[index].university"
-          :placeholder="$t(`settings.common.university`)"
-          required
-        />
-        <div class="remove" v-on:click="removeInterest(index)">X</div>
-      </div>
-      <!-- SCIENCE -->
-      <select v-model="user.education[index].science">
-        <option
-          v-for="science in SciencesList"
-          :key="science"
-          :value="science.toLowerCase()"
-        >
-          {{ $t(`sciences.sciences.${science.toLowerCase()}`) }}
-        </option>
-      </select>
-      <!-- DEGREE -->
-      <select>
-        <option v-for="option in 5" :key="option">
-          {{ $t(`user.degrees.${option}.full`) }}
-        </option>
-      </select>
-      <div class="flex">
-        <!-- TIME -->
-        <input
-          v-model="user.education[index].time"
-          max-length="9"
-          class="time"
-          :placeholder="$t(`settings.common.time`)"
-          required
-        />
-        <!-- PLACE -->
-        <input
-          v-model="user.education[index].place"
-          :placeholder="$t(`settings.common.place`)"
-          required
-        />
-      </div>
-      <!-- DESCRIPTION -->
-      <input
-        v-model="user.education[index].specialization"
-        :placeholder="`${$t('settings.common.specialization')} (${$t(
-          'settings.common.optional'
-        )})`"
-      />
+      <University :index="index" v-on:remove="removeInterest(index)" />
+      <Science :index="index" />
+      <Degree :index="index" />
+      <Details :index="index" />
+      <Description :index="index" />
     </section>
     <Submit />
   </form>
@@ -71,6 +27,11 @@ import { defineComponent } from 'vue'
 import Add from './Shared/Add.vue'
 import Expand from './Shared/Expand.vue'
 import Submit from './Shared/Submit.vue'
+import University from './Education/University.vue'
+import Science from './Education/Science.vue'
+import Degree from './Education/Degree.vue'
+import Details from './Education/Details.vue'
+import Description from './Education/Description.vue'
 import { changeEducation } from '@/scripts/services/settings'
 import { User, SciencesList } from '@/types/user'
 
@@ -104,6 +65,11 @@ export default defineComponent({
     Add,
     Expand,
     Submit,
+    University,
+    Science,
+    Degree,
+    Details,
+    Description,
   },
 })
 </script>
@@ -133,40 +99,5 @@ header {
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  input,
-  select,
-  option {
-    display: block;
-    margin: 5px;
-    padding: 5px;
-    font-size: 17px;
-    flex-grow: 1;
-    border-radius: 7px;
-    @media (max-width: 1000px) {
-      font-size: 15px;
-    }
-  }
-}
-
-.flex {
-  display: flex;
-  align-items: center;
-  .time {
-    max-width: 130px;
-  }
-}
-
-.remove {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: theme(light);
-  border-radius: 5px;
-  margin-left: 5px;
-  width: 30px;
-  height: 30px;
-  font-size: 15px;
-  background: theme(main);
-  cursor: pointer;
 }
 </style>

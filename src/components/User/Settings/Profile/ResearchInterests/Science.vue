@@ -2,7 +2,9 @@
   <div class="sciencecont">
     <img
       :src="
-        require(`@/assets/icons/sciences/${interest.science.toLowerCase()}.svg`)
+        require(`@/assets/icons/sciences/${user.researchInterests[
+          index
+        ].science.toLowerCase()}.svg`)
       "
     />
     <select
@@ -22,12 +24,11 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { User, ResearchInterest, SciencesList } from '@/types/user'
+import { User, SciencesList } from '@/types/user'
 
 export default defineComponent({
   props: {
     index: Number,
-    interest: Object as () => ResearchInterest,
   },
   data() {
     return {
