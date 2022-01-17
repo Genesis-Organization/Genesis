@@ -28,7 +28,7 @@ article {
   align-items: center;
   padding: 5vh 20px;
   margin-bottom: 2vh;
-  font-size: 22px;
+  font-size: 19px;
   background: #b4c1c7;
   @media (max-width: 700px) {
     font-size: 16px;

@@ -1,4 +1,12 @@
 <template>
+  <div class="search">
+    <div class="bar">
+      <input />
+      <button>
+        <ic icon="search" />
+      </button>
+    </div>
+  </div>
   <div class="headcont">
     <div class="header">
       <div
@@ -57,6 +65,33 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import '@/styles/index.scss';
+.search {
+  margin: 5px 5px 0 0;
+  display: flex;
+  justify-content: flex-end;
+  .bar {
+    width: 285px;
+    display: flex;
+    border: 3px solid theme(main_dark);
+    background-color: theme(main_dark);
+    border-radius: 7px;
+    input {
+      flex-grow: 1;
+      margin-left: 1px;
+      padding: 5px;
+      font-size: 17px;
+      border-radius: 4px 0 0 4px;
+    }
+    button {
+      background-color: transparent;
+      color: theme(light);
+      width: 35px;
+      height: 35px;
+      font-size: 18px;
+    }
+  }
+}
+
 .headcont {
   display: flex;
   justify-content: space-between;

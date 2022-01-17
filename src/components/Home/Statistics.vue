@@ -34,7 +34,7 @@ article {
   flex-wrap: wrap;
   margin: auto;
   padding: 20px;
-  font-size: 22px;
+  font-size: 19px;
   min-height: 18vh;
   max-width: 1500px;
   @media (max-width: 700px) {
