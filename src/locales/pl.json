@@ -303,6 +303,7 @@
       "description": "Opis profilu",
       "researchinterests": "Zainteresowania naukowe",
       "education": "Wykształcenie",
+      "research": "Działalność naukowa",
       "items": {
         "education": {
           "spec": "Specjalizacja"

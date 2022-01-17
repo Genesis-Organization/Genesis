@@ -14,7 +14,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Layout from '../Layout.vue'
+import Layout from '../../Layout.vue'
 import ResearchInterestItem from '../items/ItemResearchInterest.vue'
 import { ResearchInterest } from '@/types/user'
 

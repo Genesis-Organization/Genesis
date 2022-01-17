@@ -17,6 +17,7 @@
     <Filter v-on:setSection="setSection" />
     <Home :user="user" v-if="currentSection == 0" />
     <!-- WIP -->
+    <Research :user="user" v-if="currentSection == 2" />
     <About :user="user" v-if="currentSection == 4" />
   </div>
 </template>
@@ -27,6 +28,7 @@ import Banner from './Banner.vue'
 import UserHeader from './Header/UserHeader.vue'
 import Filter from './Filter.vue'
 import Home from './Home/Home.vue'
+import Research from './Research/Research.vue'
 import About from './About/About.vue'
 import { User } from '@/types/user'
 
@@ -39,6 +41,7 @@ export default defineComponent({
     UserHeader,
     Filter,
     Home,
+    Research,
     About,
   },
   data() {

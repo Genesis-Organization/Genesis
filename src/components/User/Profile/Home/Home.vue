@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import ResearchInterests from '../About/sections/ResearchInterests.vue'
+import ResearchInterests from '../Research/sections/ResearchInterests.vue'
 import { User } from '@/types/user'
 
 export default defineComponent({

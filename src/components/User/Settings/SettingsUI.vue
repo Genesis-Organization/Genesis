@@ -2,11 +2,14 @@
   <div class="container">
     <Menu v-on:setSection="setSection" />
     <Section v-if="currentSection == 0">Work in Progress</Section>
-    <Section v-if="currentSection == 1">Work in Progress</Section>
+    <Section v-if="currentSection == 1">
+      <BasicInfo />
+    </Section>
     <Section v-if="currentSection == 2">
       <Description />
       <ResearchInterests />
       <Education />
+      <Work />
     </Section>
     <Section v-if="currentSection == 3">Work in Progress</Section>
     <Section v-if="currentSection == 4">Work in Progress</Section>
@@ -17,11 +20,16 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+
 import Menu from './Menu.vue'
 import Section from './Section.vue'
+
+import BasicInfo from './Account/BasicInfo.vue'
+
 import Description from './Profile/Description.vue'
 import ResearchInterests from './Profile/ResearchInterests.vue'
 import Education from './Profile/Education.vue'
+import Work from './Profile/Research.vue'
 
 export default defineComponent({
   data() {
@@ -32,9 +40,13 @@ export default defineComponent({
   components: {
     Menu,
     Section,
+    // ACCOUNT
+    BasicInfo,
+    // PROFILE
     Description,
     ResearchInterests,
     Education,
+    Work,
   },
   methods: {
     setSection(number: number) {

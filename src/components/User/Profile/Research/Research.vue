@@ -1,12 +1,10 @@
 <template>
   <ResearchInterests :researchInterests="user.researchInterests" />
-  <Education :education="user.education" />
-  <Work :work="user.work" />
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Education from './sections/Education.vue'
+import ResearchInterests from './sections/ResearchInterests.vue'
 import { User } from '@/types/user'
 
 export default defineComponent({
@@ -14,7 +12,7 @@ export default defineComponent({
     user: Object as () => User,
   },
   components: {
-    Education,
+    ResearchInterests,
   },
 })
 </script>

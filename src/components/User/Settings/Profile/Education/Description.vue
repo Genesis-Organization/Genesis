@@ -1,6 +1,6 @@
 <template>
   <input
-    v-model="user.education[index].specialization"
+    v-model="user.education[index].spec"
     :placeholder="`${$t('settings.common.specialization')} (${$t(
       'settings.common.optional'
     )})`"
