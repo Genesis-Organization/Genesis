@@ -24,9 +24,9 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Add from './Shared/Add.vue'
-import Expand from './Shared/Expand.vue'
-import Submit from './Shared/Submit.vue'
+import Add from '../Shared/Add.vue'
+import Expand from '../Shared/Expand.vue'
+import Submit from '../Shared/Submit.vue'
 import University from './Education/University.vue'
 import Science from './Education/Science.vue'
 import Degree from './Education/Degree.vue'

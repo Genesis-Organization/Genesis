@@ -22,9 +22,9 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Add from './Shared/Add.vue'
-import Expand from './Shared/Expand.vue'
-import Submit from './Shared/Submit.vue'
+import Add from '../Shared/Add.vue'
+import Expand from '../Shared/Expand.vue'
+import Submit from '../Shared/Submit.vue'
 import Science from './ResearchInterests/Science.vue'
 import Level from './ResearchInterests/Level.vue'
 import { changeInterests } from '@/scripts/services/settings'

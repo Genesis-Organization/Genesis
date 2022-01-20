@@ -9,7 +9,6 @@
       <Description />
       <ResearchInterests />
       <Education />
-      <Work />
     </Section>
     <Section v-if="currentSection == 3">Work in Progress</Section>
     <Section v-if="currentSection == 4">Work in Progress</Section>
@@ -29,7 +28,6 @@ import BasicInfo from './Account/BasicInfo.vue'
 import Description from './Profile/Description.vue'
 import ResearchInterests from './Profile/ResearchInterests.vue'
 import Education from './Profile/Education.vue'
-import Work from './Profile/Research.vue'
 
 export default defineComponent({
   data() {
@@ -46,7 +44,6 @@ export default defineComponent({
     Description,
     ResearchInterests,
     Education,
-    Work,
   },
   methods: {
     setSection(number: number) {

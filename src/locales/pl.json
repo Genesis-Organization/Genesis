@@ -386,7 +386,12 @@
       "time": "Czas studiowania (rok)",
       "place": "Miejscowość",
       "specialization": "Specjalizacja",
-      "optional": "Opcjonalnie"
+      "optional": "Opcjonalnie",
+      "basicinfo": "Podstawowe Informacje",
+      "warn": {
+        "header": "Uwaga!",
+        "cont": "Są to dane, które bardzo rzadko się zmieniają. Zastanów się czy na pewno chcesz je ruszać?"
+      }
     }
   },
   "notifications": {

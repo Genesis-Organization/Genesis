@@ -8,7 +8,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Submit from './Shared/Submit.vue'
+import Submit from '../Shared/Submit.vue'
 import { changeDesc } from '@/scripts/services/settings'
 import { User } from '@/types/user'
 
