@@ -7,7 +7,9 @@
     <form>
       <div class="up">
         <input v-model="user.Name" />
-        <button>Submit</button>
+        <button>
+          <ic icon="check" />
+        </button>
       </div>
       <div class="down">
         <input v-model="user.Surname" />
@@ -57,7 +59,6 @@ export default defineComponent({
   input,
   button {
     padding: 3px 6px;
-    margin: 3px;
     margin: 0 5px;
     font-size: 18px;
     border-radius: 5px;
@@ -73,6 +74,10 @@ export default defineComponent({
   }
   input {
     flex-grow: 1;
+  }
+  button {
+    background-color: theme(main_dark);
+    color: theme(light);
   }
 }
 </style>

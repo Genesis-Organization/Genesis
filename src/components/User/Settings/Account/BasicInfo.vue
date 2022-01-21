@@ -37,7 +37,7 @@ header {
 .inputs {
   display: flex;
   flex-direction: column;
-  width: 750px;
+  width: 720px;
   max-width: 90vw;
 }
 </style>

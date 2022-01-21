@@ -2,11 +2,13 @@
   <div class="input">
     <div class="info">
       <ic icon="paper-plane" />
-      <div>E-mail</div>
+      <div>{{ $t('auth.inputs.email') }}</div>
     </div>
     <form>
       <input v-model="user.Email" />
-      <button>Submit</button>
+      <button>
+        <ic icon="check" />
+      </button>
     </form>
   </div>
 </template>
@@ -50,14 +52,19 @@ export default defineComponent({
   }
   input,
   button {
-    padding: 3px 6px;
-    margin: 3px;
+    display: flex;
+    align-items: center;
+    padding: 5px 6px;
     margin: 0 5px;
     font-size: 18px;
     border-radius: 5px;
   }
   input {
     flex-grow: 1;
+  }
+  button {
+    background-color: theme(main_dark);
+    color: theme(light);
   }
 }
 </style>

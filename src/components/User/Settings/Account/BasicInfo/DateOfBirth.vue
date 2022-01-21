@@ -1,12 +1,14 @@
 <template>
   <div class="input">
     <div class="info">
-      <ic icon="paper-plane" />
-      <div>E-mail</div>
+      <ic icon="calendar-alt" />
+      <div>{{ $t('auth.inputs.dateofbirth') }}</div>
     </div>
     <form>
-      <input v-model="user.Email" />
-      <button>Submit</button>
+      <input type="date" v-model="user.DateOfBirth" />
+      <button>
+        <ic icon="check" />
+      </button>
     </form>
   </div>
 </template>
@@ -50,14 +52,20 @@ export default defineComponent({
   }
   input,
   button {
+    display: flex;
+    align-items: center;
     padding: 3px 6px;
-    margin: 3px;
     margin: 0 5px;
     font-size: 18px;
     border-radius: 5px;
   }
   input {
     flex-grow: 1;
+  }
+  button {
+    padding: 6px;
+    background-color: theme(main_dark);
+    color: theme(light);
   }
 }
 </style>
