@@ -6,7 +6,7 @@
     <div class="fat"></div>
     <div class="pick">
       <div class="closecontainer">
-        <div class="close" v-on:click="unfocusMenu">
+        <div class="close" @click="unfocusMenu">
           <ic icon="angle-double-left" />
         </div>
       </div>
@@ -15,7 +15,7 @@
         v-for="(section, index) in sections"
         :key="index"
         :class="{ isActive: activeSection == index }"
-        v-on:click="emitSection(index)"
+        @click="emitSection(index)"
       >
         <ic :icon="section.icon" />
         <div class="text">

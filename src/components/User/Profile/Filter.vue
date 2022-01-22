@@ -6,7 +6,7 @@
         v-for="(section, index) in sections"
         :key="index"
         :class="{ isActive: currentSection == index }"
-        v-on:click="emitSection(index)"
+        @click="emitSection(index)"
       >
         <ic :icon="section" />
       </div>

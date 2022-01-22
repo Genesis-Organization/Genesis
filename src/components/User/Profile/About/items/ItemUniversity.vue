@@ -1,9 +1,5 @@
 <template>
-  <div
-    class="university"
-    :class="{ notlast: !last }"
-    v-on:click="ToggleDetails"
-  >
+  <div class="university" :class="{ notlast: !last }" @click="ToggleDetails">
     <div class="headercont">
       <div>
         <header>{{ university.science }}</header>

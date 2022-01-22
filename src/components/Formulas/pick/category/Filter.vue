@@ -1,13 +1,13 @@
 <template>
   <div class="filter">
-    <div class="filter_option all" v-on:click="filterCategories(null)">
+    <div class="filter_option all" @click="filterCategories(null)">
       {{ $t('sciences.groups.all') }}
     </div>
     <div
       class="filter_option"
       v-for="group in groups"
       :key="group"
-      v-on:click="filterCategories(group.GroupID)"
+      @click="filterCategories(group.GroupID)"
     >
       {{ $t('sciences.groups.' + group.GroupName.toLowerCase()) }}
     </div>

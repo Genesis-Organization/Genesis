@@ -14,7 +14,7 @@
       :isSponsor="user.isSponsor"
       :description="user.description"
     />
-    <Filter v-on:setSection="setSection" />
+    <Filter @setSection="setSection" />
     <Home :user="user" v-if="currentSection == 0" />
     <!-- WIP -->
     <Research :user="user" v-if="currentSection == 2" />

@@ -1,5 +1,5 @@
 <template>
-  <div v-on:click="upOneLevel()">
+  <div @click="upOneLevel()">
     <ic icon="angle-double-left"></ic>
   </div>
 </template>

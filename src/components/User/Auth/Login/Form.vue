@@ -20,7 +20,7 @@
         <button>
           {{ $t('auth.login.login') }}
         </button>
-        <div class="que" v-on:click="showModal">?</div>
+        <div class="que" @click="showModal">?</div>
         <Modal ref="modal" :title="$t('modal.modals.login.title')">
           dasdasd
         </Modal>

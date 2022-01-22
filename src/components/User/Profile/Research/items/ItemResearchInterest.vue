@@ -1,5 +1,5 @@
 <template>
-  <div class="item" v-on:click="ToggleDesc">
+  <div class="item" @click="ToggleDesc">
     <div
       class="itemcont"
       :class="{ visionary: interest.level === 'visionary' }"

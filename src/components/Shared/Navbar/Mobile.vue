@@ -1,17 +1,17 @@
 <template>
   <div class="mobile">
     <Logo class="logo" />
-    <Hamburger v-on:click="setSideMenu(true)" />
+    <Hamburger @click="setSideMenu(true)" />
     <div class="site-menu" v-if="showSideMenu == true">
       <ul>
-        <div class="close" v-on:click="setSideMenu(false)"></div>
+        <div class="close" @click="setSideMenu(false)"></div>
         <Logo class="logo" />
-        <MProfile v-on:close="setSideMenu(false)" />
+        <MProfile @close="setSideMenu(false)" />
         <NavItem
           v-for="subpage in subpages"
           :key="subpage"
           :subpage="subpage"
-          v-on:click="setSideMenu(false)"
+          @click="setSideMenu(false)"
         />
         <Locale :options="langs" />
       </ul>

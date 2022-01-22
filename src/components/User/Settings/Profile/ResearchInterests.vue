@@ -5,7 +5,7 @@
     v-if="showForm"
     @submit.prevent="changeInterests(user), (this.showForm = false)"
   >
-    <Add v-on:click="addInterest" />
+    <Add @click="addInterest" />
     <section
       v-for="(interest, index) in user.researchInterests"
       :key="index"
@@ -13,11 +13,11 @@
     >
       <Science :index="index" />
       <input v-model="user.researchInterests[index].desc" />
-      <Level :index="index" v-on:remove="removeInterest(index)" />
+      <Level :index="index" @remove="removeInterest(index)" />
     </section>
     <Submit />
   </form>
-  <Expand v-on:click="this.showForm = true" v-if="!showForm" />
+  <Expand @click="this.showForm = true" v-if="!showForm" />
 </template>
 
 <script lang="ts">

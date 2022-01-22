@@ -21,7 +21,7 @@
     </router-link>
   </article>
   <NavItem
-    v-on:click="this.$emit('close')"
+    @click="this.$emit('close')"
     v-else
     :subpage="{
       text: 'Zaloguj się',
@@ -31,28 +31,28 @@
   />
   <div class="buttons" v-if="user">
     <router-link
-      v-on:click="this.$emit('close')"
+      @click="this.$emit('close')"
       :to="'/users/' + user.Login"
       :style="{
         backgroundImage: `url(${require('@/assets/icons/navbar/login.svg')})`,
       }"
     ></router-link>
     <router-link
-      v-on:click="this.$emit('close')"
+      @click="this.$emit('close')"
       to="/messages"
       :style="{
         backgroundImage: `url(${require('@/assets/icons/user/messages.svg')})`,
       }"
     ></router-link>
     <router-link
-      v-on:click="this.$emit('close')"
+      @click="this.$emit('close')"
       to="/notifications"
       :style="{
         backgroundImage: `url(${require('@/assets/icons/user/bell.svg')})`,
       }"
     ></router-link>
     <router-link
-      v-on:click="this.$emit('close')"
+      @click="this.$emit('close')"
       to="/settings"
       :style="{
         backgroundImage: `url(${require('@/assets/icons/user/settings.svg')})`,

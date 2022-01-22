@@ -5,7 +5,7 @@
       :key="interest"
       :interest="interest"
     />
-    <button v-on:click="expandItems()" v-if="extendButton">
+    <button @click="expandItems()" v-if="extendButton">
       <ic icon="angle-double-up" v-if="sortedArray[0].length > 4" />
       <ic icon="angle-double-down" v-else />
     </button>

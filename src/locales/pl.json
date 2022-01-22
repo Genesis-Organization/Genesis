@@ -422,6 +422,10 @@
     "modals": {
       "login": {
         "title": "Wszystko o systemie logowania."
+      },
+      "confirm_settings": {
+        "title": "Potwierdź swoją tożsamość.",
+        "content": "Ze względów bezpieczeństwa prosimy cię o podanie swojego hasła."
       }
     }
   }

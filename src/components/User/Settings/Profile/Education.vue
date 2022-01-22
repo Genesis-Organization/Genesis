@@ -5,13 +5,13 @@
     v-if="showForm"
     @submit.prevent="changeEducation(user), (this.showForm = false)"
   >
-    <Add v-on:click="addInterest" />
+    <Add @click="addInterest" />
     <section
       v-for="(university, index) in user.education"
       :key="index"
       class="item"
     >
-      <University :index="index" v-on:remove="removeInterest(index)" />
+      <University :index="index" @remove="removeInterest(index)" />
       <Science :index="index" />
       <Degree :index="index" />
       <Details :index="index" />
@@ -19,7 +19,7 @@
     </section>
     <Submit />
   </form>
-  <Expand v-on:click="this.showForm = true" v-if="!showForm" />
+  <Expand @click="this.showForm = true" v-if="!showForm" />
 </template>
 
 <script lang="ts">

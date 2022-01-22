@@ -4,24 +4,37 @@
       <ic icon="calendar-alt" />
       <div>{{ $t('auth.inputs.dateofbirth') }}</div>
     </div>
-    <form>
+    <div class="form">
       <input type="date" v-model="user.DateOfBirth" />
-      <button>
+      <button @click="showModal">
         <ic icon="check" />
       </button>
-    </form>
+      <Modal ref="modal" :title="$t('modal.modals.confirm_settings.title')">
+        dasdasd
+      </Modal>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import Modal from '@/components/Shared/Modals/Modal.vue'
 import { User } from '@/types/user'
 
 export default defineComponent({
+  components: {
+    Modal,
+  },
   data() {
     return {
       user: this.$store.getters.getUser as User,
     }
+  },
+  methods: {
+    showModal() {
+      const modal = this.$refs.modal as InstanceType<typeof Modal>
+      if (modal) modal.toggleModal()
+    },
   },
 })
 </script>
@@ -43,7 +56,7 @@ export default defineComponent({
       margin-right: 10px;
     }
   }
-  form {
+  .form {
     display: flex;
     align-items: flex-end;
     @media (min-width: 1000px) {

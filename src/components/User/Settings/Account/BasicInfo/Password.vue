@@ -4,21 +4,34 @@
       <ic icon="key" />
       <div>{{ $t('auth.inputs.password') }}</div>
     </div>
-    <form>
-      <button>{{ $t('settings.common.changepass') }}</button>
-    </form>
+    <div class="form">
+      <button @click="showModal">{{ $t('settings.common.changepass') }}</button>
+      <Modal ref="modal" :title="$t('modal.modals.confirm_settings.title')">
+        dasdasd
+      </Modal>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import Modal from '@/components/Shared/Modals/Modal.vue'
 import { User } from '@/types/user'
 
 export default defineComponent({
+  components: {
+    Modal,
+  },
   data() {
     return {
       user: this.$store.getters.getUser as User,
     }
+  },
+  methods: {
+    showModal() {
+      const modal = this.$refs.modal as InstanceType<typeof Modal>
+      if (modal) modal.toggleModal()
+    },
   },
 })
 </script>
@@ -40,7 +53,7 @@ export default defineComponent({
       margin-right: 10px;
     }
   }
-  form {
+  .form {
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;

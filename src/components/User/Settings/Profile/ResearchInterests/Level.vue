@@ -13,7 +13,7 @@
       </option>
     </select>
     <div class="que">?</div>
-    <div class="que remove" v-on:click="$emit('remove')">X</div>
+    <div class="que remove" @click="$emit('remove')">X</div>
   </div>
 </template>
 

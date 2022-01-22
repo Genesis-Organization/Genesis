@@ -5,7 +5,7 @@
       :placeholder="$t(`settings.common.university`)"
       required
     />
-    <span class="remove" v-on:click="$emit('remove')">X</span>
+    <span class="remove" @click="$emit('remove')">X</span>
   </div>
 </template>
 

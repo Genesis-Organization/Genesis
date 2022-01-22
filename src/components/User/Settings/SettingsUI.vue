@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Menu v-on:setSection="setSection" />
+    <Menu @setSection="setSection" />
     <Section v-if="currentSection == 0">Work in Progress</Section>
     <Section v-if="currentSection == 1">
       <BasicInfo />

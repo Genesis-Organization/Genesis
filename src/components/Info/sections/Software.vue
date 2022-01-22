@@ -9,7 +9,7 @@
         <div
           v-for="lang in category"
           :key="lang"
-          v-on:click="lang != category[0] && whatIsThatLang(lang)"
+          @click="lang != category[0] && whatIsThatLang(lang)"
         >
           <img
             :src="

@@ -3,7 +3,7 @@
     <section class="modal">
       <div class="bar">
         <div class="title">{{ title }}</div>
-        <div class="close" v-on:click="toggleModal">
+        <div class="close" @click="toggleModal">
           <ic icon="times" />
         </div>
       </div>
@@ -73,6 +73,7 @@ export default defineComponent({
   }
   .close {
     font-size: 27px;
+    cursor: pointer;
   }
 }
 .content {
