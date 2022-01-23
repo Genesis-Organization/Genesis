@@ -1,5 +1,6 @@
 <template>
   <div class="background" v-if="display">
+    <div class="bgclick" @click="toggleModal" />
     <section class="modal">
       <div class="bar">
         <div class="title">{{ title }}</div>
@@ -83,5 +84,12 @@ export default defineComponent({
   border-radius: 10px;
   padding: 10px;
   text-align: left;
+}
+.bgclick {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 </style>

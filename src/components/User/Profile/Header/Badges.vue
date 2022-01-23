@@ -75,7 +75,6 @@ section {
     transition: all 0.3s;
     transform: translateX(-50%);
     overflow: hidden;
-    border: 4px solid #161616;
     opacity: 0;
     b {
       font-weight: 500;

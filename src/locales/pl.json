@@ -414,6 +414,22 @@
         "education": {
           "done": "Pomyślnie zaktualizowano wykształcenie",
           "didnt": "Nie udało się zaktualizować wyształcenia ;c"
+        },
+        "name": {
+          "done": "Pomyślnie zaktualizowano imię i nazwisko",
+          "didnt": "Nie udało się zaktualizować imienia i nazwiska ;c"
+        },
+        "email": {
+          "done": "Pomyślnie zaktualizowano adres E-mail",
+          "didnt": "Nie udało się zaktualizować adresu E-mail ;c"
+        },
+        "dob": {
+          "done": "Pomyślnie zaktualizowano datę urodzenia",
+          "didnt": "Nie udało się zaktualizować daty urodzenia ;c"
+        },
+        "password": {
+          "done": "Pomyślnie zaktualizowano hasło",
+          "didnt": "Nie udało się zaktualizować hasła ;c"
         }
       }
     }

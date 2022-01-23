@@ -75,3 +75,100 @@ export const changeEducation = async (user: User): Promise<void> => {
     })
   }
 }
+
+export const changeName = async (
+  user: User,
+  password: string
+): Promise<void> => {
+  try {
+    await axios.put(`/users/${user?.Login}/name`, {
+      token: Cookies.get('jwt'),
+      name: user.Name,
+      surname: user.Surname,
+      password,
+    })
+    notify({
+      type: 'success',
+      title: i18n.global.t('notifications.types.succes'),
+      text: i18n.global.t('notifications.text.user.name.done'),
+    })
+  } catch (e) {
+    notify({
+      type: 'error',
+      title: i18n.global.t('notifications.types.error'),
+      text: i18n.global.t('notifications.text.user.name.didnt'),
+    })
+  }
+}
+
+export const changeEmail = async (
+  user: User,
+  password: string
+): Promise<void> => {
+  try {
+    await axios.put(`/users/${user?.Login}/email`, {
+      token: Cookies.get('jwt'),
+      email: user.Email,
+      password,
+    })
+    notify({
+      type: 'success',
+      title: i18n.global.t('notifications.types.succes'),
+      text: i18n.global.t('notifications.text.user.email.done'),
+    })
+  } catch (e) {
+    notify({
+      type: 'error',
+      title: i18n.global.t('notifications.types.error'),
+      text: i18n.global.t('notifications.text.user.email.didnt'),
+    })
+  }
+}
+
+export const changeDOB = async (
+  user: User,
+  password: string
+): Promise<void> => {
+  try {
+    await axios.put(`/users/${user?.Login}/dateofbirth`, {
+      token: Cookies.get('jwt'),
+      DateOfBirth: user.DateOfBirth,
+      password,
+    })
+    notify({
+      type: 'success',
+      title: i18n.global.t('notifications.types.succes'),
+      text: i18n.global.t('notifications.text.user.dob.done'),
+    })
+  } catch (e) {
+    notify({
+      type: 'error',
+      title: i18n.global.t('notifications.types.error'),
+      text: i18n.global.t('notifications.text.user.dob.didnt'),
+    })
+  }
+}
+
+// export const changePassword = async (
+//   user: User,
+//   password: string
+// ): Promise<void> => {
+//   try {
+//     await axios.put(`/users/${user?.Login}/dateofbirth`, {
+//       token: Cookies.get('jwt'),
+//       DateOfBirth: user.DateOfBirth,
+//       password,
+//     })
+//     notify({
+//       type: 'success',
+//       title: i18n.global.t('notifications.types.succes'),
+//       text: i18n.global.t('notifications.text.user.dob.done'),
+//     })
+//   } catch (e) {
+//     notify({
+//       type: 'error',
+//       title: i18n.global.t('notifications.types.error'),
+//       text: i18n.global.t('notifications.text.user.dob.didnt'),
+//     })
+//   }
+// }
