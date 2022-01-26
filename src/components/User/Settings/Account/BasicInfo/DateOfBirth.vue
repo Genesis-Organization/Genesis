@@ -17,7 +17,9 @@
             class="confirm_password"
             v-model="temppass"
           />
-          <button @click="changeDOB(user, temppass)">Confirm</button>
+          <button @click="changeDOB(user, temppass)">
+            {{ $t('auth.inputs.confirm') }}
+          </button>
         </Confirm>
       </Modal>
     </div>

@@ -381,6 +381,11 @@
       "cookies": "Ciasteczka",
       "bug": "Zgłoś błąd"
     },
+    "sections": {
+      "account": {
+        "remove": "Usuń konto"
+      }
+    },
     "common": {
       "university": "Uniwersytet",
       "time": "Czas studiowania (rok)",
@@ -429,6 +434,8 @@
         },
         "password": {
           "done": "Pomyślnie zaktualizowano hasło",
+          "must_be_same": "Hasła do siebie nie pasują",
+          "too_weak": "Nowe hasło jest za słabe",
           "didnt": "Nie udało się zaktualizować hasła ;c"
         }
       }
@@ -442,6 +449,13 @@
       "confirm_settings": {
         "title": "Potwierdź swoją tożsamość.",
         "content": "Ze względów bezpieczeństwa prosimy cię o podanie swojego hasła."
+      },
+      "change_password": {
+        "title": "Potwierdź zmienę hasła.",
+        "pass_str": "Siła hasła",
+        "old": "Obecne hasło",
+        "new": "Nowe hasło",
+        "confirm": "Potwierdź hasło"
       }
     }
   }

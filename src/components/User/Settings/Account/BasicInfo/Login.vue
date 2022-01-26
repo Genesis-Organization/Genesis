@@ -1,11 +1,11 @@
 <template>
   <div class="input">
     <div class="info">
-      <ic icon="paper-plane" />
-      <div>{{ $t('auth.inputs.email') }}</div>
+      <ic icon="fingerprint" />
+      <div>{{ $t('auth.inputs.login') }}</div>
     </div>
     <div class="form">
-      <input v-model="user.Email" />
+      <input v-model="user.Login" />
       <button @click="showModal">
         <ic icon="check" />
       </button>
@@ -17,7 +17,7 @@
             class="confirm_password"
             v-model="temppass"
           />
-          <button @click="changeEmail(user, temppass)">
+          <button @click="changeDOB(user, temppass)">
             {{ $t('auth.inputs.confirm') }}
           </button>
         </Confirm>
@@ -30,7 +30,7 @@
 import { defineComponent } from 'vue'
 import Modal from '@/components/Shared/Modals/Modal.vue'
 import Confirm from '../Confirm.vue'
-import { changeEmail } from '@/scripts/services/settings'
+import { changeDOB } from '@/scripts/services/settings'
 import { User } from '@/types/user'
 
 export default defineComponent({
@@ -41,6 +41,7 @@ export default defineComponent({
   data() {
     return {
       user: this.$store.getters.getUser as User,
+      temppass: '',
     }
   },
   methods: {
@@ -48,7 +49,7 @@ export default defineComponent({
       const modal = this.$refs.modal as InstanceType<typeof Modal>
       if (modal) modal.toggleModal()
     },
-    changeEmail,
+    changeDOB,
   },
 })
 </script>
@@ -81,7 +82,7 @@ export default defineComponent({
   button {
     display: flex;
     align-items: center;
-    padding: 5px 6px;
+    padding: 3px 6px;
     margin: 0 5px;
     font-size: 18px;
     border-radius: 5px;
@@ -90,6 +91,7 @@ export default defineComponent({
     flex-grow: 1;
   }
   button {
+    padding: 6px;
     background-color: theme(main_dark);
     color: theme(light);
   }

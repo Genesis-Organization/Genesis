@@ -149,26 +149,47 @@ export const changeDOB = async (
   }
 }
 
-// export const changePassword = async (
-//   user: User,
-//   password: string
-// ): Promise<void> => {
-//   try {
-//     await axios.put(`/users/${user?.Login}/dateofbirth`, {
-//       token: Cookies.get('jwt'),
-//       DateOfBirth: user.DateOfBirth,
-//       password,
-//     })
-//     notify({
-//       type: 'success',
-//       title: i18n.global.t('notifications.types.succes'),
-//       text: i18n.global.t('notifications.text.user.dob.done'),
-//     })
-//   } catch (e) {
-//     notify({
-//       type: 'error',
-//       title: i18n.global.t('notifications.types.error'),
-//       text: i18n.global.t('notifications.text.user.dob.didnt'),
-//     })
-//   }
-// }
+export const changePassword = async (
+  user: User,
+  oldpass: string,
+  newpass: string,
+  confirmpass: string,
+  strength: number
+): Promise<void> => {
+  if (newpass != confirmpass) {
+    notify({
+      type: 'error',
+      title: i18n.global.t('notifications.types.error'),
+      text: i18n.global.t('notifications.text.user.password.must_be_same'),
+    })
+    return
+  }
+
+  if (strength < 50 || newpass.length < 6) {
+    notify({
+      type: 'error',
+      title: i18n.global.t('notifications.types.error'),
+      text: i18n.global.t('notifications.text.user.password.too_weak'),
+    })
+    return
+  }
+
+  try {
+    await axios.put(`/users/${user?.Login}/dateofbirth`, {
+      token: Cookies.get('jwt'),
+      oldPass: oldpass,
+      newPass: newpass,
+    })
+    notify({
+      type: 'success',
+      title: i18n.global.t('notifications.types.succes'),
+      text: i18n.global.t('notifications.text.user.password.done'),
+    })
+  } catch (e) {
+    notify({
+      type: 'error',
+      title: i18n.global.t('notifications.types.error'),
+      text: i18n.global.t('notifications.text.user.password.didnt'),
+    })
+  }
+}
