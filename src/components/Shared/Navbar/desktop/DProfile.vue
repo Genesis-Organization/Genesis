@@ -1,13 +1,16 @@
 <template>
   <span v-if="user && Object.keys(user).length > 0">
     <article>
-      <div class="avatarcont">
+      <div
+        class="avatarcont"
+        :class="{ premium: user.isSponsor || user.isGenesisMember }"
+      >
         <section
           class="avatar"
           :style="{
             backgroundImage: 'url(/user/avatar/' + user.avatarFileID + '.png)',
           }"
-        ></section>
+        />
       </div>
       <div class="username">
         {{ user.Name }}
@@ -85,9 +88,26 @@ article {
 }
 
 .avatarcont {
-  background: #e3e3e3;
-  padding: 3px;
+  background-color: #e3e3e3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px;
   border-radius: 50%;
+  &.premium {
+    background-image: url('../../../../assets/icons/logo/colors_premiumborder.png');
+    background-size: cover;
+  }
+  &:before {
+    content: '';
+    background: theme(dark);
+    border-radius: 50%;
+    width: calc(100% - 5px);
+    height: calc(100% - 5px);
+    position: absolute;
+    top: 2.5px;
+    left: 2.5px;
+  }
 }
 
 .avatar {

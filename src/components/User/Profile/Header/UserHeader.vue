@@ -13,7 +13,7 @@
         class="avatar"
         v-if="avatar"
         :style="{ backgroundImage: `url(/user/avatar/${avatar}.png)` }"
-      ></div>
+      />
       <div class="data">
         <div class="username">
           {{ username }}

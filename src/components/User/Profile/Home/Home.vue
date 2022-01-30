@@ -1,4 +1,5 @@
 <template>
+  <CreatePost v-if="user.Login == currentUser.Login" />
   <ResearchInterests
     :researchInterests="user.researchInterests"
     :login="user.Login"
@@ -7,6 +8,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import CreatePost from '../Blog/CreatePost.vue'
 import ResearchInterests from '../Research/sections/ResearchInterests.vue'
 import { User } from '@/types/user'
 
@@ -16,6 +18,12 @@ export default defineComponent({
   },
   components: {
     ResearchInterests,
+    CreatePost,
+  },
+  data() {
+    return {
+      currentUser: this.$store.getters.getUser,
+    }
   },
 })
 </script>
