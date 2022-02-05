@@ -3,7 +3,9 @@
   <form
     class="researchinterests"
     v-if="showForm"
-    @submit.prevent="changeInterests(user), (this.showForm = false)"
+    @submit.prevent="
+      SettingsService.changeInterests(user), (this.showForm = false)
+    "
   >
     <Add @click="addInterest" />
     <section
@@ -27,7 +29,7 @@ import Expand from '../Shared/Expand.vue'
 import Submit from '../Shared/Submit.vue'
 import Science from './ResearchInterests/Science.vue'
 import Level from './ResearchInterests/Level.vue'
-import { changeInterests } from '@/scripts/services/settings'
+import SettingsService from '@/scripts/services/settings'
 import { User, SciencesList, ScienceLevel } from '@/types/user'
 
 export default defineComponent({
@@ -41,12 +43,12 @@ export default defineComponent({
     removeInterest(index: number) {
       index > -1 && this.user.researchInterests?.splice(index, 1)
     },
-    changeInterests,
   },
   data() {
     return {
       user: this.$store.getters.getUser as User,
       showForm: false,
+      SettingsService,
     }
   },
   components: {

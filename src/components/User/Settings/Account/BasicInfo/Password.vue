@@ -11,7 +11,13 @@
           <form
             class="pass_content"
             @submit.prevent="
-              changePassword(user, temppass, newpass, confirmnewpass, strength)
+              SettingsService.changePassword(
+                user,
+                temppass,
+                newpass,
+                confirmnewpass,
+                strength
+              )
             "
           >
             <input
@@ -58,7 +64,7 @@
 import { defineComponent } from 'vue'
 import Modal from '@/components/Shared/Modals/Modal.vue'
 import { countStrength } from '@/scripts/helpers/password_strength'
-import { changePassword } from '@/scripts/services/settings'
+import SettingsService from '@/scripts/services/settings'
 import { User } from '@/types/user'
 
 export default defineComponent({
@@ -72,6 +78,7 @@ export default defineComponent({
       newpass: '',
       confirmnewpass: '',
       strength: 0,
+      SettingsService,
     }
   },
   watch: {
@@ -85,7 +92,6 @@ export default defineComponent({
       if (modal) modal.toggleModal()
     },
     countStrength,
-    changePassword,
   },
 })
 </script>

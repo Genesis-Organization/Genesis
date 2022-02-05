@@ -1,5 +1,5 @@
 <template>
-  <form class="description" @submit.prevent="changeDesc(user)">
+  <form class="description" @submit.prevent="SettingsService.changeDesc(user)">
     <div>{{ $t('user.sections.description') }}</div>
     <textarea v-model="user.description" maxlength="300"></textarea>
     <Submit />
@@ -9,16 +9,14 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import Submit from '../Shared/Submit.vue'
-import { changeDesc } from '@/scripts/services/settings'
+import SettingsService from '@/scripts/services/settings'
 import { User } from '@/types/user'
 
 export default defineComponent({
-  methods: {
-    changeDesc,
-  },
   data() {
     return {
       user: this.$store.getters.getUser as User,
+      SettingsService,
     }
   },
   components: {

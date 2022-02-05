@@ -17,7 +17,7 @@
             class="confirm_password"
             v-model="temppass"
           />
-          <button @click="changeDOB(user, temppass)">
+          <button @click="SettingsService.changeDOB(user, temppass)">
             {{ $t('auth.inputs.confirm') }}
           </button>
         </Confirm>
@@ -30,7 +30,7 @@
 import { defineComponent } from 'vue'
 import Modal from '@/components/Shared/Modals/Modal.vue'
 import Confirm from '../Confirm.vue'
-import { changeDOB } from '@/scripts/services/settings'
+import SettingsService from '@/scripts/services/settings'
 import { User } from '@/types/user'
 
 export default defineComponent({
@@ -42,6 +42,7 @@ export default defineComponent({
     return {
       user: this.$store.getters.getUser as User,
       temppass: '',
+      SettingsService,
     }
   },
   methods: {
@@ -49,7 +50,6 @@ export default defineComponent({
       const modal = this.$refs.modal as InstanceType<typeof Modal>
       if (modal) modal.toggleModal()
     },
-    changeDOB,
   },
 })
 </script>
