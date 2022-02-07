@@ -1,22 +1,21 @@
-import { StoreOptions } from 'vuex'
+import { Module, VuexModule, Mutation } from 'vuex-module-decorators'
 
-const langs: StoreOptions<{ appLanguage: string }> = {
-  state: {
-    appLanguage:
-      localStorage.getItem('appLanguage') ||
-      process.env.VUE_APP_I18N_LOCALE ||
-      'en',
-  },
-  getters: {
-    getAppLanguage: (state) => state.appLanguage,
-  },
-  mutations: {
-    setAppLanguage(state, language: string) {
-      state.appLanguage = language
-      localStorage.setItem('language', language) // Whenever we change the appLanguage we save it to the localStorage
-    },
-  },
-  actions: {},
+@Module({ name: 'langs' })
+class LangsModule extends VuexModule {
+  appLanguage =
+    localStorage.getItem('appLanguage') ||
+    process.env.VUE_APP_I18N_LOCALE ||
+    'en'
+
+  get getAppLanguage(): string {
+    return this.appLanguage
+  }
+
+  @Mutation
+  setAppLanguage(language: string): void {
+    this.appLanguage = language
+    localStorage.setItem('language', language)
+  }
 }
 
-export default langs
+export default LangsModule

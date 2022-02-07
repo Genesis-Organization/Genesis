@@ -62,9 +62,6 @@ export default defineComponent({
       if (modal) modal.toggleModal()
     },
   },
-  mounted() {
-    this.showModal()
-  },
 })
 </script>
 

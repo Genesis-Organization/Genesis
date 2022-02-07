@@ -1,18 +1,18 @@
-import { StoreOptions } from 'vuex'
+import { Module, VuexModule } from 'vuex-module-decorators'
+
 import Cookies from 'js-cookie'
 import jwtDecode, { JwtPayload } from 'jwt-decode'
 import { User } from '@/types/user'
 
-const auth: StoreOptions<{ user: User | null }> = {
-  state: {
-    user: Cookies.get('jwt')
-      ? jwtDecode<JwtPayload & { user: User }>(Cookies.get('jwt')!)?.user
-      : null,
-  },
-  getters: {
-    getUser: (state) => state.user,
-  },
-  mutations: {},
-  actions: {},
+@Module({ name: 'auth' })
+class AuthModule extends VuexModule {
+  user = Cookies.get('jwt')
+    ? jwtDecode<JwtPayload & { user: User }>(Cookies.get('jwt')!)?.user
+    : null
+
+  get getUser(): User | null {
+    return this.user
+  }
 }
-export default auth
+
+export default AuthModule
