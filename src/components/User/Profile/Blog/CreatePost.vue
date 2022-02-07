@@ -41,6 +41,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import BlogService from '@/scripts/services/blog'
 import Modal from '@/components/Shared/Modals/Light.vue'
 
 export default defineComponent({
@@ -52,6 +53,7 @@ export default defineComponent({
       user: this.$store.getters.getUser,
       postTitle: '',
       postContent: '',
+      BlogService,
     }
   },
   methods: {

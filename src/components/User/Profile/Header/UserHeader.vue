@@ -1,10 +1,10 @@
 <template>
   <div class="search">
     <div class="bar">
-      <input />
-      <button>
+      <input v-model="searchUser" />
+      <router-link :to="{ path: '/search', query: { user: searchUser } }">
         <ic icon="search" />
-      </button>
+      </router-link>
     </div>
   </div>
   <div class="headcont">
@@ -60,6 +60,11 @@ export default defineComponent({
     Badges,
     HeaderButtons,
   },
+  data() {
+    return {
+      searchUser: '' as string,
+    }
+  },
 })
 </script>
 
@@ -82,7 +87,10 @@ export default defineComponent({
       font-size: 17px;
       border-radius: 4px 0 0 4px;
     }
-    button {
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       background-color: transparent;
       color: theme(light);
       width: 35px;
