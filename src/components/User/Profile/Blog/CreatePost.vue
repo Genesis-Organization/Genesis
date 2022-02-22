@@ -19,7 +19,7 @@
             <input v-model="postTitle" :placeholder="'Title'" />
             <ic icon="times" @click="showModal" />
           </div>
-          <textarea
+          <!-- <textarea
             v-model="postContent"
             :placeholder="`I've recently discovered...`"
           />
@@ -31,7 +31,24 @@
               <button><ic icon="image" /></button>
             </div>
             <button v-html="$t('auth.inputs.confirm')" />
-          </div>
+          </div> -->
+          <Editor
+            api-key="no-api-key"
+            :initial-value="`I've recently discovered...`"
+            :init="{
+              statusbar: false,
+              menubar: false,
+              plugins: [
+                'advlist autolink lists link image charmap print preview anchor',
+                'searchreplace visualblocks code fullscreen',
+                'insertdatetime media table paste code help wordcount',
+              ],
+              toolbar:
+                'undo redo | formatselect | bold italic backcolor | \
+                alignleft aligncenter alignright alignjustify | \
+                bullist numlist outdent indent | removeformat | help',
+            }"
+          />
         </div>
       </Modal>
     </div>
@@ -41,12 +58,15 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import Editor from '@tinymce/tinymce-vue'
+
 import BlogService from '@/scripts/services/blog'
 import Modal from '@/components/Shared/Modals/Light.vue'
 
 export default defineComponent({
   components: {
     Modal,
+    Editor,
   },
   data() {
     return {
