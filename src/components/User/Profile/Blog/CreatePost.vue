@@ -33,20 +33,23 @@
             <button v-html="$t('auth.inputs.confirm')" />
           </div> -->
           <Editor
-            api-key="no-api-key"
+            api-key="kkz154dh0t15u8j7mou02p6jm8krj82ju4yrwc80rwxmuy4k"
             :initial-value="`I've recently discovered...`"
             :init="{
               statusbar: false,
               menubar: false,
+              content_style: `body {font-family: Rubik;}`,
               plugins: [
                 'advlist autolink lists link image charmap print preview anchor',
-                'searchreplace visualblocks code fullscreen',
+                'searchreplace visualblocks code fullscreen codesample ',
                 'insertdatetime media table paste code help wordcount',
               ],
               toolbar:
-                'undo redo | formatselect | bold italic backcolor | \
-                alignleft aligncenter alignright alignjustify | \
-                bullist numlist outdent indent | removeformat | help',
+                'undo redo | formatselect | bold italic underline strikethrough forecolor | \
+                alignleft aligncenter alignright alignjustify |  \
+                bullist numlist outdent indent | \
+                charmap link insertfile image media codesample | code',
+              toolbar_location: 'bottom',
             }"
           />
         </div>
