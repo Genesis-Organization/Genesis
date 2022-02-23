@@ -45,8 +45,7 @@
                 'insertdatetime media table paste code help wordcount',
               ],
               toolbar:
-                'undo redo | formatselect | bold italic underline strikethrough forecolor | \
-                alignleft aligncenter alignright alignjustify |  \
+                'undo redo | formatselect | bold italic strikethrough forecolor | \
                 bullist numlist outdent indent | \
                 charmap link insertfile image media codesample | code',
               toolbar_location: 'bottom',
