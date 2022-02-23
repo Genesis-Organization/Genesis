@@ -11,7 +11,10 @@
         />
       </div>
       <div class="write" @click="showModal">
-        <div class="text" v-html="postContent ? postContent : 'Create Post'" />
+        <div
+          class="text"
+          v-html="postContent ? 'Continue writing post...' : 'Create Post'"
+        />
       </div>
       <Modal ref="modal">
         <div id="modal_cont">
@@ -19,26 +22,13 @@
             <input v-model="postTitle" :placeholder="'Title'" />
             <ic icon="times" @click="showModal" />
           </div>
-          <!-- <textarea
-            v-model="postContent"
-            :placeholder="`I've recently discovered...`"
-          />
-          <div class="options_bar">
-            <div>
-              <button><ic icon="bold" /></button>
-              <button><ic icon="italic" /></button>
-              <button><ic icon="underline" /></button>
-              <button><ic icon="image" /></button>
-            </div>
-            <button v-html="$t('auth.inputs.confirm')" />
-          </div> -->
           <Editor
             api-key="kkz154dh0t15u8j7mou02p6jm8krj82ju4yrwc80rwxmuy4k"
-            :initial-value="`I've recently discovered...`"
+            v-model="postContent"
             :init="{
               statusbar: false,
               menubar: false,
-              content_style: `body {font-family: Rubik;}`,
+              content_css: '/editor/style.css',
               plugins: [
                 'advlist autolink lists link image charmap print preview anchor',
                 'searchreplace visualblocks code fullscreen codesample ',
@@ -91,7 +81,7 @@ export default defineComponent({
 @import '@/styles/index.scss';
 article {
   width: 600px;
-  max-width: 95vw;
+  max-width: 100%;
   margin: 10px auto;
   padding: 10px;
   border-radius: 10px;
@@ -111,7 +101,7 @@ article {
   display: flex;
   align-items: center;
   .text {
-    width: 505px;
+    max-width: 100%;
     font-size: 17px;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
@@ -145,7 +135,7 @@ article {
       font-size: 21px;
       border-bottom: 3px solid theme(gray);
       flex-grow: 1;
-      margin-right: 10px;
+      margin: 0 10px 8px 0;
     }
   }
   textarea {

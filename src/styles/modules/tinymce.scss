@@ -15,11 +15,13 @@
         border: none !important;
         background: transparent !important;
         justify-content: center !important;
+        padding-top: 5px !important;
+        max-width: 70vw !important;
     }
 
     .tox-tbtn {
         background-color: theme(gray) !important;
-        margin-left: 2px !important;
+        margin-left: 3.5px !important;
     }
 
     .tox-toolbar__group:not(:last-of-type) {
