@@ -47,7 +47,7 @@ export default defineComponent({
 .modal {
   width: 1000px;
   height: 600px;
-  max-height: 90vh;
+  max-height: 80vh;
   max-width: 95vw;
   background: theme(dark);
   border-radius: 20px;

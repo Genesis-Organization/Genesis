@@ -41,6 +41,14 @@
               toolbar_location: 'bottom',
             }"
           />
+          <div class="sendcont">
+            <div class="send">
+              <button
+                v-html="$t('auth.inputs.confirm')"
+                @click="BlogService.Publish(user, postTitle, postContent)"
+              />
+            </div>
+          </div>
         </div>
       </Modal>
     </div>
@@ -64,7 +72,7 @@ export default defineComponent({
     return {
       user: this.$store.getters.getUser,
       postTitle: '',
-      postContent: '',
+      postContent: 'sadasda',
       BlogService,
     }
   },
@@ -166,6 +174,39 @@ article {
       background-color: theme(main_dark);
       color: theme(light);
       border-radius: 5px;
+    }
+  }
+  .sendcont {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    .send {
+      position: fixed;
+      padding-top: 10px;
+      background-color: theme(light);
+      padding: 20px 30px 10px 10px;
+      border-bottom-right-radius: 10px;
+      &:after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 82px;
+        height: 53px;
+        background-image: url('../../../../assets/misc/blog/rad.png');
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        bottom: -1px;
+        left: -79px;
+      }
+      button {
+        background-color: theme(main);
+        color: theme(light);
+        padding: 10px 20px;
+        font-size: 17px;
+        border-radius: 5px;
+      }
+      transform: translate(calc(-100% + 10px), -10px);
     }
   }
 }

@@ -19,6 +19,12 @@
         max-width: 70vw !important;
     }
 
+    .tox-toolbar-overlord {
+        display: flex !important;
+        justify-content: center !important;
+        text-align: center !important;
+    }
+
     .tox-tbtn {
         background-color: theme(gray) !important;
         margin-left: 3.5px !important;
